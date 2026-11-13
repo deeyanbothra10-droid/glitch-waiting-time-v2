@@ -1,0 +1,59 @@
+Licensing of this repository
+============================
+
+This repository contains four kinds of material under different terms.
+
+1. Code: MIT License (full text below)
+   glitchlib/, scripts/, tests/, run_all.py, pytest.ini, config/ (the transcription code and schema).
+
+2. Results: Creative Commons Attribution 4.0 International (CC BY 4.0)
+   https://creativecommons.org/licenses/by/4.0/legalcode
+   DECISIONS.md, prereg/FROZEN, prereg/data_freeze.json, results/, figures/, logs/.
+   Attribution: Deeyan Bothra, "glitch-waiting-time-v2" (see CITATION.cff).
+
+3. Manuscript: copyright reserved
+   PAPER.pdf, PAPER_FINAL_REVIEW.pdf and paper/glitch_paper_revised.tex.
+   Copyright (c) 2026 Deeyan Bothra. All rights reserved; not covered by the MIT or CC BY 4.0 licences above.
+
+4. Not covered by the licences above (no licence is granted; the terms of the original sources apply)
+   - data/raw/glitches.csv: the Jodrell Bank Glitch Catalogue
+     (https://www.jb.man.ac.uk/pulsar/glitches/gTable.html; Espinoza et al. 2011, MNRAS 414, 1679;
+     Basu et al. 2022, MNRAS 510, 4049). It is included unchanged so that the checksums can be verified.
+     data/raw/README.md has been present since the project's files were first committed; its origin is not
+     recorded.
+   - data/meta/ (README.md, monitoring_gaps.csv, obs_end.csv, pulsar_params.csv, source_audit.csv): input
+     tables of the analysis, included so that it can be reproduced. Their initial content (the pulsar rows of
+     the CSV tables, the 49 reference rows and n_glitches counts of source_audit.csv, and README.md apart from
+     its provenance section) was present when the project's files were first committed on 2026-10-31, and its
+     origin is not recorded. The values added since come from the sources cited in the tables: the spin
+     parameters from the ATNF Pulsar Catalogue (Manchester et al. 2005, AJ 129, 1993), version 2.9.0; the ends
+     of monitoring and the monitoring gap from the published papers named in each row or, where a row names
+     none, from the D4g rule; and the source-audit
+     entries from an audit table whose compilation is not recorded (see data/meta/README.md). No ownership is
+     claimed for this folder.
+   - data/processed/ is derived from data/raw/glitches.csv and data/meta/ by the code in this repository. The
+     terms of those inputs apply to these tables; CC BY 4.0 covers only what the processing adds.
+
+-------------------------------------------------------------------------------
+
+MIT License
+
+Copyright (c) 2026 Deeyan Bothra
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

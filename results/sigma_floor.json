@@ -1,0 +1,296 @@
+{
+  "description": "Report only: fitted sigma-hat (M2) at the lower end of the D4p search range; synthetic data",
+  "generating_sigma": 0.01,
+  "replicates_per_scenario": 200,
+  "sigma_index": 7,
+  "seed": 20261031,
+  "calibration": [
+    {
+      "pulsar": "B0531+21",
+      "noise_sd": 0.0,
+      "target": 0.08695652173913043,
+      "achieved": 0.17445438500603075,
+      "within_tolerance": false,
+      "at_floor": true,
+      "n_sequences": 50
+    },
+    {
+      "pulsar": "B1046-58",
+      "noise_sd": 0.00161875,
+      "target": 0.20720720720720723,
+      "achieved": 0.20481407504684518,
+      "within_tolerance": true,
+      "at_floor": false,
+      "n_sequences": 50
+    },
+    {
+      "pulsar": "B1338-62",
+      "noise_sd": 0.0,
+      "target": 0.15476190476190477,
+      "achieved": 0.28814776289238736,
+      "within_tolerance": false,
+      "at_floor": true,
+      "n_sequences": 50
+    },
+    {
+      "pulsar": "B1727-47",
+      "noise_sd": 0.00030625,
+      "target": 0.2583333333333333,
+      "achieved": 0.27116618813598703,
+      "within_tolerance": true,
+      "at_floor": false,
+      "n_sequences": 50
+    },
+    {
+      "pulsar": "B1737-30",
+      "noise_sd": 0.000825,
+      "target": 0.28571428571428575,
+      "achieved": 0.2934959805287467,
+      "within_tolerance": true,
+      "at_floor": false,
+      "n_sequences": 50
+    },
+    {
+      "pulsar": "B1757-24",
+      "noise_sd": 0.0,
+      "target": 0.03926701570680628,
+      "achieved": 0.039295876456727497,
+      "within_tolerance": true,
+      "at_floor": true,
+      "n_sequences": 50
+    },
+    {
+      "pulsar": "B1758-23",
+      "noise_sd": 0.008,
+      "target": 0.7916666666666667,
+      "achieved": 0.8071037950763829,
+      "within_tolerance": true,
+      "at_floor": false,
+      "n_sequences": 50
+    },
+    {
+      "pulsar": "B1800-21",
+      "noise_sd": 0.0,
+      "target": 0.02056451612903226,
+      "achieved": 0.030445873320808205,
+      "within_tolerance": false,
+      "at_floor": true,
+      "n_sequences": 50
+    },
+    {
+      "pulsar": "B1823-13",
+      "noise_sd": 0.00011875,
+      "target": 0.04166666666666667,
+      "achieved": 0.03976666446354706,
+      "within_tolerance": true,
+      "at_floor": false,
+      "n_sequences": 50
+    },
+    {
+      "pulsar": "J0205+6449",
+      "noise_sd": 0.006906250000000001,
+      "target": 0.18333333333333335,
+      "achieved": 0.18198020383631217,
+      "within_tolerance": true,
+      "at_floor": false,
+      "n_sequences": 50
+    },
+    {
+      "pulsar": "J0537-6910",
+      "noise_sd": 0.0001875,
+      "target": 0.2,
+      "achieved": 0.2026604992032258,
+      "within_tolerance": true,
+      "at_floor": false,
+      "n_sequences": 50
+    },
+    {
+      "pulsar": "J0631+1036",
+      "noise_sd": 0.0003,
+      "target": 0.18803418803418803,
+      "achieved": 0.18072253755264311,
+      "within_tolerance": true,
+      "at_floor": false,
+      "n_sequences": 50
+    },
+    {
+      "pulsar": "J0729-1448",
+      "noise_sd": 0.00245,
+      "target": 0.46875,
+      "achieved": 0.445939816340038,
+      "within_tolerance": true,
+      "at_floor": false,
+      "n_sequences": 50
+    },
+    {
+      "pulsar": "J1023-5746",
+      "noise_sd": 0.0,
+      "target": 0.009942640484913223,
+      "achieved": 0.04832654751891763,
+      "within_tolerance": false,
+      "at_floor": true,
+      "n_sequences": 50
+    },
+    {
+      "pulsar": "J1420-6048",
+      "noise_sd": 0.00106875,
+      "target": 0.07692307692307693,
+      "achieved": 0.0781729808597707,
+      "within_tolerance": true,
+      "at_floor": false,
+      "n_sequences": 50
+    },
+    {
+      "pulsar": "J1617-5055",
+      "noise_sd": 0.009899999999999999,
+      "target": 0.5454545454545454,
+      "achieved": 0.5622302601484896,
+      "within_tolerance": true,
+      "at_floor": false,
+      "n_sequences": 50
+    },
+    {
+      "pulsar": "J1737-3137",
+      "noise_sd": 0.0009750000000000002,
+      "target": 0.14285714285714288,
+      "achieved": 0.13870838298458898,
+      "within_tolerance": true,
+      "at_floor": false,
+      "n_sequences": 50
+    },
+    {
+      "pulsar": "J1814-1744",
+      "noise_sd": 0.0045000000000000005,
+      "target": 0.5714285714285715,
+      "achieved": 0.5843572409790745,
+      "within_tolerance": true,
+      "at_floor": false,
+      "n_sequences": 50
+    },
+    {
+      "pulsar": "J1841-0524",
+      "noise_sd": 0.0018,
+      "target": 0.4285714285714286,
+      "achieved": 0.44135611116603546,
+      "within_tolerance": true,
+      "at_floor": false,
+      "n_sequences": 50
+    },
+    {
+      "pulsar": "J2021+3651",
+      "noise_sd": 0.0013562500000000003,
+      "target": 0.04838709677419355,
+      "achieved": 0.04693887458047842,
+      "within_tolerance": true,
+      "at_floor": false,
+      "n_sequences": 50
+    },
+    {
+      "pulsar": "J2229+6114",
+      "noise_sd": 0.0016562500000000002,
+      "target": 0.05660377358490566,
+      "achieved": 0.056530897490420305,
+      "within_tolerance": true,
+      "at_floor": false,
+      "n_sequences": 50
+    }
+  ],
+  "calibration_outside_tolerance": [
+    "B0531+21",
+    "B1338-62",
+    "B1800-21",
+    "J1023-5746"
+  ],
+  "scenarios": {
+    "S3": {
+      "replicates": 200,
+      "analysed": 200,
+      "discarded": 0,
+      "failures": {
+        "failed": 0,
+        "fraction": 0.0,
+        "limit": 0.01,
+        "result": "PASS",
+        "reasons": []
+      },
+      "sigma_hat_mean": 1.0800628083779418,
+      "sigma_hat_median": 1.085864893321225,
+      "sigma_hat_p2.5": 0.8839433832100398,
+      "sigma_hat_p97.5": 1.2460701350515249
+    },
+    "S3m": {
+      "replicates": 200,
+      "analysed": 200,
+      "discarded": 0,
+      "failures": {
+        "failed": 0,
+        "fraction": 0.0,
+        "limit": 0.01,
+        "result": "PASS",
+        "reasons": []
+      },
+      "sigma_hat_mean": 0.8310010763092665,
+      "sigma_hat_median": 0.8335483992901846,
+      "sigma_hat_p2.5": 0.7205823486524516,
+      "sigma_hat_p97.5": 0.9388286437619088
+    },
+    "S1m": {
+      "replicates": 200,
+      "analysed": 200,
+      "discarded": 0,
+      "failures": {
+        "failed": 0,
+        "fraction": 0.0,
+        "limit": 0.01,
+        "result": "PASS",
+        "reasons": []
+      },
+      "sigma_hat_mean": 0.7364685765155516,
+      "sigma_hat_median": 0.7352646929483598,
+      "sigma_hat_p2.5": 0.6079860206565028,
+      "sigma_hat_p97.5": 0.8469641545018637
+    },
+    "S4-mix": {
+      "replicates": 200,
+      "analysed": 200,
+      "discarded": 0,
+      "failures": {
+        "failed": 0,
+        "fraction": 0.0,
+        "limit": 0.01,
+        "result": "PASS",
+        "reasons": []
+      },
+      "sigma_hat_mean": 0.009470534341746311,
+      "sigma_hat_median": 0.009446429756742748,
+      "sigma_hat_p2.5": 0.008519850952252337,
+      "sigma_hat_p97.5": 0.010496742313241944
+    }
+  },
+  "pulsars": [
+    "B0531+21",
+    "B1046-58",
+    "B1338-62",
+    "B1727-47",
+    "B1737-30",
+    "B1757-24",
+    "B1758-23",
+    "B1800-21",
+    "B1823-13",
+    "J0205+6449",
+    "J0537-6910",
+    "J0631+1036",
+    "J0729-1448",
+    "J1023-5746",
+    "J1420-6048",
+    "J1617-5055",
+    "J1737-3137",
+    "J1814-1744",
+    "J1841-0524",
+    "J2021+3651",
+    "J2229+6114"
+  ],
+  "config_sha256": "2022df18439daf006bcc0562f3c7ac6234b3c663c3b883aa2739bfa7df60147a",
+  "git_commit": "0a5949656fc03fcc3259b043dd27d0d3144406e8",
+  "generated_utc": "2026-11-01T07:30:33+00:00"
+}

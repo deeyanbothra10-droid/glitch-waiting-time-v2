@@ -1,0 +1,733 @@
+{
+  "description": "D4o item 5, report only: emulated exponential-recovery detection per D4o group; synthetic",
+  "published": {
+    "J0537-6910": [
+      12,
+      66
+    ],
+    "Yu2013": [
+      27,
+      107
+    ]
+  },
+  "per_sigma": {
+    "0.2": {
+      "S1m": {
+        "D4o": {
+          "J0537-6910": {
+            "glitches": 54401,
+            "with_exponential": 23906,
+            "detected": 13539,
+            "detected_without_exponential": 1289,
+            "detected_of_with_exponential": 0.5663431774449929,
+            "detected_of_glitches": 0.2725685189610485
+          },
+          "crab": {
+            "glitches": 33710,
+            "with_exponential": 33710,
+            "detected": 1388,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.041174725600711955,
+            "detected_of_glitches": 0.041174725600711955
+          },
+          "others_at_least_split": {
+            "glitches": 136420,
+            "with_exponential": 136420,
+            "detected": 42135,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.3088623369007477,
+            "detected_of_glitches": 0.3088623369007477
+          },
+          "others_below_split": {
+            "glitches": 104395,
+            "with_exponential": 104395,
+            "detected": 311,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.0029790698788256143,
+            "detected_of_glitches": 0.0029790698788256143
+          }
+        },
+        "placeholder_D14": {
+          "J0537-6910": {
+            "glitches": 54401,
+            "with_exponential": 54401,
+            "detected": 22587,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.41519457362916123,
+            "detected_of_glitches": 0.41519457362916123
+          },
+          "crab": {
+            "glitches": 33710,
+            "with_exponential": 33710,
+            "detected": 263,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.0078018392168495996,
+            "detected_of_glitches": 0.0078018392168495996
+          },
+          "others_at_least_split": {
+            "glitches": 136420,
+            "with_exponential": 136420,
+            "detected": 59185,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.4338440111420613,
+            "detected_of_glitches": 0.4338440111420613
+          },
+          "others_below_split": {
+            "glitches": 104395,
+            "with_exponential": 104395,
+            "detected": 6036,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.05781886105656401,
+            "detected_of_glitches": 0.05781886105656401
+          }
+        }
+      },
+      "S4-mix": {
+        "D4o": {
+          "J0537-6910": {
+            "glitches": 26874,
+            "with_exponential": 11991,
+            "detected": 6745,
+            "detected_without_exponential": 282,
+            "detected_of_with_exponential": 0.5625052122425153,
+            "detected_of_glitches": 0.261479496911513
+          },
+          "crab": {
+            "glitches": 16281,
+            "with_exponential": 16281,
+            "detected": 646,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.03967815244763835,
+            "detected_of_glitches": 0.03967815244763835
+          },
+          "others_at_least_split": {
+            "glitches": 65386,
+            "with_exponential": 65386,
+            "detected": 22564,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.34508916281772856,
+            "detected_of_glitches": 0.34508916281772856
+          },
+          "others_below_split": {
+            "glitches": 48073,
+            "with_exponential": 48073,
+            "detected": 3074,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.06394441786449774,
+            "detected_of_glitches": 0.06394441786449774
+          }
+        },
+        "placeholder_D14": {
+          "J0537-6910": {
+            "glitches": 26874,
+            "with_exponential": 26874,
+            "detected": 12050,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.4483887772568282,
+            "detected_of_glitches": 0.4483887772568282
+          },
+          "crab": {
+            "glitches": 16281,
+            "with_exponential": 16281,
+            "detected": 173,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.010625882931023893,
+            "detected_of_glitches": 0.010625882931023893
+          },
+          "others_at_least_split": {
+            "glitches": 65386,
+            "with_exponential": 65386,
+            "detected": 30411,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.46509956259749796,
+            "detected_of_glitches": 0.46509956259749796
+          },
+          "others_below_split": {
+            "glitches": 48073,
+            "with_exponential": 48073,
+            "detected": 5737,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.11933933808998815,
+            "detected_of_glitches": 0.11933933808998815
+          }
+        }
+      }
+    },
+    "0.4": {
+      "S1m": {
+        "D4o": {
+          "J0537-6910": {
+            "glitches": 54302,
+            "with_exponential": 24078,
+            "detected": 12816,
+            "detected_without_exponential": 1079,
+            "detected_of_with_exponential": 0.5322701221031647,
+            "detected_of_glitches": 0.2558837611874332
+          },
+          "crab": {
+            "glitches": 33738,
+            "with_exponential": 33738,
+            "detected": 1423,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.042177959570810365,
+            "detected_of_glitches": 0.042177959570810365
+          },
+          "others_at_least_split": {
+            "glitches": 137832,
+            "with_exponential": 137832,
+            "detected": 43989,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.3191493992686749,
+            "detected_of_glitches": 0.3191493992686749
+          },
+          "others_below_split": {
+            "glitches": 104287,
+            "with_exponential": 104287,
+            "detected": 386,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.003701324230249216,
+            "detected_of_glitches": 0.003701324230249216
+          }
+        },
+        "placeholder_D14": {
+          "J0537-6910": {
+            "glitches": 54302,
+            "with_exponential": 54302,
+            "detected": 20817,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.3833560458178336,
+            "detected_of_glitches": 0.3833560458178336
+          },
+          "crab": {
+            "glitches": 33738,
+            "with_exponential": 33738,
+            "detected": 285,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.008447447981504534,
+            "detected_of_glitches": 0.008447447981504534
+          },
+          "others_at_least_split": {
+            "glitches": 137832,
+            "with_exponential": 137832,
+            "detected": 59015,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.42816617331243834,
+            "detected_of_glitches": 0.42816617331243834
+          },
+          "others_below_split": {
+            "glitches": 104287,
+            "with_exponential": 104287,
+            "detected": 5069,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.048606250059930765,
+            "detected_of_glitches": 0.048606250059930765
+          }
+        }
+      },
+      "S4-mix": {
+        "D4o": {
+          "J0537-6910": {
+            "glitches": 26980,
+            "with_exponential": 11916,
+            "detected": 6289,
+            "detected_without_exponential": 410,
+            "detected_of_with_exponential": 0.5277777777777778,
+            "detected_of_glitches": 0.24829503335804298
+          },
+          "crab": {
+            "glitches": 16367,
+            "with_exponential": 16367,
+            "detected": 668,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.040813832712164724,
+            "detected_of_glitches": 0.040813832712164724
+          },
+          "others_at_least_split": {
+            "glitches": 65907,
+            "with_exponential": 65907,
+            "detected": 23830,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.3615700911890998,
+            "detected_of_glitches": 0.3615700911890998
+          },
+          "others_below_split": {
+            "glitches": 48225,
+            "with_exponential": 48225,
+            "detected": 3336,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.06917573872472783,
+            "detected_of_glitches": 0.06917573872472783
+          }
+        },
+        "placeholder_D14": {
+          "J0537-6910": {
+            "glitches": 26980,
+            "with_exponential": 26980,
+            "detected": 11623,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.43080059303187546,
+            "detected_of_glitches": 0.43080059303187546
+          },
+          "crab": {
+            "glitches": 16367,
+            "with_exponential": 16367,
+            "detected": 200,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.01221971039286369,
+            "detected_of_glitches": 0.01221971039286369
+          },
+          "others_at_least_split": {
+            "glitches": 65907,
+            "with_exponential": 65907,
+            "detected": 30335,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.4602697740755914,
+            "detected_of_glitches": 0.4602697740755914
+          },
+          "others_below_split": {
+            "glitches": 48225,
+            "with_exponential": 48225,
+            "detected": 5279,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.10946604458268533,
+            "detected_of_glitches": 0.10946604458268533
+          }
+        }
+      }
+    },
+    "0.6": {
+      "S1m": {
+        "D4o": {
+          "J0537-6910": {
+            "glitches": 54972,
+            "with_exponential": 24508,
+            "detected": 12335,
+            "detected_without_exponential": 988,
+            "detected_of_with_exponential": 0.5033050432511833,
+            "detected_of_glitches": 0.242359746780179
+          },
+          "crab": {
+            "glitches": 35147,
+            "with_exponential": 35147,
+            "detected": 1413,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.04020257774489999,
+            "detected_of_glitches": 0.04020257774489999
+          },
+          "others_at_least_split": {
+            "glitches": 140986,
+            "with_exponential": 140986,
+            "detected": 44344,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.31452768359979005,
+            "detected_of_glitches": 0.31452768359979005
+          },
+          "others_below_split": {
+            "glitches": 107891,
+            "with_exponential": 107891,
+            "detected": 442,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.004096727252504843,
+            "detected_of_glitches": 0.004096727252504843
+          }
+        },
+        "placeholder_D14": {
+          "J0537-6910": {
+            "glitches": 54972,
+            "with_exponential": 54972,
+            "detected": 19643,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.35732736665939024,
+            "detected_of_glitches": 0.35732736665939024
+          },
+          "crab": {
+            "glitches": 35147,
+            "with_exponential": 35147,
+            "detected": 350,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.009958175662218682,
+            "detected_of_glitches": 0.009958175662218682
+          },
+          "others_at_least_split": {
+            "glitches": 140986,
+            "with_exponential": 140986,
+            "detected": 61516,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.4363270111926007,
+            "detected_of_glitches": 0.4363270111926007
+          },
+          "others_below_split": {
+            "glitches": 107891,
+            "with_exponential": 107891,
+            "detected": 6424,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.05954157436672197,
+            "detected_of_glitches": 0.05954157436672197
+          }
+        }
+      },
+      "S4-mix": {
+        "D4o": {
+          "J0537-6910": {
+            "glitches": 26906,
+            "with_exponential": 11980,
+            "detected": 6234,
+            "detected_without_exponential": 626,
+            "detected_of_with_exponential": 0.5203672787979967,
+            "detected_of_glitches": 0.25496171857578237
+          },
+          "crab": {
+            "glitches": 16228,
+            "with_exponential": 16228,
+            "detected": 699,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.0430736997781612,
+            "detected_of_glitches": 0.0430736997781612
+          },
+          "others_at_least_split": {
+            "glitches": 66458,
+            "with_exponential": 66458,
+            "detected": 23927,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.3600318998465196,
+            "detected_of_glitches": 0.3600318998465196
+          },
+          "others_below_split": {
+            "glitches": 49066,
+            "with_exponential": 49066,
+            "detected": 3556,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.07247381078547263,
+            "detected_of_glitches": 0.07247381078547263
+          }
+        },
+        "placeholder_D14": {
+          "J0537-6910": {
+            "glitches": 26906,
+            "with_exponential": 26906,
+            "detected": 11164,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.41492603880175427,
+            "detected_of_glitches": 0.41492603880175427
+          },
+          "crab": {
+            "glitches": 16228,
+            "with_exponential": 16228,
+            "detected": 263,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.01620655656889327,
+            "detected_of_glitches": 0.01620655656889327
+          },
+          "others_at_least_split": {
+            "glitches": 66458,
+            "with_exponential": 66458,
+            "detected": 31055,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.46728761021998855,
+            "detected_of_glitches": 0.46728761021998855
+          },
+          "others_below_split": {
+            "glitches": 49066,
+            "with_exponential": 49066,
+            "detected": 5784,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.1178820364407125,
+            "detected_of_glitches": 0.1178820364407125
+          }
+        }
+      }
+    },
+    "0.8": {
+      "S1m": {
+        "D4o": {
+          "J0537-6910": {
+            "glitches": 54938,
+            "with_exponential": 24530,
+            "detected": 11575,
+            "detected_without_exponential": 832,
+            "detected_of_with_exponential": 0.47187117814920504,
+            "detected_of_glitches": 0.22583639739342531
+          },
+          "crab": {
+            "glitches": 35485,
+            "with_exponential": 35485,
+            "detected": 1475,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.04156685923629703,
+            "detected_of_glitches": 0.04156685923629703
+          },
+          "others_at_least_split": {
+            "glitches": 145972,
+            "with_exponential": 145972,
+            "detected": 48347,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.3312073548351739,
+            "detected_of_glitches": 0.3312073548351739
+          },
+          "others_below_split": {
+            "glitches": 111619,
+            "with_exponential": 111619,
+            "detected": 821,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.0073553785645812985,
+            "detected_of_glitches": 0.0073553785645812985
+          }
+        },
+        "placeholder_D14": {
+          "J0537-6910": {
+            "glitches": 54938,
+            "with_exponential": 54938,
+            "detected": 17949,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.32671375004550585,
+            "detected_of_glitches": 0.32671375004550585
+          },
+          "crab": {
+            "glitches": 35485,
+            "with_exponential": 35485,
+            "detected": 404,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.011385092292517966,
+            "detected_of_glitches": 0.011385092292517966
+          },
+          "others_at_least_split": {
+            "glitches": 145972,
+            "with_exponential": 145972,
+            "detected": 61743,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.4229783794152303,
+            "detected_of_glitches": 0.4229783794152303
+          },
+          "others_below_split": {
+            "glitches": 111619,
+            "with_exponential": 111619,
+            "detected": 5085,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.04555676004981231,
+            "detected_of_glitches": 0.04555676004981231
+          }
+        }
+      },
+      "S4-mix": {
+        "D4o": {
+          "J0537-6910": {
+            "glitches": 27244,
+            "with_exponential": 12185,
+            "detected": 5812,
+            "detected_without_exponential": 870,
+            "detected_of_with_exponential": 0.4769798933114485,
+            "detected_of_glitches": 0.24526501247981206
+          },
+          "crab": {
+            "glitches": 16642,
+            "with_exponential": 16642,
+            "detected": 679,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.04080038456916236,
+            "detected_of_glitches": 0.04080038456916236
+          },
+          "others_at_least_split": {
+            "glitches": 67715,
+            "with_exponential": 67715,
+            "detected": 25266,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.3731226463855867,
+            "detected_of_glitches": 0.3731226463855867
+          },
+          "others_below_split": {
+            "glitches": 49787,
+            "with_exponential": 49787,
+            "detected": 3397,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.06823066262277301,
+            "detected_of_glitches": 0.06823066262277301
+          }
+        },
+        "placeholder_D14": {
+          "J0537-6910": {
+            "glitches": 27244,
+            "with_exponential": 27244,
+            "detected": 10665,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.3914623403318162,
+            "detected_of_glitches": 0.3914623403318162
+          },
+          "crab": {
+            "glitches": 16642,
+            "with_exponential": 16642,
+            "detected": 290,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.017425790169450787,
+            "detected_of_glitches": 0.017425790169450787
+          },
+          "others_at_least_split": {
+            "glitches": 67715,
+            "with_exponential": 67715,
+            "detected": 30849,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.4555711437643063,
+            "detected_of_glitches": 0.4555711437643063
+          },
+          "others_below_split": {
+            "glitches": 49787,
+            "with_exponential": 49787,
+            "detected": 4905,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.09851969389599695,
+            "detected_of_glitches": 0.09851969389599695
+          }
+        }
+      }
+    },
+    "1.2": {
+      "S1m": {
+        "D4o": {
+          "J0537-6910": {
+            "glitches": 56499,
+            "with_exponential": 25297,
+            "detected": 9893,
+            "detected_without_exponential": 715,
+            "detected_of_with_exponential": 0.39107404040004745,
+            "detected_of_glitches": 0.18775553549620347
+          },
+          "crab": {
+            "glitches": 37825,
+            "with_exponential": 37825,
+            "detected": 1590,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.04203569068076669,
+            "detected_of_glitches": 0.04203569068076669
+          },
+          "others_at_least_split": {
+            "glitches": 162379,
+            "with_exponential": 162379,
+            "detected": 53703,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.33072626386416965,
+            "detected_of_glitches": 0.33072626386416965
+          },
+          "others_below_split": {
+            "glitches": 126311,
+            "with_exponential": 126311,
+            "detected": 1515,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.011994204780264585,
+            "detected_of_glitches": 0.011994204780264585
+          }
+        },
+        "placeholder_D14": {
+          "J0537-6910": {
+            "glitches": 56499,
+            "with_exponential": 56499,
+            "detected": 15056,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.26648259261225865,
+            "detected_of_glitches": 0.26648259261225865
+          },
+          "crab": {
+            "glitches": 37825,
+            "with_exponential": 37825,
+            "detected": 756,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.01998678122934567,
+            "detected_of_glitches": 0.01998678122934567
+          },
+          "others_at_least_split": {
+            "glitches": 162379,
+            "with_exponential": 162379,
+            "detected": 65803,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.4052432888489275,
+            "detected_of_glitches": 0.4052432888489275
+          },
+          "others_below_split": {
+            "glitches": 126311,
+            "with_exponential": 126311,
+            "detected": 6043,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.04784223068458012,
+            "detected_of_glitches": 0.04784223068458012
+          }
+        }
+      },
+      "S4-mix": {
+        "D4o": {
+          "J0537-6910": {
+            "glitches": 28108,
+            "with_exponential": 12511,
+            "detected": 4805,
+            "detected_without_exponential": 1273,
+            "detected_of_with_exponential": 0.38406202541763246,
+            "detected_of_glitches": 0.21623737014373132
+          },
+          "crab": {
+            "glitches": 16931,
+            "with_exponential": 16931,
+            "detected": 704,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.04158053275057587,
+            "detected_of_glitches": 0.04158053275057587
+          },
+          "others_at_least_split": {
+            "glitches": 73161,
+            "with_exponential": 73161,
+            "detected": 27113,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.37059362228509724,
+            "detected_of_glitches": 0.37059362228509724
+          },
+          "others_below_split": {
+            "glitches": 53162,
+            "with_exponential": 53162,
+            "detected": 3447,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.06483954704488168,
+            "detected_of_glitches": 0.06483954704488168
+          }
+        },
+        "placeholder_D14": {
+          "J0537-6910": {
+            "glitches": 28108,
+            "with_exponential": 28108,
+            "detected": 8898,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.3165646790949196,
+            "detected_of_glitches": 0.3165646790949196
+          },
+          "crab": {
+            "glitches": 16931,
+            "with_exponential": 16931,
+            "detected": 419,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.024747504577402397,
+            "detected_of_glitches": 0.024747504577402397
+          },
+          "others_at_least_split": {
+            "glitches": 73161,
+            "with_exponential": 73161,
+            "detected": 32169,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.4397014802968795,
+            "detected_of_glitches": 0.4397014802968795
+          },
+          "others_below_split": {
+            "glitches": 53162,
+            "with_exponential": 53162,
+            "detected": 5041,
+            "detected_without_exponential": 0,
+            "detected_of_with_exponential": 0.09482337007637034,
+            "detected_of_glitches": 0.09482337007637034
+          }
+        }
+      }
+    }
+  },
+  "stores": {
+    "D4o": "results/validation_partial_d4o",
+    "placeholder_D14": "results/validation_partial"
+  },
+  "seed": 20261031,
+  "config_sha256": "2022df18439daf006bcc0562f3c7ac6234b3c663c3b883aa2739bfa7df60147a",
+  "git_commit": "0a5949656fc03fcc3259b043dd27d0d3144406e8",
+  "generated_utc": "2026-11-01T07:43:55+00:00"
+}

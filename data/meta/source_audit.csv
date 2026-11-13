@@ -1,0 +1,50 @@
+ref,n_glitches,telescope,cadence_days,cadence_num_days,exp_fitted,df1_definition,df1_method,tau_d_days,Q,span,quote,notes
+Espinoza+2011 [elsk11],103,Lovell (Jodrell Bank),2-10,6,no,"step at glitch epoch, difference of pre/post ephemerides; transients not separated",short-window,,,post-glitch ephemeris ideally 30-50 d; longer when sampling poor,,"arXiv:1102.1743 Sec 3.1, 3.3"
+Antonopoulou+2018 [aeka18],45,RXTE,<14,14,when-detected,permanent (persisting step),local-relaxation,,,TOAs delimited by previous and next glitches; nu-ddot and step in nu-ddot when both datasets >= ~90 d,,arXiv:1708.09459 Sec 3.1.1; errors already x2
+Basu+2021 [bsa+21],36,Lovell (Jodrell Bank),10-14,12,when-detected,total (dnudot_p + sum dnu_d/tau),global,,,"all glitches fitted simultaneously with nu, nudot, nu-ddot",,arXiv:2111.06835 Sec 3.1
+Ho+2026 [hke+26],23,NICER,variable,14,when-detected,unstated,local-relaxation,,,segments between glitches with per-segment nu-ddot,,arXiv:2512.19800; confidence medium
+Lower+2021 [ljd+21],20,Parkes,~30,30,yes,unstated,global,,,TempoNest fit of glitch and red-noise parameters together,,arXiv:2109.07612 Sec 3.2; confidence medium
+Yu+2012 [ymh+12],17,Parkes,14-28,21,when-detected,total at glitch (inferred),local-relaxation,,,"segment ~200-3000 d centred on glitch, with dnuddot_p",,arXiv:1211.2035 Sec 3
+Wang+2000 [wmp+00],15,Parkes,14-42,28,when-detected,total at glitch (extrapolated),short-window,,,pre/post fits over ~100-300 d spans,,arXiv:astro-ph/0005561
+New - Our measurement,13,Lovell (Jodrell Bank),10-14,12,when-detected,,global,,,,,method ASSUMED to follow Basu et al. 2022; confirm with maintainers
+Gügercinoğlu+22 [ggyz22],8,Fermi-LAT,1-30,15,yes,step,global,,,"TEMPO2 fit, exponentials included",,arXiv:2011.14788 Sec 2
+Zubieta+2024 [zgp+24],4,,,,,,,,,,,
+Downs (1981) [dow81],4,,,,,,,,,,,
+Cordes+1988 [cdk88],3,,,,,,,,,,,
+McCulloch+1987 [mkhr87],2,,,,,,,,,,,
+Livingstone+2009 [lrc+09],2,,,,,,,,,,,
+Espinoza+2021 [ead+21],2,,,,,,,,,,,
+Weltevrede+2010 [wjs10],2,,,,,,,,,,,
+Shaw+2025 [bak+25],2,,,,,,,,,,,
+Liu+24 [lyg+24],2,,,,,,,,,,,
+New - Our measurement.,2,Lovell (Jodrell Bank),10-14,12,when-detected,,global,,,,,method ASSUMED to follow Basu et al. 2022; confirm with maintainers
+Zubieta+2023 [zmf+23],2,,,,,,,,,,,
+Weltevrede+2010 [wjm+10],2,,,,,,,,,,,
+Hessels+2004 [hrr+04],1,,,,,,,,,,,
+Grover+2025 [ggj+25],1,,,,,,,,,,,
+Dodson+2004 [dbr+04],1,,,,,,,,,,,
+Dodson+2002 [dml02],1,,,,,,,,,,,
+Buchner (2010) [buc10],1,,,,,,,,,,,
+Buchner(2013) [buc13],1,,,,,,,,,,,
+Flanagan+2006 [fb06],1,,,,,,,,,,,
+Flanagan+1994 [fm94],1,,,,,,,,,,,
+Flanagan (1991) [fla91],1,,,,,,,,,,,
+Flanagan (1994) [fla94],1,,,,,,,,,,,
+Johnston+1995 [jml+95],1,,,,,,,,,,,
+Jankowski+2015 [jbb+15],1,,,,,,,,,,,
+Palfreyman+2018,1,,,,,,,,,,,
+Our measurement,1,Lovell (Jodrell Bank),10-14,12,when-detected,,global,,,,,method ASSUMED to follow Basu et al. 2022; confirm with maintainers
+Lower+2018 [lfb+18],1,,,,,,,,,,,
+New - Our Measurement,1,Lovell (Jodrell Bank),10-14,12,when-detected,,global,,,,,method ASSUMED to follow Basu et al. 2022; confirm with maintainers
+Janssen+2006 [js06],1,,,,,,,,,,,
+Jankowski+2016,1,,,,,,,,,,,
+Kerr (2019) [kerr19],1,,,,,,,,,,,
+Shaw+2018,1,,,,,,,,,,,
+Torii+2000 [tgv+00],1,,,,,,,,,,,
+Sosa-Fiscella+2021 [szp+21],1,,,,,,,,,,,
+Shemar+1996 [sl96],1,,,,,,,,,,,
+Shaw+2025b [bak+25b],1,,,,,,,,,,,
+Shaw+2021 [skl+21],1,,,,,,,,,,,
+Shaw+2018 (ATel #11625),1,,,,,,,,,,,
+Urama (2002) [ura02],1,,,,,,,,,,,
+Weltevrede+2011 [wje11],1,,,,,,,,,,,

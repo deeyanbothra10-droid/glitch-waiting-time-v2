@@ -1,0 +1,1 @@
+glitches.csv: Jodrell Bank Glitch Catalogue as converted on 30 Oct 2026 (736 glitches, 226 pulsars; SHA-256 5ba59d0160fe1f00eb70d464aa048c8b9968980c251118dca6deed825f849de7). Missing values are coded X (twice x). Never edit it by hand. To compare with the live catalogue, download https://www.jb.man.ac.uk/pulsar/glitches/gTable.html again and keep this file unchanged.

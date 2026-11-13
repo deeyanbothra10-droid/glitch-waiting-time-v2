@@ -1,0 +1,783 @@
+# Analysis decisions, transcribed from DECISIONS.md. Do not edit a value here without editing
+# DECISIONS.md first; then update meta.decisions_md_sha256 to the new checksum of DECISIONS.md.
+# Types and allowed values: config/decisions_schema.yaml. Key-to-sentence map: config/TRANSCRIPTION.md.
+# Items marked [after audit] in DECISIONS.md carry provisional: true.
+# Units: dnu_frac = Δν/ν and dnudot_frac = Δν̇/ν̇, both dimensionless
+# (catalogue dff is Δν/ν in units of 1e-9; df1 is Δν̇/ν̇ in units of 1e-3).
+# Method class labels: window, local-relaxation, global (exponentials included),
+# global-noexp ("global without exponentials"), unknown.
+
+meta:
+  source: DECISIONS.md
+  status: proposed            # "Status: PROPOSED ... Not yet frozen."
+  decisions_md_sha256: 2fd950febe3648b20098cca04a4ebe2742c905c43218d7977fa4894198f00bed
+
+# D1 · Research question
+D1:
+  provisional: false
+  primary_question: >-
+    Within individual glitching pulsars, does the waiting time to the next glitch scale with
+    R = (Δν/ν)/(Δν̇/ν̇) as the vortex-creep model predicts, and does the Δν̇ term add predictive power
+    beyond glitch size alone, when Δν̇ is measured by relaxation-modelled fits?
+  secondary_question: >-
+    Is the relation stronger in Vela-like than in Crab-like pulsars?
+  secondary_exploratory: true
+
+# D2 · Hypotheses (tested on admissible data)
+D2:
+  provisional: false
+  data: admissible
+  T1:
+    model: M2
+    parameter: b
+    expected_sign: positive     # "in M2, b > 0"
+    null_value: 0               # "Null: b = 0"
+  T2:
+    model: M4
+    parameter: d
+    expected_sign: negative     # "in M4, d < 0"
+    null_value: 0               # "Null: d = 0"
+  model_prediction:
+    b: 1
+    d: -1
+  consistency_judged_against: S1_simulation   # "judged against the S1 simulation (see D6, D12), not against the raw value 1"
+
+# D3 · Primary model
+D3:
+  provisional: false
+  family: lognormal_aft
+  censoring: right
+  intercepts: per_pulsar
+  sigma: shared
+  T1_model: M2
+  T2_model: M4
+
+# D4 · Criterion and significance
+D4:
+  provisional: false
+  test: likelihood_ratio
+  T1_comparison:
+    full: M2
+    reduced: M0
+  T2_comparison:
+    full: M4
+    reduced: M3
+  sidedness: two-sided
+  familywise_alpha: 0.05
+  correction: bonferroni
+  per_test_alpha: 0.025
+  secondary_analyses: [spearman, permutation, loo_cv, aic, implied_beta, class_comparison]
+  secondary_reporting: estimates_and_intervals_no_significance
+
+# D4a · Secondary-analysis details
+D4a:
+  provisional: false
+  permutation:
+    strata: pulsar
+    permuted_variable: ln_R
+    intervals: all                 # completed and censored together; each keeps its own T and censoring flag
+    statistic: M2_bhat_full_censored_likelihood
+    sidedness: two-sided
+    p_value: one_plus_count_abs_ge_over_one_plus_N    # (1 + #{|b̂_perm| ≥ |b̂_obs|}) / (1 + N)
+    n_permutations: 10000
+    seed: 20261031
+    placebo_uses_same_scheme: true # outcome = previous wait (D15)
+  spearman:
+    intervals: completed_only
+    per_pulsar_min_completed_admissible: 4
+    pooling: fisher_z_weighted_mean
+    pooling_weight: n_minus_3
+    p_values: none
+    label: completed intervals only
+  loo_cv:
+    unit: interval
+    score_completed: log_f_T
+    score_censored: log_S_c
+    summary: mean_over_all_intervals_per_model
+
+# D4b · Clarifications (31 Oct) of D4, D4a, D14 and D15. Where D4b clarifies an entry of another
+# decision (marked "clarified by D4b" there), code reads the D4b value.
+D4b:
+  provisional: false
+  interval_estimates:
+    level: 0.95
+    model_parameters: wald_inverse_hessian
+    simulated_quantities: percentile
+    pooled_spearman: fisher_z_pm_z_over_sqrt_sum_n_minus_3   # Fisher z ± 1.96/sqrt(Σ(n_p − 3))
+    spearman_abs_r_one: flag_and_exclude_from_pooled_and_list
+  simulation:
+    typical_wait: obs_span_over_n_glitches     # W_p = (obs_end − first-glitch mjd) / (number of glitches)
+    covariate_centring: within_pulsar
+    intercept: ln_W_p                          # c_p = ln W_p; superseded by D4c.glitch_counts.intercept
+    S1:
+      covariate: ln_R
+      slope: 1
+    S2:
+      covariate: none
+    S3:
+      covariate: ln_dnu_frac
+      slope: 1                                 # a = 1
+    S4_t_rec:
+      distribution: lognormal
+      median: W_p
+      log_sd: 0.3
+      independent_of_T: true
+      uses_waits: false                        # "never uses real or simulated waits"
+    replicates_per: scenario_and_sigma
+    replicates:
+      S1: 1000
+      S2: 1000
+      S3: 1000
+      S4_per_variant: 500
+    seed: 20261031
+    validation_lr_tests: all_replicates
+    validation_permutation:
+      applies_to: [primary, placebo]
+      n_permutations: 999
+      first_n_replicates: 200
+    validation_loo_cv_first_n_replicates: 100
+    real_run_n_permutations: 10000
+    method_class:
+      global_exp_fitted_yes: global
+      global_exp_fitted_no: global-noexp
+      global_exp_fitted_sometimes: per_glitch_from_audit_notes_else_unknown
+      admissible_global_requires_exp_fitted: "yes"
+  diagnostics:
+    collinearity:
+      correlation: pearson
+      over: usable_glitches
+      min_admissible_usable_glitches_per_pulsar: 4
+      rule_summary: unweighted_median_abs_r
+      also_report: pooled_within_pulsar_demeaned_r
+    placebo:
+      outcome: previous_wait
+      rows: intervals_whose_start_glitch_has_predecessor
+      previous_wait_always_completed: true
+      test: D4a_permutation
+      sidedness: two-sided
+      alpha: 0.05
+      significantly_negative: p_below_alpha_and_bhat_negative
+      significantly_positive: p_below_alpha_and_bhat_positive
+    missingness:
+      method: conditional_logit
+      strata: pulsar
+      response: df1_missing
+      predictor: ln_following_wait
+      rows: included_pulsars_glitches_with_completed_following_wait
+      censored_following_wait: exclude_and_count
+      sidedness: two-sided
+      alpha: 0.05
+      report: [odds_ratio, interval]
+      descriptive_also: df1_le_0
+
+# D4c · Simulation design (31 Oct). Where D4c changes an earlier entry (marked there), code reads D4c.
+D4c:
+  provisional: false
+  s4_expectations:                 # revised before any real data; superseded by D4d (S4 is a measurement, not a test)
+    S4l_forward: not_positive
+    S4l_forward_max_upper_95: 0.02 # "upper end of the 95% interval ≤ +0.02"
+    S4l_bias_reporting: finding_works_against_T1
+    S4w: unchanged                 # positive forward association
+    S4g: unchanged                 # no association
+    S4g0: unchanged                # negative backward association
+  layers:
+    statistics_only: [S1, S2, S3]  # no measurement emulation; t_rec not used
+    statistics_measured_dnudot: true_times_exp_normal_sd_real_relative_error   # Δν̇ × exp(e), SD(e) = df1_err/df1 of the resampled glitch
+    emulated: [S1m, S4]
+    S1m_t_rec: equals_T
+    S1_reference_for_D6_D12: S1m   # "the S1-simulated b̂ distribution" means S1m
+    S4_t_rec: independent_of_T
+  mixtures:                        # S1m and the S4 mix
+    method_assignment: resampled_glitch_method
+    primary_analysis_glitches: admissible_only
+    unknown_emulated_as: window    # worst case, in all-data mixtures
+    unknown_sensitivity_emulated_as: global
+  emulation:
+    cadence: per_source_from_audit
+    cadence_until_audit_days: 14
+    noise_calibration: per_pulsar_bisection_on_median_relative_error   # match median real df1_err/df1 of usable glitches; clarified by D4e (reported error, under S1m)
+    noise_min_error_values_per_pulsar: 3
+    noise_fallback: global_median
+    pre_glitch_monitoring_days: 365
+    min_samples_after: 4
+    min_samples_before_window: 4   # window method only
+    unmeasurable_glitch: missing_unusable_still_ends_previous_interval
+    exp_min_tau_over_cadence: 2    # τ_d < 2 × cadence: not in any fit; superseded by D4d.exponential_detection
+  glitch_counts:
+    intercept: ln_W_p_minus_half_sigma_squared   # c_p = ln W_p − σ²/2, so the mean wait is W_p; superseded by D4h.intercept
+
+# D4d · S4 as measurement; calibrated decision rules (31 Oct). Supersedes D4c.s4_expectations and
+# D4c.emulation.exp_min_tau_over_cadence; amends D12 (A, D) and D15 (placebo).
+D4d:
+  provisional: false
+  s4_role:
+    pass_fail_tests: none          # restores D14: S4 reported, not pass/fail
+    outputs: [results, emulation_findings_log]
+    emulator_correctness_tests:
+      - window_linear_recovery                 # (a) J(1 − T/(2·t_rec)) for T ≤ t_rec
+      - window_exponential_constant_step       # (b) Δν̇_p + (Δν_d/T)(1 − e^(−T/τ_d))
+      - fitted_methods_exact_when_t_rec_equals_T   # (c) global and local, every exponential fitted
+      - undetected_exponential_never_fitted    # (d)
+  exponential_detection:
+    unit: each_fitted_window
+    criterion: aic_drop
+    min_aic_drop: 10
+    tau_d_known_to_fit: true
+  calibrated_rules:
+    reference_scenarios: [S1m, S4-mix]
+    reference_inputs: same_pulsars_counts_measurement_mix_noise_as_real
+    primary_measurement_mix: admissible_only
+    replicates: 1000
+    sigma: estimated_from_real_primary_fit
+    support_requires:              # in addition to D12 outcome A
+      bhat_above_S4mix_percentile: 97.5
+      placebo_bhat_not_below_S1m_placebo_percentile: 2.5
+    artefact_if:                   # D12 outcome D
+      bhat_inside_S4mix_central_fraction: 0.95
+      placebo_bhat_below_S1m_placebo_percentile: 2.5
+    raw_placebo_permutation_p: reported_not_deciding
+  answers:
+    dnu_noise: times_exp_normal_sd_real_relative_error_all_layers   # Δν/ν × exp(e), SD(e) = dff_err/dff
+    calibration_sequences_per_step: 50
+    calibration_tolerance_fraction_of_target: 0.05
+    calibration_record_achieved: true
+    cadence_within_pulsar: interval_uses_starting_glitch_source_cadence
+    pre_glitch_baseline_cadence: previous_interval
+    missing_error_fill: pulsar_median_relative_error
+    missing_error_min_values_per_pulsar: 3
+    missing_error_fallback: global_median
+    missing_error_flagged: true
+
+# D4e · Noise calibration and replicate rules (31 Oct). Clarifies D4c.emulation.noise_calibration and D4d.
+D4e:
+  provisional: false
+  readings_confirmed:
+    global_exponential_detection: same_per_window_aic_decision
+    pre_glitch_baseline_cadence: first_glitch_cadence
+  calibration:
+    target_statistic: median_reported_formal_relative_error     # not the scatter of measured vs true
+    target_reference: median_real_df1_err_over_df1
+    scenario: S1m                  # t_rec = T, so no model misfit
+    per: pulsar_and_sigma
+    noise_used_in: all_emulated_scenarios                      # S1m and every S4 variant
+    report: [achieved_per_pulsar, pulsars_outside_tolerance]
+  replicate_inclusion:
+    rule: D13_min_admissible_completed_intervals_per_pulsar    # ≥ 4, as for real data
+    failing_pulsars: dropped_from_replicate_fit
+    replicate: kept
+    report: pulsars_dropped_per_scenario
+    discard_replicate_if_fewer_pulsars_than: 2
+    report_discarded: true
+  limitations:
+    marginal_detection_errors_understated: stated_limitation_no_code_change   # 2–4×; affects D8 item 5
+
+# D4f · Audit-driven method classes (31 Oct). Adds the short-window class (D8 item 2 then covers it
+# too) and its admission rule; exp_fitted "when-detected" = "yes"; "Our measurement" assumed global.
+D4f:
+  provisional: false
+  short_window:
+    class: short-window
+    definition: pre_post_local_solutions_fixed_spans_differenced_no_transients
+    sources:                       # source key -> span w (days) for the emulation, main and sensitivity
+      elsk11:                      # Espinoza+2011, post-glitch span ideally 30–50 d
+        source_type: espinoza
+        w_days: 40
+        w_sensitivity_days: 150
+      wmp+00:                      # Wang+2000, ~100–300 d
+        source_type: wang
+        w_days: 125
+        w_sensitivity_days: 300
+    emulation: constant_level_w_before_and_after_truncated_at_neighbouring_glitch_no_exponentials
+  admission:
+    statistic: S4sw_forward_slope_upper_95
+    max_upper_95: 0.02
+    every_sigma: true
+    main_and_sensitivity_w: true
+    fixture: synthetic
+    if_passed: primary_analysis
+    otherwise: robustness_item_2_only
+    record: emulation_findings_log
+  exp_fitted_when_detected_counts_as: "yes"
+  our_measurement:
+    class: global                  # assumed, following Basu et al. 2022; to confirm with the maintainers
+    status: assumed
+    admitted: true
+    robustness_run_excluding: true
+  robustness_without_J0537:
+    always_reported: true
+    exploratory_if_fewer_intervals_than: 40
+  unaudited_sources: unknown
+
+# D4g · Censoring dates and the J0537 gap (31 Oct). Fills D10 (censoring dates) and D11 (gap list)
+# for the current pulsars; adds robustness item 10.
+D4g:
+  provisional: false
+  gaps:
+    J0537-6910:
+      gap_start_mjd: 55926.9       # RXTE monitoring ended 31 Dec 2011 (Antonopoulou et al. 2018)
+      gap_end_mjd: 57982           # NICER monitoring began 17 Aug 2017 (Ho et al. 2026, Table 2)
+      censored_interval_start_mjd: 55819
+  obs_end_documented:
+    J0537-6910: 60827              # NICER data to 2025 Jun 1 (Ho et al. 2026)
+    J1023-5746: 59269              # Fermi data end (Gügercinoğlu et al. 2022)
+  jodrell_bank_basu2022:
+    obs_end_mjd: 58483             # 31 Dec 2018, end of the Basu et al. 2022 sample
+    applies_if_last_glitch_before: 58483
+    pulsars: [J0631+1036, J0205+6449, J0729-1448, J1814-1744]
+  all_other_pulsars:
+    obs_end: last_glitch_epoch     # no censoring information
+    last_interval: dropped_and_logged_never_zero_censoring
+  robustness_item_10:
+    applies_to: jodrell_bank_pulsars
+    obs_end: max_last_glitch_and_mjd
+    mjd: 60891                     # latest catalogue measurement 61071 minus 180 d reporting lag
+    latest_catalogue_mjd: 61071
+    reporting_lag_days: 180
+    jodrell_bank_rule:             # pulsar is JB-monitored if >= 1 glitch has a JB primary source
+      source_keys: [elsk11, bsa+21, bkj+19, our measurement]   # Espinoza+2011, Basu+2021, Basu+2019, Our measurement
+      primary_reference_prefix: Shaw+                          # any Shaw+ entry
+      included_pulsars_computed_31_oct: [B0531+21, B1727-47, B1737-30, B1757-24, B1758-23, B1800-21, B1823-13, J0205+6449, J0631+1036, J0729-1448, J1737-3137, J1814-1744, J1841-0524, J2021+3651, J2229+6114]
+
+# D4h · Intercept, false-positive bound and open items (31 Oct). Replaces D4c.glitch_counts.intercept and
+# the D14 false-positive bounds; settles D8 items 8 and 9.
+D4h:
+  provisional: false
+  intercept:
+    formula: ln_W_p_minus_half_sigma_squared_minus_ln_m_p
+    m_p: pool_mean_exp_slope_times_centred_covariate   # S1/S1m: ln R, slope 1; S3: ln dnu_frac, slope a
+    m_p_without_covariate: 1                          # S2, S4
+  false_positive_bound:
+    alpha: 0.025                   # the D4 per-test alpha
+    mc_sd_multiplier: 3            # bound = alpha + 3 sqrt(alpha (1 - alpha) / n)
+    n: replicates
+    applies_to: [S2_T1, S2_T2, S3_T2]
+  robustness_item_9:
+    combination: quadrature        # sqrt(mjd_err_start^2 + mjd_err_end^2)
+    max_fraction_of_T: 0.1
+    missing_error: exclude         # either error missing (X): interval excluded
+  robustness_item_8:
+    status: not_run
+    reason: no step-only dnudot values are recorded
+  confirmed:
+    S1m_replicates_per_sigma: 1000
+    support_placebo_condition: D4d_percentile
+    raw_placebo_permutation_p: reported_only
+    implied_beta_intervals: all_admissible_completed_and_censored
+
+# D4i · Tiered decision rules after the power analysis (31 Oct). Replaces the D12 outcomes A, B, C as
+# amended by D4d (D keeps D4d); implied beta no longer decides; missingness judged against S1m.
+# Outcome rules superseded by D4j (exclusive order); D4i's implied-beta and missingness items still apply.
+D4i:
+  provisional: false
+  reason_recorded_before_freeze: true   # after seeing simulated power only; no real R-T statistic
+  A1_scaling_supported:
+    T1_rejects: true
+    bhat_above_S4mix_percentile: 97.5
+    bhat_within_S1m_central_fraction: 0.95
+    placebo_condition: D4d               # placebo b-hat not below the 2.5th percentile of the S1m placebo b-hat
+  A2_dnudot_supported:
+    requires_A1: true
+    T2_rejects_with_d_negative: true
+  T2_not_rejected:
+    label: not established (T2 power ≈ 0.34)       # replaced by D4p.A1_label (no fixed power figure)
+    is_outcome_B: false
+  B_requires_T2_power_at_least: 0.8
+  C_refutation:
+    bhat_below_S1m_percentile: 2.5
+    or_T1_not_rejected_and_T1_power_at_least: 0.8
+    power_sigma: estimated_from_real_primary_fit
+  D_artefact: as_D4d
+  implied_beta:
+    role: reported_not_deciding
+    interval_level: 0.95
+    discussed_by: D7_class               # Vela-like vs Crab-like
+  simulation_outcome_rates: D4i_rules
+  missingness:
+    judged_against: S1m_distribution     # like the placebo; some association expected under a true model
+
+# D4j · Exclusive outcome order; corrected artefact definition (31 Oct). Replaces the D4i outcome flags and
+# the D4d artefact definition: outcomes are assigned in order, the first that applies wins.
+# C's power clause and A's slope condition replaced by D4l; T1/T2 decisions are D4l's directional tests.
+D4j:
+  provisional: false
+  reason_recorded_before_freeze: true
+  order: [D_placebo, C, A, D_bias_range, inconclusive]
+  D_placebo:
+    placebo_bhat_below_S1m_placebo_percentile: 2.5
+  C_refutation:
+    bhat_below_S1m_percentile: 2.5
+    or_T1_not_rejected_and_T1_power_at_least: 0.8     # power at the fitted sigma
+  A_scaling_supported:
+    T1_rejects: true
+    bhat_above_S4mix_percentile: 97.5
+    bhat_within_S1m_central_fraction: 0.95
+    within_A:
+      A2: T2_rejects_with_d_negative
+      B: T2_not_rejected_and_T2_power_at_least     # power at the fitted sigma
+      B_min_T2_power: 0.8
+      A1: otherwise                                # Δν̇ term not established
+  D_bias_range:
+    T1_rejects: true
+    bhat_at_or_below_S4mix_percentile: 97.5
+  inconclusive: anything_else
+  never_change_outcome: [implied_beta, D15_missingness]
+
+# D4k · Failed replicates, σ grid, reference σ (31 Oct).
+D4k:
+  provisional: false
+  failed_replicates:
+    excluded_from_rates: true
+    listed_with_reason: true
+    max_fraction_per_job: 0.01     # above this the job is FAIL until the cause is explained
+    explanation_log: logs/emulation_findings.md
+  validation_sigma_grid_additional: [0.8, 1.2]   # added to D14.sigma_grid in 06; ln of an exponential wait has SD 1.28
+  real_reference_sigma: fitted_sigma_hat_of_primary_model   # never interpolated from the grid; replaced by D4n.matched_sigma
+  real_reference_replicates_and_seeds: as_in_06
+  missingness_not_estimable:
+    reported_as: not_estimable
+    S1m_reference_uses: estimable_replicates_only
+    report_count: true
+  real_data_fit_failure: stops_run   # 07-09: never skipped
+
+# D4l · Calibrated directional tests; corrected C and A bounds (1 Nov). Replaces the D4 chi-square
+# decision for T1/T2, D4j's C power clause and D4j's A slope condition.
+D4l:
+  provisional: false
+  reason_recorded_before_freeze: true
+  directional_tests:
+    statistic: signed_root_LR            # sign: positive = predicted direction; T2: replaced by D4n.T2 (reported only)
+    T1_predicted_direction: b_positive
+    T2_predicted_direction: d_negative
+    reject_above_null_percentile: 97.5
+    T1_null_scenario: S2
+    T2_null_scenario: S3
+    null_replicates: 1000
+    null_seeds: disjoint_from_evaluation
+    real_run_null_sigma: fitted_sigma_hat          # in 08; replaced by D4n.matched_sigma
+    real_run_S3_size_coefficient: real_M3_estimate
+    powers_use_these_tests: true
+  C_refutation:
+    bhat_below_S1m_percentile: 2.5
+    power_clause: removed
+  A_slope_condition:
+    above_S4mix_percentile: 97.5
+    at_or_above_S1m_percentile: 2.5
+    at_or_below_S1_percentile: 97.5
+    report_percentile_within_S1m: true
+    label_if_above_S1m_percentile: 97.5
+    label: less attenuated than emulated   # report only
+  report_only:
+    - S3_old_test_rejections_fraction_d_negative
+    - SD_vs_mean_SE_of_b_and_d_for_S1_S3_S1m
+    - S1m_measured_on_true_ln_dnudot_slope_per_method_class
+
+# D4m · Measured size-only null; A1 relabelled; calibrated intervals (1 Nov). Adds S3m to the T2 null,
+# renames A1, adds the A2 false-positive check under S3m, and calibrates the reported intervals.
+D4m:
+  provisional: false
+  reason_recorded_before_freeze: true
+  S3m:
+    base: S3                         # size only: ln T = a (ln dnu_frac - mean) + c_p + sigma eps
+    measurement: emulated
+    method_mix: source_audit         # resampled glitch's method, as for S4-mix
+    t_rec: as_S4_mix                 # D4m clarification: all S4-mix emulation settings, incl. t_rec independent of T
+    roles: [evaluation, null_reference]
+    evaluation_replicates: as_S3     # D4m clarification: 1,000 per sigma; as a null reference: D4l's 1,000
+    seeds: disjoint
+    real_run: sigma_hat_and_real_M3_size_coefficient   # in 08; sigma replaced by D4n.matched_sigma
+  T2_rejects_if_exceeds_null_percentile_under: [S3, S3m]   # both: the larger 97.5th percentile; replaced by D4n.T2
+  A1_label: association consistent with the scaling, not specific to vortex creep (a size-only world produces it)   # replaced by D4p.A1_label
+  creep_specific_evidence: A2_only
+  false_positive_bound_also_applies_to: A2_rate_under_S3m_every_sigma
+  calibrated_intervals:
+    factor: sd_of_estimate_over_mean_model_se    # from the matching null at the same sigma
+    b_null: S2
+    d_null: S3m
+    plain_wald_shown: true
+    plain_wald_label: uncalibrated
+    decisions_unaffected: true
+  report_only: [S3m_outcome_rates, fraction_S1m_b_above_S3m_97.5, fraction_S1m_d_below_S3m_2.5]
+
+# D4n · σ matched on fitted scatter; T2 on d-hat against null references (1 Nov). Replaces D4k item 3
+# (and the sigma of D4l/D4m's 08 null runs) and the D4l/D4m T2 decision.
+D4n:
+  provisional: false
+  reason_recorded_before_freeze: true
+  chosen_after: simulated_power_only           # no real R–T statistic computed
+  matched_sigma:                                # 08 only
+    replaces: D4k.real_reference_sigma
+    scenarios: [S1, S1m, S2, S3, S3m, S4-mix]
+    statistic: median_fitted_sigma_hat_of_primary_model
+    target: real_fitted_sigma_hat
+    search: bisection
+    search_range: [0.0, 2.0]                    # replaced by D4p.matched_sigma_search
+    replicates_per_step: 200
+    tolerance_in_sigma_hat: 0.01
+    then_replicates: full_count
+    if_fitted_sigma_hat_at_zero_exceeds_target: run_at_zero_and_report   # replaced by D4p (lower end 0.01)
+  T2:
+    statistic: d_hat
+    rejects_if_d_hat_below_null_percentile: 2.5
+    null_scenarios: [S3, S3m]
+    combine: smaller_percentile
+    null_sigma_in_06: same_sigma
+    null_sigma_in_08: matched_sigma
+    signed_root: reported_never_changes_outcome
+  short_window_label:
+    applies_to: A2
+    label: short-window-sensitive
+    if_d_hat_refitted_without_short_window_at_least: 0.0
+    report_only: true
+  report_against_sigma: [generating_sigma, mean_fitted_sigma_hat_of_primary_model]
+  report_against_sigma_in: ["05", "06"]
+
+# D4o · Literature-based exponential recoveries (1 Nov). Replaces D14.exponentials (Q, tau_d) in the emulation.
+# Each range: envelope of the single-component fits tabulated in the cited source.
+D4o:
+  provisional: false
+  reason_recorded_before_freeze: true
+  replaces: D14.exponentials
+  draw: log_uniform_within_group                # per glitch
+  ranges: envelope_of_single_component_tabulated_fits
+  excluded_from_envelopes: [multi_component_fits, J1617-5055_event]
+  groups:
+    J0537-6910:
+      pulsars: [J0537-6910]
+      exponential_only_if_dnu_microhz_at_least: 20     # Δν from dff and ν
+      Q: [0.002, 0.04]
+      tau_d_days: [4.0, 37.0]
+      source: "arXiv:2512.13426 (A&A 706, A61, 2026), Table 2"
+    crab:
+      pulsars: [B0531+21]
+      Q: [0.58, 1.00]
+      tau_d_days: [2.0, 21.1]
+      source: "Wong, Backer & Lyne 2001 (astro-ph/0010010), Table 3; Wang et al. 2012 (arXiv:1203.4291), Table 2"
+    others:
+      pulsars: all_other_included
+      dnu_frac_split: 1.0e-7
+      at_least_split:
+        Q: [0.002, 0.06]
+        tau_d_days: [5.8, 488.0]
+      below_split:
+        Q: [0.10, 0.15]
+        tau_d_days: [54.0, 2340.0]
+      source: "Lower et al. 2021 (arXiv:2109.07612), Table 2"
+  detection: D4d_aic_only                       # the 2 x cadence rule is not reinstated
+  report_only:
+    detection_fraction_per_group: true
+    published_detection_rates:                  # [detected, glitches]
+      J0537-6910: [12, 66]                      # arXiv:2512.13426
+      Yu2013: [27, 107]                         # Yu et al. 2013 (arXiv:1211.2035): detection rate only
+  limitations_not_emulated: [crab_persistent_step_slow_growth_46pct_tau_320d, multi_component_recoveries, J1617-5055_Q_0.98_event]
+  D8_robustness_additions: [exclude_B0531+21]    # J0537-6910 is already D8 item 1
+  limitations_recorded_report_only:             # 1 Nov, from the D4o run (74b71ec)
+    short_window_label_fires_on_model_true_A2: [0.115, 0.32]      # S1m, sigma 1.2 to 0.2: signals lost power, not an artefact
+    J0537_emulated_detection_fraction_of_glitches: [0.19, 0.27]   # across sigma; 0.27 at sigma 0.2; published 12/66; includes glitches given none
+
+# D4p · Pre-freeze gaps (1 Nov). Replaces D4n's search range and sigma = 0 rule; confirms 08 readings; defines
+# 09's reporting; replaces the A1 label; removes the D9/D10/D11 provisional tags.
+D4p:
+  provisional: false
+  reason_recorded_before_freeze: true
+  matched_sigma_search:
+    search_range: [0.01, 2.0]
+    if_fitted_sigma_hat_at_lower_end_exceeds_target: run_at_lower_end_and_report
+    max_bisection_steps: 30
+    if_not_converged: midpoint_of_final_bracket_and_report
+  confirmed_readings_08:
+    noise_calibration: each_candidate_and_matched_sigma
+    interval_factors: each_null_at_own_matched_sigma
+    search_seeds: own_seed_index_same_seeds_every_step
+  robustness_09:
+    report: [b_hat, d_hat, calibrated_intervals, signed_roots, same_sign_as_primary]
+    outcome_classification: none
+    interval_factors: primary_factors_from_08            # D4p clarification (confirmed reading)
+    interval_label: approximate (primary factors)
+  A1_label: "association consistent with the scaling, not specific to vortex creep; Δν̇ term not established (T2 power at the matched σ reported)"
+  A1_label_fixed_power_figure: false
+  provisional_tags_removed: [D9, D10, D11]
+  D9_unaudited_sources: excluded_not_assumed
+  preflight_07_refuses_if_any_provisional: true
+  limitations_recorded: [t_rec_log_sd_0.3_not_tabulated, short_window_spans_40_125_d_not_tabulated]
+
+# D5 · Baselines
+D5:
+  provisional: false
+  baselines: [M0, M3, poisson_exponential_aft]
+  poisson_scope: per_pulsar
+  poisson_reporting: descriptive
+
+# D6 · Measurement uncertainty
+D6:
+  provisional: false
+  primary_errors_in_lnR: ignore
+  attenuation_handling: simulation_calibration
+  calibration_scenario: S1
+  calibration_inputs: [real_error_bars, real_measurement_methods]
+  robustness_max_sigma_lnR: 0.5
+
+# D7 · Vela-like / Crab-like rule (exploratory only)
+D7:
+  provisional: false
+  statistic: median_usable_dnu_frac
+  vela_like_min_dnu_frac: 1.0e-6    # Vela-like if median >= this; otherwise Crab-like
+  exploratory_only: true
+  report_per_class: [T1_estimate, T2_estimate]   # "with intervals; no test"
+  test: none
+
+# D8 · Robustness set (all reported, whatever they show)
+D8:
+  provisional: false
+  report_all: true
+  exclude_pulsar: J0537-6910                     # item 1
+  method_classes_separately: [window, local-relaxation, global, global-noexp, unknown]   # item 2
+  per_pulsar_min_admissible_completed: 10        # item 3
+  drop_censored: true                            # item 4
+  max_sigma_lnR: 0.5                             # item 5
+  exclude_gap_flagged: true                      # item 6
+  min_dnu_frac: 1.0e-7                           # item 7
+  step_dnudot_where_reported: true               # item 8
+  max_epoch_uncertainty_fraction_of_T: 0.10      # item 9 ("combined start and end epoch uncertainty")
+
+# D9 · Which Δν̇  [after audit]
+D9:
+  provisional: false                 # D4p item 5: tag removed
+  primary_dnudot: catalogue_df1
+  admissible_methods: [local-relaxation, global]          # Notation: relaxation-modelled methods
+  excluded_from_primary: [window, unknown, global-noexp]  # analysed in D8 item 2
+  secondary_dnudot: source_paper_step                     # D8 item 8
+
+# D10 · Censoring dates  [after audit]
+D10:
+  provisional: false                 # D4p item 5: tag removed
+  preference_order: [maintainer_last_observation, most_recent_glitch_paper_data_span_end]
+  on_disagreement: earliest_defensible
+  if_none: drop_last_interval_and_log
+
+# D11 · Monitoring gaps  [after audit]
+D11:
+  provisional: false                 # D4p item 5: tag removed
+  interval_spanning_gap: censor_at_gap_start
+  gap_list_source: source_papers
+  gaps_to_verify: [J0537-6910 RXTE->NICER]
+  robustness_alternative: exclude    # D8 item 6
+
+# D12 · Decision rules
+D12:
+  provisional: false
+  gate:
+    min_admissible_completed_intervals: 40
+    min_pulsars: 5
+    if_not_met: >-
+      the method-stratified bias analysis (D14 S4 scenarios + D8 item 2) becomes the main result,
+      and T1/T2 on all data are reported as exploratory.
+  outcomes:
+    A_support:                     # amended by D4d.calibrated_rules.support_requires; replaced by D4i (A1, A2)
+      rule: >-
+        T1 and T2 both reject; observed b̂ within the central 95% of the S1-simulated b̂ distribution;
+        placebo not significantly negative (D15); implied β > 0 for every pulsar with ≥ 5 admissible intervals.
+      s1_central_fraction: 0.95
+      implied_beta_min: 0
+      implied_beta_min_admissible_intervals: 5
+    B_size_does_the_work:          # clarified by D4i (T2 power >= 0.8 required)
+      rule: T1 rejects, T2 does not, and T2 had power ≥ 0.8 in S1.
+      T2_min_power_S1: 0.8
+    C_refutation:                  # replaced by D4i.C_refutation
+      rule: >-
+        T1 does not reject and T1 power in S1 ≥ 0.8 at σ = 0.4; or b̂ lies outside the central 95% of
+        the S1 distribution.
+      T1_min_power_S1: 0.8
+      power_sigma: 0.4
+      s1_central_fraction: 0.95
+    D_artefact:                    # amended by D4d.calibrated_rules.artefact_if
+      rule: placebo significantly negative, or support appears only in window-type data.
+    inconclusive:
+      rule: anything else, including T2 when collinearity makes it underpowered (D15).
+
+# D13 · Inclusion
+D13:
+  provisional: false
+  pulsar_key: name
+  missing_codes: ["X", "x"]
+  excluded_objects:
+    - 4U_0142+61
+    - 1E_1048.1-5937
+    - CXO_J164710.2-455216
+    - 1RXS_J1708-4009
+    - AX_1838.0-0655
+    - 1E_1841-045
+    - 1E_2259+586
+    - M82-X2
+  usable_min_dff_exclusive: 0      # usable: dff > 0
+  usable_min_df1_exclusive: 0      # usable: df1 > 0
+  order_by: mjd
+  min_admissible_completed_intervals_per_pulsar: 4
+  remove_glitches_for_epoch_uncertainty: false
+  flag_mjd_err_above_days: 30
+  flag_mjd_err_unknown: true
+  expected_counts_21_pulsars:      # stated in D13, used as checks
+    mjd_err_above_30_days: 18
+    mjd_err_unknown: 6
+  primary_fractional_error_cut: none
+
+# D14 · Simulation settings
+D14:
+  provisional: false               # except the exponentials block below
+  sigma_grid: [0.2, 0.4, 0.6]       # validation grid extended by D4k.validation_sigma_grid_additional
+  replicates:                      # clarified by D4b: per scenario per sigma value
+    S1: 1000
+    S2: 1000
+    S3: 1000
+    S4_per_variant: 500
+  seed: 20261031
+  S1_t_rec: equals_T               # "recovery completes at the next glitch"
+  S4_t_rec:
+    independent_of_T: true
+    distribution: lognormal
+    median: pulsar_median_wait              # clarified by D4b: median W_p, never real or simulated waits
+    log_sd: 0.3
+  exponentials:
+    provisional: false             # tag removed 1 Nov: D14's "Provisional: replace with ranges ..." is done by D4o (0269544)
+                                   # replaced by D4o (literature-based groups)
+    Q:
+      distribution: log-uniform
+      low: 0.005
+      high: 0.05
+    tau_d_days:
+      distribution: log-uniform
+      low: 1.0
+      high: 100.0
+  cadence_and_noise: per_source_from_source_audit
+  noise_scaling: match_real_df1_relative_errors
+  S4_method_mix: source_audit_proportions
+  pass_criteria:                   # false-positive bounds superseded by D4h.false_positive_bound
+    S2_T1_max_false_positive_rate: 0.07
+    S2_T2_max_false_positive_rate: 0.07
+    S3_T2_max_false_positive_rate: 0.07
+    S1_bhat_median_max_abs_deviation_noise_free: 0.05
+    S4: reported_not_pass_fail
+
+# D15 · Diagnostics
+D15:
+  provisional: false
+  placebo:                        # clarified by D4b (rows, sidedness, meaning of "significantly"); amended by D4d (placebo p no longer decides alone)
+    model: M2
+    outcome: previous_wait
+    data: admissible
+    p_threshold: 0.05
+    if_significantly_negative: artefact_flag_support_blocked
+    if_significantly_positive: report_does_not_block_support
+    otherwise: clean
+  missingness:
+    method: within_pulsar_logistic_regression   # clarified by D4b: conditional logit, completed following waits
+    response: dnudot_missing
+    predictor: ln_following_wait
+    report: odds_ratio
+    if_significant: state_selection_caveat
+  collinearity:                   # clarified by D4b: Pearson, usable glitches, >= 4 per pulsar
+    measure: within_pulsar_correlation
+    variables: [ln_dnu_frac, ln_dnudot_frac]
+    summary: median_abs_r
+    underpowered_if_above: 0.9
+    allowed_before_freeze: true
+    if_underpowered: T2_exploratory

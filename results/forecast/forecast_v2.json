@@ -1,0 +1,940 @@
+{
+  "label": "POST-FREEZE FORWARD FORECAST v2, NOT PART OF THE PRE-REGISTRATION",
+  "supersedes": "forecast-v1",
+  "rule": [
+    "Label: post-freeze forward forecast v2; NOT part of the pre-registration (prereg-v2). Supersedes forecast v1 (tag forecast-v1, kept unchanged) before any outcome was known.",
+    "Snapshot: the Jodrell Bank glitch catalogue downloaded 2026-10-30 (MJD 61343); for each of the 21 included pulsars, its last catalogued glitch g. Pulsars whose g lacks dff > 0 or df1 > 0 are not forecastable.",
+    "Forecast: ln T ~ Normal(mu, sigma), T = wait after g in days, from the frozen fits in results/primary.json: M2 mu = c_p + b ln R_g with R_g = (dff/1000)/df1; M0 (baseline) mu = c_p; each model's own sigma-hat. Median and central 50% (0.25-0.75) and 90% (0.05-0.95) windows of the conditional distribution.",
+    "Scored set: only the forecastable pulsars covered by the D4g Jodrell Bank rule (ongoing Jodrell Bank timing programme), conditioned on T > t0 = 61343 - epoch(g).",
+    "Reported, not scored: every other forecastable pulsar, conditioned on T > documented obs_end - epoch(g), or unconditioned if obs_end equals epoch(g); labelled 'reported, not scored: monitoring after obs_end not documented'.",
+    "Scoring, on 2028-11-01 (MJD 62076): download the catalogue again. For each scored pulsar the outcome is the first glitch after g: the first catalogued glitch of that pulsar whose epoch exceeds g's epoch by more than g's catalogued epoch uncertainty (0 if none is given).",
+    "Void: if that glitch's epoch is before MJD 61343, the pulsar is void and not scored.",
+    "Score per scored pulsar: log predictive density of the observed wait (density of T in days) under the conditional forecast, or, if no glitch by MJD 62076, log of the conditional survival at the wait to that date; M2 minus M0. Total score = sum over scored pulsars; positive means M2 forecasts better.",
+    "Coverage: for the 50% and 90% windows, the fraction of scored pulsars whose observed wait lies inside the window (ends included). A pulsar with no glitch by the scoring date counts as outside if the window ends before the scoring date, and as not determinable (excluded from that coverage) otherwise; the counts are reported.",
+    "Functions: glitchlib.forecast (conditional_quantiles, log_predictive, coverage, outcome_for, forecast_window)."
+  ],
+  "snapshot": {
+    "date": "2026-10-30",
+    "mjd": 61343.0
+  },
+  "scoring": {
+    "date": "2028-11-01",
+    "mjd": 62076.0
+  },
+  "n_scored": 11,
+  "frozen_fits": {
+    "M2": {
+      "b": 0.26825045075014986,
+      "sigma": 0.69611287746613
+    },
+    "M0": {
+      "sigma": 0.7871519672244063
+    },
+    "source": "results/primary.json"
+  },
+  "inputs_sha256": {
+    "data/raw/glitches.csv": "5ba59d0160fe1f00eb70d464aa048c8b9968980c251118dca6deed825f849de7",
+    "data/processed/glitches_clean.csv": "0236c783e81b878d9e8d61c41cb41e163fff3a49fe7b26889456639d9f6b3920",
+    "data/meta/obs_end.csv": "c2bbd21f4270a1acd343cffca83d2389bb76c3969401051b08a28a39efe4f168",
+    "results/primary.json": "ae49ec5dec119ae09b1d71b19c4e2ed9307b3f518d9bff905b6f1248519da4e9",
+    "results/forecast/forecast_v1.json": "1aebf098db140138b701735fea8e5a6bd33333f198924d3eb1ab762aa91a52c6"
+  },
+  "scored": {
+    "B0531+21": {
+      "g": {
+        "mjd": 60893.9,
+        "date": "2025-08-06",
+        "mjd_err": 0.7,
+        "dff": 4.53,
+        "df1": 0.44,
+        "ln_R": -4.576052787417364,
+        "source_key": "bak+25b",
+        "method_class": "unknown"
+      },
+      "jodrell_bank": true,
+      "obs_end_mjd": 60893.9,
+      "obs_end_source": "D4g: last glitch epoch, no censoring information (last interval dropped)",
+      "conditioning": "no glitch before MJD 61343 (snapshot)",
+      "M2": {
+        "mu": 5.8333090144711965,
+        "sigma": 0.69611287746613,
+        "t0_days": 449.09999999999854,
+        "waits_days": {
+          "median": 657.2049037731829,
+          "w50_lo": 534.1450700215609,
+          "w50_hi": 880.7604165667638,
+          "w90_lo": 464.1799279954654,
+          "w90_hi": 1485.3661649575765
+        },
+        "dates": {
+          "median": "2027-05-26",
+          "w50_lo": "2027-01-23",
+          "w50_hi": "2028-01-04",
+          "w90_lo": "2026-11-14",
+          "w90_hi": "2029-08-31"
+        }
+      },
+      "M0": {
+        "mu": 5.894148528037131,
+        "sigma": 0.7871519672244063,
+        "t0_days": 449.09999999999854,
+        "waits_days": {
+          "median": 710.5890416229006,
+          "w50_lo": 554.654460363104,
+          "w50_hi": 1002.7279822411708,
+          "w90_lo": 467.6846678806334,
+          "w90_hi": 1837.65103786905
+        },
+        "dates": {
+          "median": "2027-07-18",
+          "w50_lo": "2027-02-12",
+          "w50_hi": "2028-05-05",
+          "w90_lo": "2026-11-17",
+          "w90_hi": "2030-08-18"
+        }
+      }
+    },
+    "B1757-24": {
+      "g": {
+        "mjd": 58564.76,
+        "date": "2019-03-22",
+        "mjd_err": 0.007,
+        "dff": 2250.9,
+        "df1": 3.82,
+        "ln_R": -0.528920286380828,
+        "source_key": "our measurement",
+        "method_class": "global"
+      },
+      "jodrell_bank": true,
+      "obs_end_mjd": 58564.76,
+      "obs_end_source": "D4g: last glitch epoch, no censoring information (last interval dropped)",
+      "conditioning": "no glitch before MJD 61343 (snapshot)",
+      "M2": {
+        "mu": 7.54760620355641,
+        "sigma": 0.69611287746613,
+        "t0_days": 2778.239999999998,
+        "waits_days": {
+          "median": 3951.0554595838585,
+          "w50_lo": 3255.820659873397,
+          "w50_hi": 5219.3106761972695,
+          "w90_lo": 2862.6591924897543,
+          "w90_hi": 8656.345812084459
+        },
+        "dates": {
+          "median": "2030-01-14",
+          "w50_lo": "2028-02-19",
+          "w50_hi": "2033-07-06",
+          "w90_lo": "2027-01-22",
+          "w90_hi": "2042-12-03"
+        }
+      },
+      "M0": {
+        "mu": 7.285683722488268,
+        "sigma": 0.7871519672244063,
+        "t0_days": 2778.239999999998,
+        "waits_days": {
+          "median": 3942.853407131208,
+          "w50_lo": 3244.7292473257367,
+          "w50_hi": 5259.839660339563,
+          "w90_lo": 2859.7832251782625,
+          "w90_hi": 9019.559924947025
+        },
+        "dates": {
+          "median": "2030-01-06",
+          "w50_lo": "2028-02-08",
+          "w50_hi": "2033-08-15",
+          "w90_lo": "2027-01-19",
+          "w90_hi": "2043-12-01"
+        }
+      }
+    },
+    "B1800-21": {
+      "g": {
+        "mjd": 58958.0,
+        "date": "2020-04-19",
+        "mjd_err": 40.0,
+        "dff": 4960.6,
+        "df1": 8.5,
+        "ln_R": -0.5385394623335065,
+        "source_key": "our measurement",
+        "method_class": "global"
+      },
+      "jodrell_bank": true,
+      "obs_end_mjd": 58958.0,
+      "obs_end_source": "D4g: last glitch epoch, no censoring information (last interval dropped)",
+      "conditioning": "no glitch before MJD 61343 (snapshot)",
+      "M2": {
+        "mu": 7.8154090261579885,
+        "sigma": 0.69611287746613,
+        "t0_days": 2385.0,
+        "waits_days": {
+          "median": 3870.2602343067424,
+          "w50_lo": 3002.1672620719623,
+          "w50_hi": 5419.934490393407,
+          "w90_lo": 2496.183478049447,
+          "w90_hi": 9574.735048324403
+        },
+        "dates": {
+          "median": "2030-11-23",
+          "w50_lo": "2028-07-08",
+          "w50_hi": "2035-02-19",
+          "w90_lo": "2027-02-18",
+          "w90_hi": "2046-07-06"
+        }
+      },
+      "M0": {
+        "mu": 7.511920769750564,
+        "sigma": 0.7871519672244063,
+        "t0_days": 2385.0,
+        "waits_days": {
+          "median": 3715.5477340518482,
+          "w50_lo": 2921.313419054913,
+          "w50_hi": 5205.5383228798955,
+          "w90_lo": 2479.296006639164,
+          "w90_hi": 9464.709365482415
+        },
+        "dates": {
+          "median": "2030-06-21",
+          "w50_lo": "2028-04-18",
+          "w50_hi": "2034-07-20",
+          "w90_lo": "2027-02-01",
+          "w90_hi": "2046-03-18"
+        }
+      }
+    },
+    "B1823-13": {
+      "g": {
+        "mjd": 58879.0,
+        "date": "2020-01-31",
+        "mjd_err": 18.0,
+        "dff": 2481.5,
+        "df1": 5.9,
+        "ln_R": -0.8660891348663153,
+        "source_key": "our measurement",
+        "method_class": "global"
+      },
+      "jodrell_bank": true,
+      "obs_end_mjd": 58879.0,
+      "obs_end_source": "D4g: last glitch epoch, no censoring information (last interval dropped)",
+      "conditioning": "no glitch before MJD 61343 (snapshot)",
+      "M2": {
+        "mu": 7.924923013221233,
+        "sigma": 0.69611287746613,
+        "t0_days": 2464.0,
+        "waits_days": {
+          "median": 4124.252390895079,
+          "w50_lo": 3157.999453910805,
+          "w50_hi": 5839.554344532002,
+          "w90_lo": 2589.799530122439,
+          "w90_hi": 10426.212009230296
+        },
+        "dates": {
+          "median": "2031-05-17",
+          "w50_lo": "2028-09-22",
+          "w50_hi": "2036-01-26",
+          "w90_lo": "2027-03-04",
+          "w90_hi": "2048-08-17"
+        }
+      },
+      "M0": {
+        "mu": 7.9695820661956756,
+        "sigma": 0.7871519672244063,
+        "t0_days": 2464.0,
+        "waits_days": {
+          "median": 4467.30564666299,
+          "w50_lo": 3286.479755672619,
+          "w50_hi": 6647.556623066713,
+          "w90_lo": 2611.3626734394506,
+          "w90_hi": 12854.557936968877
+        },
+        "dates": {
+          "median": "2032-04-24",
+          "w50_lo": "2029-01-29",
+          "w50_hi": "2038-04-13",
+          "w90_lo": "2027-03-26",
+          "w90_hi": "2055-04-11"
+        }
+      }
+    },
+    "J0205+6449": {
+      "g": {
+        "mjd": 58320.0,
+        "date": "2018-07-21",
+        "mjd_err": 97.0,
+        "dff": 3140.0,
+        "df1": 20.0,
+        "ln_R": -1.851509473633829,
+        "source_key": "bsa+21",
+        "method_class": "global"
+      },
+      "jodrell_bank": true,
+      "obs_end_mjd": 58483.0,
+      "obs_end_source": "Basu et al. 2022: end of the Jodrell Bank sample, 31 Dec 2018 (D4g)",
+      "conditioning": "no glitch before MJD 61343 (snapshot)",
+      "M2": {
+        "mu": 6.27199915443292,
+        "sigma": 0.69611287746613,
+        "t0_days": 3023.0,
+        "waits_days": {
+          "median": 3563.5507258275597,
+          "w50_lo": 3241.4113158235505,
+          "w50_hi": 4154.798196951758,
+          "w90_lo": 3061.3383020793794,
+          "w90_hi": 5742.330545931182
+        },
+        "dates": {
+          "median": "2028-04-22",
+          "w50_lo": "2027-06-05",
+          "w50_hi": "2029-12-04",
+          "w90_lo": "2026-12-07",
+          "w90_hi": "2034-04-10"
+        }
+      },
+      "M0": {
+        "mu": 6.1190820686029275,
+        "sigma": 0.7871519672244063,
+        "t0_days": 3023.0,
+        "waits_days": {
+          "median": 3661.0260734700964,
+          "w50_lo": 3279.031811700498,
+          "w50_hi": 4374.484898073089,
+          "w90_lo": 3067.7610101015184,
+          "w90_hi": 6356.834685609502
+        },
+        "dates": {
+          "median": "2028-07-29",
+          "w50_lo": "2027-07-13",
+          "w50_hi": "2030-07-12",
+          "w90_lo": "2026-12-13",
+          "w90_hi": "2035-12-15"
+        }
+      }
+    },
+    "J0631+1036": {
+      "g": {
+        "mjd": 58352.13,
+        "date": "2018-08-22",
+        "mjd_err": 0.01,
+        "dff": 96.4,
+        "df1": 1.3,
+        "ln_R": -2.601613341833128,
+        "source_key": "bsa+21",
+        "method_class": "global"
+      },
+      "jodrell_bank": true,
+      "obs_end_mjd": 58483.0,
+      "obs_end_source": "Basu et al. 2022: end of the Jodrell Bank sample, 31 Dec 2018 (D4g)",
+      "conditioning": "no glitch before MJD 61343 (snapshot)",
+      "M2": {
+        "mu": 6.216580377227845,
+        "sigma": 0.69611287746613,
+        "t0_days": 2990.8700000000026,
+        "waits_days": {
+          "median": 3514.660030349566,
+          "w50_lo": 3202.5428173248292,
+          "w50_hi": 4087.263417844024,
+          "w90_lo": 3028.0288018022943,
+          "w90_hi": 5623.333359867117
+        },
+        "dates": {
+          "median": "2028-04-05",
+          "w50_lo": "2027-05-29",
+          "w50_hi": "2029-10-30",
+          "w90_lo": "2026-12-06",
+          "w90_hi": "2034-01-13"
+        }
+      },
+      "M0": {
+        "mu": 5.944580790734897,
+        "sigma": 0.7871519672244063,
+        "t0_days": 2990.8700000000026,
+        "waits_days": {
+          "median": 3580.301215974466,
+          "w50_lo": 3227.617801000657,
+          "w50_hi": 4237.476306675751,
+          "w90_lo": 3032.2817074733657,
+          "w90_hi": 6055.170366599314
+        },
+        "dates": {
+          "median": "2028-06-10",
+          "w50_lo": "2027-06-23",
+          "w50_hi": "2030-03-29",
+          "w90_lo": "2026-12-10",
+          "w90_hi": "2035-03-21"
+        }
+      }
+    },
+    "J1737-3137": {
+      "g": {
+        "mjd": 59848.0,
+        "date": "2022-09-26",
+        "mjd_err": 29.0,
+        "dff": 215.6,
+        "df1": 1.22,
+        "ln_R": -1.7331812986924602,
+        "source_key": "our measurement",
+        "method_class": "global"
+      },
+      "jodrell_bank": true,
+      "obs_end_mjd": 59848.0,
+      "obs_end_source": "D4g: last glitch epoch, no censoring information (last interval dropped)",
+      "conditioning": "no glitch before MJD 61343 (snapshot)",
+      "M2": {
+        "mu": 7.153319493536525,
+        "sigma": 0.69611287746613,
+        "t0_days": 1495.0,
+        "waits_days": {
+          "median": 2265.583622613639,
+          "w50_lo": 1811.494349276659,
+          "w50_hi": 3085.9025787289984,
+          "w90_lo": 1551.3760254918056,
+          "w90_hi": 5298.220039120432
+        },
+        "dates": {
+          "median": "2028-12-08",
+          "w50_lo": "2027-09-11",
+          "w50_hi": "2031-03-08",
+          "w90_lo": "2026-12-25",
+          "w90_hi": "2037-03-29"
+        }
+      },
+      "M0": {
+        "mu": 7.141616755131856,
+        "sigma": 0.7871519672244063,
+        "t0_days": 1495.0,
+        "waits_days": {
+          "median": 2398.8444606363223,
+          "w50_lo": 1860.3673226780754,
+          "w50_hi": 3406.357969522718,
+          "w90_lo": 1559.4166305122271,
+          "w90_hi": 6285.10461847146
+        },
+        "dates": {
+          "median": "2029-04-20",
+          "w50_lo": "2027-10-30",
+          "w50_hi": "2032-01-23",
+          "w90_lo": "2027-01-02",
+          "w90_hi": "2039-12-11"
+        }
+      }
+    },
+    "J1814-1744": {
+      "g": {
+        "mjd": 55626.0,
+        "date": "2011-03-06",
+        "mjd_err": 2.0,
+        "dff": 16.0,
+        "df1": 0.3,
+        "ln_R": -2.9311937524164198,
+        "source_key": "bsa+21",
+        "method_class": "global"
+      },
+      "jodrell_bank": true,
+      "obs_end_mjd": 58483.0,
+      "obs_end_source": "Basu et al. 2022: end of the Jodrell Bank sample, 31 Dec 2018 (D4g)",
+      "conditioning": "no glitch before MJD 61343 (snapshot)",
+      "M2": {
+        "mu": 7.459977952453387,
+        "sigma": 0.69611287746613,
+        "t0_days": 5717.0,
+        "waits_days": {
+          "median": 7081.391770703722,
+          "w50_lo": 6267.696358971246,
+          "w50_hi": 8580.475930884744,
+          "w90_lo": 5813.61891413782,
+          "w90_hi": 12643.8014886928
+        },
+        "dates": {
+          "median": "2030-07-25",
+          "w50_lo": "2028-05-02",
+          "w50_hi": "2034-09-01",
+          "w90_lo": "2027-02-03",
+          "w90_hi": "2045-10-16"
+        }
+      },
+      "M0": {
+        "mu": 6.843138388305209,
+        "sigma": 0.7871519672244063,
+        "t0_days": 5717.0,
+        "waits_days": {
+          "median": 6970.258290771101,
+          "w50_lo": 6219.678701779504,
+          "w50_hi": 8373.846256473,
+          "w90_lo": 5804.8572558611195,
+          "w90_hi": 12283.063389391635
+        },
+        "dates": {
+          "median": "2030-04-05",
+          "w50_lo": "2028-03-15",
+          "w50_hi": "2034-02-06",
+          "w90_lo": "2027-01-25",
+          "w90_hi": "2044-10-21"
+        }
+      }
+    },
+    "J1841-0524": {
+      "g": {
+        "mjd": 59111.6,
+        "date": "2020-09-19",
+        "mjd_err": 0.6,
+        "dff": 128.0,
+        "df1": 0.1,
+        "ln_R": 0.2468600779315258,
+        "source_key": "our measurement",
+        "method_class": "global"
+      },
+      "jodrell_bank": true,
+      "obs_end_mjd": 59111.6,
+      "obs_end_source": "D4g: last glitch epoch, no censoring information (last interval dropped)",
+      "conditioning": "no glitch before MJD 61343 (snapshot)",
+      "M2": {
+        "mu": 7.054997290784692,
+        "sigma": 0.69611287746613,
+        "t0_days": 2231.4000000000015,
+        "waits_days": {
+          "median": 2990.0403426466305,
+          "w50_lo": 2538.576799256187,
+          "w50_hi": 3819.2770982285506,
+          "w90_lo": 2285.4395037351665,
+          "w90_hi": 6072.946215268059
+        },
+        "dates": {
+          "median": "2028-11-26",
+          "w50_lo": "2027-09-02",
+          "w50_hi": "2031-03-05",
+          "w90_lo": "2026-12-23",
+          "w90_hi": "2037-05-06"
+        }
+      },
+      "M0": {
+        "mu": 6.584034144687114,
+        "sigma": 0.7871519672244063,
+        "t0_days": 2231.4000000000015,
+        "waits_days": {
+          "median": 2920.9486233587395,
+          "w50_lo": 2507.2278060867275,
+          "w50_hi": 3700.778834168142,
+          "w90_lo": 2279.5407528860133,
+          "w90_hi": 5910.136659945778
+        },
+        "dates": {
+          "median": "2028-09-18",
+          "w50_lo": "2027-08-01",
+          "w50_hi": "2030-11-07",
+          "w90_lo": "2026-12-17",
+          "w90_hi": "2036-11-24"
+        }
+      }
+    },
+    "J2021+3651": {
+      "g": {
+        "mjd": 60289.0,
+        "date": "2023-12-11",
+        "mjd_err": 8.0,
+        "dff": 2523.6,
+        "df1": 6.2,
+        "ln_R": -0.8988628385365285,
+        "source_key": "our measurement",
+        "method_class": "global"
+      },
+      "jodrell_bank": true,
+      "obs_end_mjd": 60289.0,
+      "obs_end_source": "D4g: last glitch epoch, no censoring information (last interval dropped)",
+      "conditioning": "no glitch before MJD 61343 (snapshot)",
+      "M2": {
+        "mu": 7.446014461204292,
+        "sigma": 0.69611287746613,
+        "t0_days": 1054.0,
+        "waits_days": {
+          "median": 2124.138443652748,
+          "w50_lo": 1520.521525611403,
+          "w50_hi": 3161.667119795989,
+          "w90_lo": 1143.0257277599728,
+          "w90_hi": 5897.701361110709
+        },
+        "dates": {
+          "median": "2029-10-04",
+          "w50_lo": "2028-02-08",
+          "w50_hi": "2032-08-06",
+          "w90_lo": "2027-01-27",
+          "w90_hi": "2040-02-02"
+        }
+      },
+      "M0": {
+        "mu": 7.291444819179084,
+        "sigma": 0.7871519672244063,
+        "t0_days": 1054.0,
+        "waits_days": {
+          "median": 2068.2973136557903,
+          "w50_lo": 1475.7054147722158,
+          "w50_hi": 3152.2023901743923,
+          "w90_lo": 1130.670347695076,
+          "w90_hi": 6228.994441202686
+        },
+        "dates": {
+          "median": "2029-08-09",
+          "w50_lo": "2027-12-25",
+          "w50_hi": "2032-07-28",
+          "w90_lo": "2027-01-14",
+          "w90_hi": "2040-12-29"
+        }
+      }
+    },
+    "J2229+6114": {
+      "g": {
+        "mjd": 61071.0,
+        "date": "2026-01-31",
+        "mjd_err": 76.0,
+        "dff": 870.0,
+        "df1": 10.6,
+        "ln_R": -2.500116068451529,
+        "source_key": "our measurement",
+        "method_class": "global"
+      },
+      "jodrell_bank": true,
+      "obs_end_mjd": 61071.0,
+      "obs_end_source": "D4g: last glitch epoch, no censoring information (last interval dropped)",
+      "conditioning": "no glitch before MJD 61343 (snapshot)",
+      "M2": {
+        "mu": 6.776100290312946,
+        "sigma": 0.69611287746613,
+        "t0_days": 272.0,
+        "waits_days": {
+          "median": 912.8507288998134,
+          "w50_lo": 590.0487876680907,
+          "w50_hi": 1438.4696600279187,
+          "w90_lo": 350.66827814312325,
+          "w90_hi": 2799.0864383009425
+        },
+        "dates": {
+          "median": "2028-07-31",
+          "w50_lo": "2027-09-13",
+          "w50_hi": "2030-01-08",
+          "w90_lo": "2027-01-16",
+          "w90_hi": "2033-09-30"
+        }
+      },
+      "M0": {
+        "mu": 6.662501890622097,
+        "sigma": 0.7871519672244063,
+        "t0_days": 272.0,
+        "waits_days": {
+          "median": 855.0927580432,
+          "w50_lo": 538.2852994024545,
+          "w50_hi": 1408.6818579933445,
+          "w90_lo": 328.6844071198495,
+          "w90_hi": 2959.547480973277
+        },
+        "dates": {
+          "median": "2028-06-04",
+          "w50_lo": "2027-07-23",
+          "w50_hi": "2029-12-09",
+          "w90_lo": "2026-12-25",
+          "w90_hi": "2034-03-09"
+        }
+      }
+    }
+  },
+  "reported_not_scored": {
+    "B1046-58": {
+      "g": {
+        "mjd": 60406.6,
+        "date": "2024-04-06",
+        "mjd_err": 0.5,
+        "dff": 4078.0,
+        "df1": 11.0,
+        "ln_R": -0.9922886006461071,
+        "source_key": "zgp+24",
+        "method_class": "unknown"
+      },
+      "jodrell_bank": false,
+      "obs_end_mjd": 60406.6,
+      "obs_end_source": "D4g: last glitch epoch, no censoring information (last interval dropped)",
+      "conditioning": "unconditioned (documented obs_end equals g)",
+      "M2": {
+        "mu": 6.761184085278215,
+        "sigma": 0.69611287746613,
+        "t0_days": 0.0,
+        "waits_days": {
+          "median": 863.6642426895681,
+          "w50_lo": 540.0507326233222,
+          "w50_hi": 1381.1960229684776,
+          "w90_lo": 274.8375769793414,
+          "w90_hi": 2714.0245242251326
+        },
+        "dates": {
+          "median": "2026-08-18",
+          "w50_lo": "2025-09-28",
+          "w50_hi": "2028-01-17",
+          "w90_lo": "2025-01-06",
+          "w90_hi": "2031-09-11"
+        }
+      },
+      "M0": {
+        "mu": 6.666411533508668,
+        "sigma": 0.7871519672244063,
+        "t0_days": 0.0,
+        "waits_days": {
+          "median": 785.5715433089888,
+          "w50_lo": 461.9633688658566,
+          "w50_hi": 1335.8692295710234,
+          "w90_lo": 215.22021618545023,
+          "w90_hi": 2867.4009374895627
+        },
+        "dates": {
+          "median": "2026-06-01",
+          "w50_lo": "2025-07-12",
+          "w50_hi": "2027-12-03",
+          "w90_lo": "2024-11-07",
+          "w90_hi": "2032-02-12"
+        }
+      },
+      "label": "reported, not scored: monitoring after obs_end not documented"
+    },
+    "J0537-6910": {
+      "g": {
+        "mjd": 60762.0,
+        "date": "2025-03-28",
+        "mjd_err": 9.0,
+        "dff": 176.45,
+        "df1": 0.455,
+        "ln_R": -0.9472598688296714,
+        "source_key": "hke+26",
+        "method_class": "local-relaxation"
+      },
+      "jodrell_bank": false,
+      "obs_end_mjd": 60827.0,
+      "obs_end_source": "Ho et al. 2026: NICER data to 2025 Jun 1 (D4g)",
+      "conditioning": "no glitch before documented obs_end MJD 60827.0",
+      "M2": {
+        "mu": 4.606425454980598,
+        "sigma": 0.69611287746613,
+        "t0_days": 65.0,
+        "waits_days": {
+          "median": 127.01197331915057,
+          "w50_lo": 91.83014230162632,
+          "w50_hi": 187.78972816151207,
+          "w90_lo": 70.06755239248838,
+          "w90_hi": 348.387528155509
+        },
+        "dates": {
+          "median": "2025-08-02",
+          "w50_lo": "2025-06-27",
+          "w50_hi": "2025-10-01",
+          "w90_lo": "2025-06-06",
+          "w90_hi": "2026-03-11"
+        }
+      },
+      "M0": {
+        "mu": 4.6331437034947545,
+        "sigma": 0.7871519672244063,
+        "t0_days": 65.0,
+        "waits_days": {
+          "median": 136.36266995248897,
+          "w50_lo": 95.0216889265601,
+          "w50_hi": 211.3856612025813,
+          "w90_lo": 70.54080609725428,
+          "w90_hi": 423.828590895934
+        },
+        "dates": {
+          "median": "2025-08-11",
+          "w50_lo": "2025-07-01",
+          "w50_hi": "2025-10-25",
+          "w90_lo": "2025-06-06",
+          "w90_hi": "2026-05-25"
+        }
+      },
+      "label": "reported, not scored: monitoring after obs_end not documented",
+      "note": "its glitch rate (one glitch every 100-200 d) makes a 580 d glitch-free stretch to the 2026-10-30 snapshot implausible, so the snapshot is not used for conditioning"
+    },
+    "J1023-5746": {
+      "g": {
+        "mjd": 58823.0,
+        "date": "2019-12-06",
+        "mjd_err": 8.0,
+        "dff": 1681.0,
+        "df1": 6.77,
+        "ln_R": -1.393112232497705,
+        "source_key": "ggyz22",
+        "method_class": "global"
+      },
+      "jodrell_bank": false,
+      "obs_end_mjd": 59269.0,
+      "obs_end_source": "G\u00fcgercino\u011flu et al. 2022: Fermi data end (D4g)",
+      "conditioning": "no glitch before documented obs_end MJD 59269.0",
+      "M2": {
+        "mu": 6.453631978454565,
+        "sigma": 0.69611287746613,
+        "t0_days": 446.0,
+        "waits_days": {
+          "median": 834.9702862841427,
+          "w50_lo": 612.5887654963951,
+          "w50_hi": 1221.939538721373,
+          "w90_lo": 477.05473951820983,
+          "w90_hi": 2247.5273247008545
+        },
+        "dates": {
+          "median": "2022-03-19",
+          "w50_lo": "2021-08-09",
+          "w50_hi": "2023-04-10",
+          "w90_lo": "2021-03-27",
+          "w90_hi": "2026-01-30"
+        }
+      },
+      "M0": {
+        "mu": 6.523096106931226,
+        "sigma": 0.7871519672244063,
+        "t0_days": 446.0,
+        "waits_days": {
+          "median": 917.5729604290442,
+          "w50_lo": 643.685894113597,
+          "w50_hi": 1415.7401452411639,
+          "w90_lo": 482.3159912418605,
+          "w90_hi": 2827.3916363693506
+        },
+        "dates": {
+          "median": "2022-06-10",
+          "w50_lo": "2021-09-09",
+          "w50_hi": "2023-10-21",
+          "w90_lo": "2021-04-01",
+          "w90_hi": "2027-09-02"
+        }
+      },
+      "label": "reported, not scored: monitoring after obs_end not documented"
+    },
+    "J1420-6048": {
+      "g": {
+        "mjd": 58555.0,
+        "date": "2019-03-13",
+        "mjd_err": 2.0,
+        "dff": 2777.0,
+        "df1": 64.0,
+        "ln_R": -3.1375118750350093,
+        "source_key": "lyg+24",
+        "method_class": "unknown"
+      },
+      "jodrell_bank": false,
+      "obs_end_mjd": 58555.0,
+      "obs_end_source": "D4g: last glitch epoch, no censoring information (last interval dropped)",
+      "conditioning": "unconditioned (documented obs_end equals g)",
+      "M2": {
+        "mu": 6.47438643827582,
+        "sigma": 0.69611287746613,
+        "t0_days": 0.0,
+        "waits_days": {
+          "median": 648.3213204058748,
+          "w50_lo": 405.39643388519943,
+          "w50_hi": 1036.813596174464,
+          "w90_lo": 206.31056838651966,
+          "w90_hi": 2037.3194537729782
+        },
+        "dates": {
+          "median": "2020-12-20",
+          "w50_lo": "2020-04-21",
+          "w50_hi": "2022-01-12",
+          "w90_lo": "2019-10-05",
+          "w90_hi": "2024-10-09"
+        }
+      },
+      "M0": {
+        "mu": 6.962897011118924,
+        "sigma": 0.7871519672244063,
+        "t0_days": 0.0,
+        "waits_days": {
+          "median": 1056.6903710468093,
+          "w50_lo": 621.3975643780304,
+          "w50_hi": 1796.9084596922519,
+          "w90_lo": 289.49766833436126,
+          "w90_hi": 3857.0070242272586
+        },
+        "dates": {
+          "median": "2022-02-01",
+          "w50_lo": "2020-11-23",
+          "w50_hi": "2024-02-11",
+          "w90_lo": "2019-12-27",
+          "w90_hi": "2029-10-03"
+        }
+      },
+      "label": "reported, not scored: monitoring after obs_end not documented"
+    },
+    "J1617-5055": {
+      "g": {
+        "mjd": 56267.0,
+        "date": "2012-12-06",
+        "mjd_err": 6.0,
+        "dff": 2068.0,
+        "df1": 13.2,
+        "ln_R": -1.8536348729461425,
+        "source_key": "ljd+21",
+        "method_class": "global"
+      },
+      "jodrell_bank": false,
+      "obs_end_mjd": 56267.0,
+      "obs_end_source": "D4g: last glitch epoch, no censoring information (last interval dropped)",
+      "conditioning": "unconditioned (documented obs_end equals g)",
+      "M2": {
+        "mu": 6.284162727641246,
+        "sigma": 0.69611287746613,
+        "t0_days": 0.0,
+        "waits_days": {
+          "median": 536.0153119004613,
+          "w50_lo": 335.17129409884643,
+          "w50_hi": 857.2106849550684,
+          "w90_lo": 170.5722458623309,
+          "w90_hi": 1684.4030700260523
+        },
+        "dates": {
+          "median": "2014-05-26",
+          "w50_lo": "2013-11-06",
+          "w50_hi": "2015-04-12",
+          "w90_lo": "2013-05-25",
+          "w90_hi": "2017-07-17"
+        }
+      },
+      "M0": {
+        "mu": 5.838970722967574,
+        "sigma": 0.7871519672244063,
+        "t0_days": 0.0,
+        "waits_days": {
+          "median": 343.42567852477924,
+          "w50_lo": 201.9549775671391,
+          "w50_hi": 583.997473550737,
+          "w90_lo": 94.08710053880614,
+          "w90_hi": 1253.5320569429205
+        },
+        "dates": {
+          "median": "2013-11-14",
+          "w50_lo": "2013-06-25",
+          "w50_hi": "2014-07-12",
+          "w90_lo": "2013-03-10",
+          "w90_hi": "2016-05-12"
+        }
+      },
+      "label": "reported, not scored: monitoring after obs_end not documented"
+    }
+  },
+  "not_forecastable": {
+    "B1338-62": {
+      "g_mjd": 58214.0,
+      "reason": "last glitch lacks dff and df1 > 0"
+    },
+    "B1727-47": {
+      "g_mjd": 57984.0,
+      "reason": "last glitch lacks df1 > 0"
+    },
+    "B1737-30": {
+      "g_mjd": 60980.0,
+      "reason": "last glitch lacks df1 > 0"
+    },
+    "B1758-23": {
+      "g_mjd": 58993.5,
+      "reason": "last glitch lacks df1 > 0"
+    },
+    "J0729-1448": {
+      "g_mjd": 58266.6,
+      "reason": "last glitch lacks df1 > 0"
+    }
+  },
+  "git_commit": "e1c31f987dc1694f02149994ff7131f38e71c314",
+  "generated_utc": "2026-11-12T15:12:19+00:00"
+}

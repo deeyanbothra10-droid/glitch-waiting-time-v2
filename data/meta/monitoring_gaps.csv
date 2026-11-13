@@ -1,0 +1,2 @@
+name,jname,gap_start_mjd,gap_end_mjd,source,notes
+J0537-6910,0537-6910,55926.9,57982,Antonopoulou et al. 2018 (RXTE monitoring ended 31 Dec 2011); Ho et al. 2026 Table 2 (NICER monitoring began 17 Aug 2017),RXTE-NICER gap (D4g); the interval starting at MJD 55819 is censored at the gap start (D11)

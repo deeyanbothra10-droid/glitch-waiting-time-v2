@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this code or these results, please cite them as below."
+title: "Do neutron-star glitches keep time? A pre-registered test of the vortex-creep prediction of the time to the next glitch"
+type: software
+authors:
+  - family-names: Bothra
+    given-names: Deeyan
+repository-code: "https://github.com/deeyanbothra10-droid/glitch-waiting-time-v2"
+url: "https://github.com/deeyanbothra10-droid/glitch-waiting-time-v2"
+license:
+  - MIT
+  - CC-BY-4.0
+keywords:
+  - pulsar glitches
+  - vortex creep
+  - survival analysis
+  - pre-registration
+references:
+  - type: data
+    title: "Jodrell Bank Glitch Catalogue"
+    url: "https://www.jb.man.ac.uk/pulsar/glitches/gTable.html"
+    authors:
+      - name: "Jodrell Bank Centre for Astrophysics"

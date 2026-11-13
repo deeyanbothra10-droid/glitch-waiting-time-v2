@@ -1,0 +1,23 @@
+{
+  "label": "EXPLORATORY, POST HOC, NOT PRE-REGISTERED",
+  "pulsar": "B0531+21",
+  "n_intervals": 24,
+  "inputs": {
+    "c_p_M1": 10.243400154838366,
+    "tau_sd_days": 459040.757933162,
+    "nu_hz": 29.946923,
+    "nudot_hz_s": -3.77535e-10,
+    "lyne_coeff_per_s": 7e-08,
+    "prompt_fraction": 0.54
+  },
+  "ratio_catalogue_to_persistent": {
+    "median": 15.561030467237234,
+    "min": 1.0621117241987772,
+    "max": 52.96976629635845
+  },
+  "implied_beta": {
+    "catalogue": -0.4673239854728222,
+    "persistent_step_total": -0.04439127085870892,
+    "persistent_step_prompt_only": 0.34371986878016736
+  }
+}

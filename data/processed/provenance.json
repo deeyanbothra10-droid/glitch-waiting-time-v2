@@ -1,0 +1,28 @@
+{
+  "file": "data/raw/glitches.csv",
+  "sha256": "5ba59d0160fe1f00eb70d464aa048c8b9968980c251118dca6deed825f849de7",
+  "sha256_matches_supplied": true,
+  "n_rows": 736,
+  "n_pulsars": 226,
+  "pulsar_key": "name",
+  "columns": [
+    "idx",
+    "name",
+    "jname",
+    "no",
+    "mjd",
+    "mjd_err",
+    "dff",
+    "dff_err",
+    "df1",
+    "df1_err",
+    "ref"
+  ],
+  "mjd_min": 40280.0,
+  "mjd_max": 61071.0,
+  "download_date": "2026-10-30",
+  "source_url": "https://www.jb.man.ac.uk/pulsar/glitches/gTable.html",
+  "random_seed": null,
+  "git_commit": "8bd11dae1f6ed924276921cca6bf2a72d2e32f36",
+  "generated_utc": "2026-10-31T11:11:28+00:00"
+}

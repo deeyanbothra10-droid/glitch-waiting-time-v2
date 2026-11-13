@@ -1,0 +1,288 @@
+{
+  "description": "Report only: D4n short-window-sensitive label among 06's A2 replicates (regenerated from their seeds); synthetic data",
+  "stores": [
+    "results/validation_partial",
+    "results/validation_partial_d4l",
+    "results/validation_partial_d4m"
+  ],
+  "store_meta": {
+    "results/validation_partial": {
+      "git_commit": "ab790d02d7a4f8097f2a85b4383fc14a60fd133e",
+      "config_sha256": "83c282b7c16e0aa320321c9c1ce03e2cb5e5390fd4489bf5c983778853daaa39"
+    },
+    "results/validation_partial_d4l": {
+      "git_commit": "596adca3714200d9b61d169f23b07c9539ca3593",
+      "config_sha256": "2b73f8bf1e56123409a1a2139a9b20a80aa4e4e286220121b2d4b66e361ddb14"
+    },
+    "results/validation_partial_d4m": {
+      "git_commit": "004dffcefe59f1686e6621659663d9047e0744c7",
+      "config_sha256": "2379680fe117c5691836638ebbbc33ae9c4259ba2f1e32ddd5721259a161485f"
+    }
+  },
+  "seed": 20261031,
+  "per_sigma": {
+    "0.2": {
+      "S1m": {
+        "analysed": 1000,
+        "A2_replicates": 799,
+        "A2_with_refit": 799,
+        "labelled_short_window_sensitive": 176,
+        "fraction_labelled": 0.2202753441802253,
+        "refit_no_data_or_failed": 0,
+        "refit_failed": 0,
+        "d_without_short_window_mean": -0.03918013445230916
+      },
+      "S3m": {
+        "analysed": 1000,
+        "A2_replicates": 8,
+        "A2_with_refit": 8,
+        "labelled_short_window_sensitive": 0,
+        "fraction_labelled": 0.0,
+        "refit_no_data_or_failed": 0,
+        "refit_failed": 0,
+        "d_without_short_window_mean": -0.0427642202105573
+      },
+      "S4-mix": {
+        "analysed": 500,
+        "A2_replicates": 0,
+        "A2_with_refit": 0,
+        "labelled_short_window_sensitive": 0,
+        "fraction_labelled": null,
+        "refit_no_data_or_failed": 0,
+        "refit_failed": 0,
+        "d_without_short_window_mean": null
+      },
+      "S4sw-espinoza": {
+        "analysed": 500,
+        "A2_replicates": 0,
+        "A2_with_refit": 0,
+        "labelled_short_window_sensitive": 0,
+        "fraction_labelled": null,
+        "refit_no_data_or_failed": 0,
+        "refit_failed": 0,
+        "d_without_short_window_mean": null
+      },
+      "S4sw-wang": {
+        "analysed": 500,
+        "A2_replicates": 0,
+        "A2_with_refit": 0,
+        "labelled_short_window_sensitive": 0,
+        "fraction_labelled": null,
+        "refit_no_data_or_failed": 0,
+        "refit_failed": 0,
+        "d_without_short_window_mean": null
+      }
+    },
+    "0.4": {
+      "S1m": {
+        "analysed": 1000,
+        "A2_replicates": 607,
+        "A2_with_refit": 607,
+        "labelled_short_window_sensitive": 128,
+        "fraction_labelled": 0.21087314662273476,
+        "refit_no_data_or_failed": 0,
+        "refit_failed": 0,
+        "d_without_short_window_mean": -0.046753837799620966
+      },
+      "S3m": {
+        "analysed": 1000,
+        "A2_replicates": 22,
+        "A2_with_refit": 22,
+        "labelled_short_window_sensitive": 0,
+        "fraction_labelled": 0.0,
+        "refit_no_data_or_failed": 0,
+        "refit_failed": 0,
+        "d_without_short_window_mean": -0.08108349674409758
+      },
+      "S4-mix": {
+        "analysed": 500,
+        "A2_replicates": 0,
+        "A2_with_refit": 0,
+        "labelled_short_window_sensitive": 0,
+        "fraction_labelled": null,
+        "refit_no_data_or_failed": 0,
+        "refit_failed": 0,
+        "d_without_short_window_mean": null
+      },
+      "S4sw-espinoza": {
+        "analysed": 500,
+        "A2_replicates": 9,
+        "A2_with_refit": 0,
+        "labelled_short_window_sensitive": 0,
+        "fraction_labelled": null,
+        "refit_no_data_or_failed": 9,
+        "refit_failed": 0,
+        "d_without_short_window_mean": NaN
+      },
+      "S4sw-wang": {
+        "analysed": 500,
+        "A2_replicates": 9,
+        "A2_with_refit": 0,
+        "labelled_short_window_sensitive": 0,
+        "fraction_labelled": null,
+        "refit_no_data_or_failed": 9,
+        "refit_failed": 0,
+        "d_without_short_window_mean": NaN
+      }
+    },
+    "0.6": {
+      "S1m": {
+        "analysed": 1000,
+        "A2_replicates": 424,
+        "A2_with_refit": 424,
+        "labelled_short_window_sensitive": 62,
+        "fraction_labelled": 0.14622641509433962,
+        "refit_no_data_or_failed": 0,
+        "refit_failed": 0,
+        "d_without_short_window_mean": -0.06551315605318672
+      },
+      "S3m": {
+        "analysed": 1000,
+        "A2_replicates": 23,
+        "A2_with_refit": 23,
+        "labelled_short_window_sensitive": 0,
+        "fraction_labelled": 0.0,
+        "refit_no_data_or_failed": 0,
+        "refit_failed": 0,
+        "d_without_short_window_mean": -0.12445455933709601
+      },
+      "S4-mix": {
+        "analysed": 500,
+        "A2_replicates": 4,
+        "A2_with_refit": 4,
+        "labelled_short_window_sensitive": 0,
+        "fraction_labelled": 0.0,
+        "refit_no_data_or_failed": 0,
+        "refit_failed": 0,
+        "d_without_short_window_mean": -0.13363396367773464
+      },
+      "S4sw-espinoza": {
+        "analysed": 500,
+        "A2_replicates": 8,
+        "A2_with_refit": 0,
+        "labelled_short_window_sensitive": 0,
+        "fraction_labelled": null,
+        "refit_no_data_or_failed": 8,
+        "refit_failed": 0,
+        "d_without_short_window_mean": NaN
+      },
+      "S4sw-wang": {
+        "analysed": 500,
+        "A2_replicates": 16,
+        "A2_with_refit": 0,
+        "labelled_short_window_sensitive": 0,
+        "fraction_labelled": null,
+        "refit_no_data_or_failed": 16,
+        "refit_failed": 0,
+        "d_without_short_window_mean": NaN
+      }
+    },
+    "0.8": {
+      "S1m": {
+        "analysed": 1000,
+        "A2_replicates": 225,
+        "A2_with_refit": 225,
+        "labelled_short_window_sensitive": 20,
+        "fraction_labelled": 0.08888888888888889,
+        "refit_no_data_or_failed": 0,
+        "refit_failed": 0,
+        "d_without_short_window_mean": -0.09768352958429802
+      },
+      "S3m": {
+        "analysed": 1000,
+        "A2_replicates": 19,
+        "A2_with_refit": 19,
+        "labelled_short_window_sensitive": 0,
+        "fraction_labelled": 0.0,
+        "refit_no_data_or_failed": 0,
+        "refit_failed": 0,
+        "d_without_short_window_mean": -0.1360492849953635
+      },
+      "S4-mix": {
+        "analysed": 500,
+        "A2_replicates": 5,
+        "A2_with_refit": 5,
+        "labelled_short_window_sensitive": 0,
+        "fraction_labelled": 0.0,
+        "refit_no_data_or_failed": 0,
+        "refit_failed": 0,
+        "d_without_short_window_mean": -0.13602018412296873
+      },
+      "S4sw-espinoza": {
+        "analysed": 500,
+        "A2_replicates": 22,
+        "A2_with_refit": 0,
+        "labelled_short_window_sensitive": 0,
+        "fraction_labelled": null,
+        "refit_no_data_or_failed": 22,
+        "refit_failed": 0,
+        "d_without_short_window_mean": NaN
+      },
+      "S4sw-wang": {
+        "analysed": 500,
+        "A2_replicates": 22,
+        "A2_with_refit": 0,
+        "labelled_short_window_sensitive": 0,
+        "fraction_labelled": null,
+        "refit_no_data_or_failed": 22,
+        "refit_failed": 0,
+        "d_without_short_window_mean": NaN
+      }
+    },
+    "1.2": {
+      "S1m": {
+        "analysed": 1000,
+        "A2_replicates": 51,
+        "A2_with_refit": 51,
+        "labelled_short_window_sensitive": 1,
+        "fraction_labelled": 0.0196078431372549,
+        "refit_no_data_or_failed": 0,
+        "refit_failed": 0,
+        "d_without_short_window_mean": -0.1643916486013756
+      },
+      "S3m": {
+        "analysed": 1000,
+        "A2_replicates": 22,
+        "A2_with_refit": 22,
+        "labelled_short_window_sensitive": 1,
+        "fraction_labelled": 0.045454545454545456,
+        "refit_no_data_or_failed": 0,
+        "refit_failed": 0,
+        "d_without_short_window_mean": -0.15674556924912067
+      },
+      "S4-mix": {
+        "analysed": 500,
+        "A2_replicates": 2,
+        "A2_with_refit": 2,
+        "labelled_short_window_sensitive": 0,
+        "fraction_labelled": 0.0,
+        "refit_no_data_or_failed": 0,
+        "refit_failed": 0,
+        "d_without_short_window_mean": -0.17502221116389033
+      },
+      "S4sw-espinoza": {
+        "analysed": 500,
+        "A2_replicates": 10,
+        "A2_with_refit": 0,
+        "labelled_short_window_sensitive": 0,
+        "fraction_labelled": null,
+        "refit_no_data_or_failed": 10,
+        "refit_failed": 0,
+        "d_without_short_window_mean": NaN
+      },
+      "S4sw-wang": {
+        "analysed": 500,
+        "A2_replicates": 40,
+        "A2_with_refit": 0,
+        "labelled_short_window_sensitive": 0,
+        "fraction_labelled": null,
+        "refit_no_data_or_failed": 40,
+        "refit_failed": 0,
+        "d_without_short_window_mean": NaN
+      }
+    }
+  },
+  "config_sha256": "17ccc8c95b70f13399a226315035bed06cfe58cd47d2a5543b3dfe6c8c5b3606",
+  "git_commit": "84998acd52290d4a128cde2313aa346389e5dd08",
+  "generated_utc": "2026-11-01T03:56:04+00:00"
+}

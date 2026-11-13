@@ -1,0 +1,3 @@
+# AI assistance
+
+Claude Code (Anthropic) wrote the analysis code. Claude proposed the original analysis rules, reviewed outputs during the project, and checked the D4o recovery-parameter tables against the cited literature. Claude also assisted in drafting and revising the manuscript and in checking its statements against this repository. The model was Claude Opus 5.5 (model ID claude-opus-5-5), used through Claude Code. The project was directed by the researcher, who provided instructions and reviewed the work. Claude Code executed computational steps under the researcher's instructions. No AI tool is an author.

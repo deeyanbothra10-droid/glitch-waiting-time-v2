@@ -1,0 +1,453 @@
+{
+  "label": "EXPLORATORY, POST HOC, NOT PRE-REGISTERED",
+  "pulsars": {
+    "B0531+21": {
+      "real": {
+        "n_intervals": 24,
+        "n_completed": 24,
+        "d_hat": -0.7398934335903995,
+        "sigma_hat_M4": 1.1256117495299478,
+        "a_hat_M4": 0.5804008794593583,
+        "a_hat_M3": 0.09828091510898648
+      },
+      "scenarios": {
+        "S3m": {
+          "method_rule": "resampled",
+          "short_window_days": null,
+          "slope": 0.09828091510898648,
+          "covariate": "ln_dnu_frac",
+          "matched_generating_sigma": 1.2848437499999998,
+          "run_at_lower_end": false,
+          "bisection_converged": true,
+          "bisection_steps": [
+            [
+              0.01,
+              0.010297340854743636
+            ],
+            [
+              1.005,
+              0.925078232375437
+            ],
+            [
+              1.5025,
+              1.2228304305401008
+            ],
+            [
+              1.25375,
+              1.1093759997608124
+            ],
+            [
+              1.3781249999999998,
+              1.1711698410713187
+            ],
+            [
+              1.3159375,
+              1.139732672252931
+            ],
+            [
+              1.2848437499999998,
+              1.1271290668968486
+            ]
+          ],
+          "noise_sd": 0.0,
+          "calibration_within_tolerance": false,
+          "replicates": 1000,
+          "analysed": 994,
+          "discarded": 6,
+          "failed": 0,
+          "sigma_hat_M4_median": 1.1034156039585223,
+          "d_hat_p2.5": -1.1526731591719217,
+          "d_hat_p50": -0.03837195154881058,
+          "d_hat_p97.5": 1.029494352777453,
+          "real_d_hat_percentile": 8.350100603621732
+        },
+        "S4sw-espinoza": {
+          "method_rule": "short-window",
+          "short_window_days": 40.0,
+          "slope": 0.0,
+          "covariate": null,
+          "matched_generating_sigma": 1.3781249999999998,
+          "run_at_lower_end": false,
+          "bisection_converged": true,
+          "bisection_steps": [
+            [
+              0.01,
+              0.009099183090278476
+            ],
+            [
+              1.005,
+              0.8907211980190702
+            ],
+            [
+              1.5025,
+              1.1805852988619383
+            ],
+            [
+              1.25375,
+              1.06884139706234
+            ],
+            [
+              1.3781249999999998,
+              1.1235700922835659
+            ]
+          ],
+          "noise_sd": 0.0,
+          "calibration_within_tolerance": false,
+          "replicates": 1000,
+          "analysed": 994,
+          "discarded": 6,
+          "failed": 0,
+          "sigma_hat_M4_median": 1.1485910222529228,
+          "d_hat_p2.5": -1.4290691429069888,
+          "d_hat_p50": -0.06373988714809212,
+          "d_hat_p97.5": 1.2876412156256825,
+          "real_d_hat_percentile": 11.267605633802818
+        },
+        "S1m": {
+          "method_rule": "resampled",
+          "short_window_days": null,
+          "slope": 1,
+          "covariate": "ln_R",
+          "matched_generating_sigma": 1.25375,
+          "run_at_lower_end": false,
+          "bisection_converged": true,
+          "bisection_steps": [
+            [
+              0.01,
+              0.43055301802379253
+            ],
+            [
+              1.005,
+              1.0081565631176967
+            ],
+            [
+              1.5025,
+              1.2119360082819908
+            ],
+            [
+              1.25375,
+              1.1190627012172971
+            ]
+          ],
+          "noise_sd": 0.0,
+          "calibration_within_tolerance": false,
+          "replicates": 1000,
+          "analysed": 982,
+          "discarded": 18,
+          "failed": 0,
+          "sigma_hat_M4_median": 1.1311774001751516,
+          "d_hat_p2.5": -1.5846659400444445,
+          "d_hat_p50": -0.03480088865237159,
+          "d_hat_p97.5": 1.120960643607918,
+          "real_d_hat_percentile": 9.775967413441954
+        }
+      }
+    },
+    "B1737-30": {
+      "real": {
+        "n_intervals": 28,
+        "n_completed": 28,
+        "d_hat": -0.7272140346074233,
+        "sigma_hat_M4": 0.7280917038378134,
+        "a_hat_M4": 0.26382350478922373,
+        "a_hat_M3": 0.10528479913219987
+      },
+      "scenarios": {
+        "S3m": {
+          "method_rule": "resampled",
+          "short_window_days": null,
+          "slope": 0.10528479913219987,
+          "covariate": "ln_dnu_frac",
+          "matched_generating_sigma": 0.8028906249999999,
+          "run_at_lower_end": false,
+          "bisection_converged": true,
+          "bisection_steps": [
+            [
+              0.01,
+              0.0231598914883222
+            ],
+            [
+              1.005,
+              0.8998018495532988
+            ],
+            [
+              0.5075,
+              0.47101984464656105
+            ],
+            [
+              0.7562499999999999,
+              0.6920427606309485
+            ],
+            [
+              0.8806249999999999,
+              0.7956892175592978
+            ],
+            [
+              0.8184374999999999,
+              0.7459348081835224
+            ],
+            [
+              0.7873437499999999,
+              0.7173583061788358
+            ],
+            [
+              0.8028906249999999,
+              0.735824320601679
+            ]
+          ],
+          "noise_sd": 0.000825,
+          "calibration_within_tolerance": true,
+          "replicates": 1000,
+          "analysed": 1000,
+          "discarded": 0,
+          "failed": 0,
+          "sigma_hat_M4_median": 0.728201810977493,
+          "d_hat_p2.5": -0.3059435936832344,
+          "d_hat_p50": 0.013446349386380476,
+          "d_hat_p97.5": 0.336893891811287,
+          "real_d_hat_percentile": 0.1
+        },
+        "S4sw-espinoza": {
+          "method_rule": "short-window",
+          "short_window_days": 40.0,
+          "slope": 0.0,
+          "covariate": null,
+          "matched_generating_sigma": 0.7873437499999999,
+          "run_at_lower_end": false,
+          "bisection_converged": true,
+          "bisection_steps": [
+            [
+              0.01,
+              0.0093912907854419
+            ],
+            [
+              1.005,
+              0.8881813458285792
+            ],
+            [
+              0.5075,
+              0.4681495966775854
+            ],
+            [
+              0.7562499999999999,
+              0.6894008700131804
+            ],
+            [
+              0.8806249999999999,
+              0.7900358830728076
+            ],
+            [
+              0.8184374999999999,
+              0.7381136355355896
+            ],
+            [
+              0.7873437499999999,
+              0.7258414606993304
+            ]
+          ],
+          "noise_sd": 0.000825,
+          "calibration_within_tolerance": true,
+          "replicates": 1000,
+          "analysed": 1000,
+          "discarded": 0,
+          "failed": 0,
+          "sigma_hat_M4_median": 0.7162170793780034,
+          "d_hat_p2.5": -0.36417236506741185,
+          "d_hat_p50": -0.0058189276498840335,
+          "d_hat_p97.5": 0.34099919196114264,
+          "real_d_hat_percentile": 0.0
+        },
+        "S1m": {
+          "method_rule": "resampled",
+          "short_window_days": null,
+          "slope": 1,
+          "covariate": "ln_R",
+          "matched_generating_sigma": 0.9894531249999998,
+          "run_at_lower_end": false,
+          "bisection_converged": true,
+          "bisection_steps": [
+            [
+              0.01,
+              0.4338967039736884
+            ],
+            [
+              1.005,
+              0.7388656668120946
+            ],
+            [
+              0.5075,
+              0.47369592261495774
+            ],
+            [
+              0.7562499999999999,
+              0.6237547070073852
+            ],
+            [
+              0.8806249999999999,
+              0.675680542627179
+            ],
+            [
+              0.9428124999999998,
+              0.7046521411331219
+            ],
+            [
+              0.9739062499999999,
+              0.7085333246956084
+            ],
+            [
+              0.9894531249999998,
+              0.7247223606768578
+            ]
+          ],
+          "noise_sd": 0.00103125,
+          "calibration_within_tolerance": true,
+          "replicates": 1000,
+          "analysed": 824,
+          "discarded": 176,
+          "failed": 0,
+          "sigma_hat_M4_median": 0.746035191071682,
+          "d_hat_p2.5": -1.296528870000383,
+          "d_hat_p50": -0.053326799983534706,
+          "d_hat_p97.5": 1.181210811012471,
+          "real_d_hat_percentile": 9.466019417475728
+        }
+      }
+    },
+    "J0537-6910": {
+      "real": {
+        "n_intervals": 63,
+        "n_completed": 61,
+        "d_hat": -0.18241632087421225,
+        "sigma_hat_M4": 0.3008809162954236,
+        "a_hat_M4": 0.557064549380247,
+        "a_hat_M3": 0.528840787912867
+      },
+      "scenarios": {
+        "S3m": {
+          "method_rule": "resampled",
+          "short_window_days": null,
+          "slope": 0.528840787912867,
+          "covariate": "ln_dnu_frac",
+          "matched_generating_sigma": 0.3209375,
+          "run_at_lower_end": false,
+          "bisection_converged": true,
+          "bisection_steps": [
+            [
+              0.01,
+              0.009993126220294744
+            ],
+            [
+              1.005,
+              0.695377534434146
+            ],
+            [
+              0.5075,
+              0.459999608648107
+            ],
+            [
+              0.25875,
+              0.24593737480891742
+            ],
+            [
+              0.38312499999999994,
+              0.3602117558930531
+            ],
+            [
+              0.3209375,
+              0.3041238306588139
+            ]
+          ],
+          "noise_sd": 0.0001875,
+          "calibration_within_tolerance": true,
+          "replicates": 1000,
+          "analysed": 1000,
+          "discarded": 0,
+          "failed": 0,
+          "sigma_hat_M4_median": 0.3063333041044445,
+          "d_hat_p2.5": -0.12708395322044766,
+          "d_hat_p50": -0.00390565392461266,
+          "d_hat_p97.5": 0.13205128414664025,
+          "real_d_hat_percentile": 0.3
+        },
+        "S4l": {
+          "method_rule": "local-relaxation",
+          "short_window_days": null,
+          "slope": 0.0,
+          "covariate": null,
+          "matched_generating_sigma": 0.3209375,
+          "run_at_lower_end": false,
+          "bisection_converged": true,
+          "bisection_steps": [
+            [
+              0.01,
+              0.009551642027972197
+            ],
+            [
+              1.005,
+              0.6857455104261992
+            ],
+            [
+              0.5075,
+              0.45970638399586505
+            ],
+            [
+              0.25875,
+              0.2469517598773121
+            ],
+            [
+              0.38312499999999994,
+              0.36143162913047744
+            ],
+            [
+              0.3209375,
+              0.30356933096472516
+            ]
+          ],
+          "noise_sd": 0.0001875,
+          "calibration_within_tolerance": true,
+          "replicates": 1000,
+          "analysed": 1000,
+          "discarded": 0,
+          "failed": 0,
+          "sigma_hat_M4_median": 0.3054897306260357,
+          "d_hat_p2.5": -0.14294638733764325,
+          "d_hat_p50": -0.01920056519899885,
+          "d_hat_p97.5": 0.10753195292520171,
+          "real_d_hat_percentile": 0.5
+        },
+        "S1m": {
+          "method_rule": "resampled",
+          "short_window_days": null,
+          "slope": 1,
+          "covariate": "ln_R",
+          "matched_generating_sigma": 0.01,
+          "run_at_lower_end": true,
+          "bisection_converged": true,
+          "bisection_steps": [
+            [
+              0.01,
+              0.43557888870990225
+            ]
+          ],
+          "noise_sd": 0.0001875,
+          "calibration_within_tolerance": true,
+          "replicates": 1000,
+          "analysed": 1000,
+          "discarded": 0,
+          "failed": 0,
+          "sigma_hat_M4_median": 0.42452865502637904,
+          "d_hat_p2.5": -0.3781491391347805,
+          "d_hat_p50": -0.1305544819639045,
+          "d_hat_p97.5": 0.1181458377866578,
+          "real_d_hat_percentile": 32.6
+        }
+      }
+    }
+  },
+  "replicates": 1000,
+  "seed": 20261031,
+  "final_dataset_sha256": "27a63d37ab877d79e28340bf113e768fe612e290bba1a8f4f2a1ae7ff8bdbe3b",
+  "config_sha256": "2fd950febe3648b20098cca04a4ebe2742c905c43218d7977fa4894198f00bed",
+  "git_commit": "33251fb3df36f96c447ad8cc8c972fc94e35fd0f",
+  "generated_utc": "2026-11-04T13:12:13+00:00"
+}

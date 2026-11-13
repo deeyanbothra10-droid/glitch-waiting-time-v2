@@ -1,0 +1,119 @@
+{
+  "admitted": false,
+  "max_upper_95": 0.02,
+  "checks": [
+    {
+      "variant": "S4sw-espinoza-w40",
+      "w": 40.0,
+      "sigma": 0.2,
+      "mean": null,
+      "se_mean": null,
+      "upper_95": null,
+      "passes": false
+    },
+    {
+      "variant": "S4sw-espinoza-w150",
+      "w": 150.0,
+      "sigma": 0.2,
+      "mean": 5.7427557892575904e-05,
+      "se_mean": 0.000657433556322086,
+      "upper_95": 0.0013459736505119495,
+      "passes": true
+    },
+    {
+      "variant": "S4sw-wang-w125",
+      "w": 125.0,
+      "sigma": 0.2,
+      "mean": -0.0004252398363669509,
+      "se_mean": 0.00064921423979574,
+      "upper_95": 0.0008471966918832496,
+      "passes": true
+    },
+    {
+      "variant": "S4sw-wang-w300",
+      "w": 300.0,
+      "sigma": 0.2,
+      "mean": 0.0012563044873300667,
+      "se_mean": 0.000601173180562633,
+      "upper_95": 0.002434582269704222,
+      "passes": true
+    },
+    {
+      "variant": "S4sw-espinoza-w40",
+      "w": 40.0,
+      "sigma": 0.4,
+      "mean": null,
+      "se_mean": null,
+      "upper_95": null,
+      "passes": false
+    },
+    {
+      "variant": "S4sw-espinoza-w150",
+      "w": 150.0,
+      "sigma": 0.4,
+      "mean": 0.003534498270109614,
+      "se_mean": 0.0013282639009262727,
+      "upper_95": 0.006137847677889787,
+      "passes": true
+    },
+    {
+      "variant": "S4sw-wang-w125",
+      "w": 125.0,
+      "sigma": 0.4,
+      "mean": 0.0003642411358661866,
+      "se_mean": 0.0012922241442178124,
+      "upper_95": 0.002896953918486192,
+      "passes": true
+    },
+    {
+      "variant": "S4sw-wang-w300",
+      "w": 300.0,
+      "sigma": 0.4,
+      "mean": 0.004130307210234515,
+      "se_mean": 0.0011858911426911093,
+      "upper_95": 0.006454611139494139,
+      "passes": true
+    },
+    {
+      "variant": "S4sw-espinoza-w40",
+      "w": 40.0,
+      "sigma": 0.6,
+      "mean": null,
+      "se_mean": null,
+      "upper_95": null,
+      "passes": false
+    },
+    {
+      "variant": "S4sw-espinoza-w150",
+      "w": 150.0,
+      "sigma": 0.6,
+      "mean": 0.005595500856891939,
+      "se_mean": 0.0017908847904626315,
+      "upper_95": 0.009105570546659258,
+      "passes": true
+    },
+    {
+      "variant": "S4sw-wang-w125",
+      "w": 125.0,
+      "sigma": 0.6,
+      "mean": 0.005859466838377717,
+      "se_mean": 0.001990975089107256,
+      "upper_95": 0.009761706307144364,
+      "passes": true
+    },
+    {
+      "variant": "S4sw-wang-w300",
+      "w": 300.0,
+      "sigma": 0.6,
+      "mean": 0.013330386177789331,
+      "se_mean": 0.0017579093997436965,
+      "upper_95": 0.016775825289371403,
+      "passes": true
+    }
+  ],
+  "rule": "D4f: S4sw forward-slope upper 95% bound (mean + 1.96 SE) <= max at every sigma and w",
+  "fixture": "synthetic",
+  "seed": 20261031,
+  "git_commit": "6caeda06f7264d766d93f6ca3edb02aab9b8b57c",
+  "generated_utc": "2026-10-31T11:41:41+00:00"
+}

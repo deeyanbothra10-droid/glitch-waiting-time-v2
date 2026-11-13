@@ -1,0 +1,465 @@
+{
+  "reproduced": [
+    "data/processed/final_dataset.csv",
+    "data/processed/glitches_clean.csv",
+    "data/processed/intervals.csv",
+    "data/processed/provenance.json",
+    "data/processed/pulsar_params.csv",
+    "figures/F1_exclusion_flow.pdf",
+    "figures/F2_lnT_vs_lnR.pdf",
+    "figures/F3_kaplan_meier.pdf",
+    "figures/F4_model_comparison.pdf",
+    "figures/F5_validation.pdf",
+    "figures/F6_implied_beta.pdf",
+    "logs/dropped_last_intervals.csv",
+    "logs/exclusions.csv",
+    "prereg/data_freeze.json",
+    "results/collinearity.json",
+    "results/emulation_s4_fixture_d4o.json",
+    "results/method_counts.json",
+    "results/power_summary.txt",
+    "results/primary.json",
+    "results/robustness.json",
+    "results/secondary.json",
+    "results/short_window_admission_d4o.json"
+  ],
+  "differs": {
+    "results/power.json": [
+      [
+        ".config_sha256",
+        "'2022df18439daf006bcc0562f3c7ac6234b3c663c3b883aa2739bfa7df60147a'",
+        "'2fd950febe3648b20098cca04a4ebe2742c905c43218d7977fa4894198f00bed'"
+      ]
+    ],
+    "results/validation.json": [
+      [
+        ".config_sha256",
+        "'2022df18439daf006bcc0562f3c7ac6234b3c663c3b883aa2739bfa7df60147a'",
+        "'2fd950febe3648b20098cca04a4ebe2742c905c43218d7977fa4894198f00bed'"
+      ],
+      [
+        ".job_source_by_sigma.0.2/S1",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.2/S1-noise-off",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.2/S1m",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.2/S2",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.2/S2-null",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.2/S3",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.2/S3-null",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.2/S3m",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.2/S3m-null",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.2/S4-mix",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.2/S4g",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.2/S4g0",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.2/S4l",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.2/S4sw-espinoza",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.2/S4sw-wang",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.2/S4w",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.4/S1",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.4/S1-noise-off",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.4/S1m",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.4/S2",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.4/S2-null",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.4/S3",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.4/S3-null",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.4/S3m",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.4/S3m-null",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.4/S4-mix",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.4/S4g",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.4/S4g0",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.4/S4l",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.4/S4sw-espinoza",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.4/S4sw-wang",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.4/S4w",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.6/S1",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.6/S1-noise-off",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.6/S1m",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.6/S2",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.6/S2-null",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.6/S3",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.6/S3-null",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.6/S3m",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.6/S3m-null",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.6/S4-mix",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.6/S4g",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.6/S4g0",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.6/S4l",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.6/S4sw-espinoza",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.6/S4sw-wang",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.6/S4w",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.8/S1",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.8/S1-noise-off",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.8/S1m",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.8/S2",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.8/S2-null",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.8/S3",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.8/S3-null",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.8/S3m",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.8/S3m-null",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.8/S4-mix",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.8/S4g",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.8/S4g0",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.8/S4l",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.8/S4sw-espinoza",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.8/S4sw-wang",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.0.8/S4w",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.1.2/S1",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.1.2/S1-noise-off",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.1.2/S1m",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.1.2/S2",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.1.2/S2-null",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.1.2/S3",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.1.2/S3-null",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.1.2/S3m",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.1.2/S3m-null",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.1.2/S4-mix",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.1.2/S4g",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.1.2/S4g0",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.1.2/S4l",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.1.2/S4sw-espinoza",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.1.2/S4sw-wang",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ],
+      [
+        ".job_source_by_sigma.1.2/S4w",
+        "'results/validation_partial_d4o'",
+        "'<reproduction folder>/results/validation_partial'"
+      ]
+    ]
+  },
+  "not_regenerated": [
+    "logs/emulation_findings.md",
+    "logs/originality_search.md",
+    "logs/prompt_log.md",
+    "prereg/FROZEN",
+    "prereg/preregistration_template.md",
+    "results/detection_fractions.json",
+    "results/emulation_s4_fixture.json",
+    "results/emulation_s4_fixture_sw_cadence14.json",
+    "results/exploratory/influence.json",
+    "results/exploratory/posthoc.json",
+    "results/interpretation_worksheet.md",
+    "results/short_window_admission.json",
+    "results/short_window_admission_cadence14.json",
+    "results/short_window_label.json",
+    "results/sigma_floor.json"
+  ],
+  "new_files": [
+    "results/environment.txt"
+  ],
+  "commit": "5605ad4",
+  "pipeline_exit_code": 0,
+  "note": "run_all.py with GLITCH_REPRODUCE=1 in a fresh clone of 5605ad4; interrupted during 06 and resumed in the same clone (06 resumed its saved jobs); clone time taken as .git/HEAD + 60 s"
+}

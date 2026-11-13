@@ -1,0 +1,7 @@
+step,rows,pulsars,df1_missing,df1_le_0,dff_missing,dff_le_0,rows_removed,objects_removed,usable,dff_err_filled,df1_err_filled,admissible,usable_source_not_in_audit,usable_window,usable_local-relaxation,usable_global,usable_global-noexp,usable_unknown,usable_short-window,admissible_completed_in_included
+0 raw catalogue,736,226,118.0,106.0,2.0,1.0,,,,,,,,,,,,,,
+1 remove non-pulsar objects (D13),715,218,,,,,21.0,8.0,,,,,,,,,,,,
+2 mark usable: dff > 0 and df1 > 0 (D13),715,218,112.0,100.0,2.0,0.0,,,503.0,,,,,,,,,,,
+2b fill missing errors of usable glitches (D4d),715,218,,,,,,,,6.0,3.0,,,,,,,,,
+"3 mark admissible: local-relaxation+global+short-window (D9, D4f)",715,218,,,,,,,,,,426.0,26.0,0.0,92.0,163.0,0.0,77.0,171.0,
+4 include pulsars with >= 4 admissible completed intervals (D13),317,21,,,,,,,,,,,,,,,,,,219.0

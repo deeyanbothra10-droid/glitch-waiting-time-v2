@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+
+# 06 partial-result stores (run caches for resume; results/validation.json is the record)
+results/validation_partial*/
+
+# manuscript build output (see README, "Building the manuscript")
+build/

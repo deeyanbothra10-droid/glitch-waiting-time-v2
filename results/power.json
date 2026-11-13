@@ -1,0 +1,1080 @@
+{
+  "description": "Power (S1, S1m) and false positives (S2) of T1/T2 with the real pulsar structure; synthetic",
+  "per_test_alpha": 0.025,
+  "seed": 20261031,
+  "pulsars": [
+    "B0531+21",
+    "B1046-58",
+    "B1338-62",
+    "B1727-47",
+    "B1737-30",
+    "B1757-24",
+    "B1758-23",
+    "B1800-21",
+    "B1823-13",
+    "J0205+6449",
+    "J0537-6910",
+    "J0631+1036",
+    "J0729-1448",
+    "J1023-5746",
+    "J1420-6048",
+    "J1617-5055",
+    "J1737-3137",
+    "J1814-1744",
+    "J1841-0524",
+    "J2021+3651",
+    "J2229+6114"
+  ],
+  "config_sha256": "2022df18439daf006bcc0562f3c7ac6234b3c663c3b883aa2739bfa7df60147a",
+  "git_commit": "0a5949656fc03fcc3259b043dd27d0d3144406e8",
+  "generated_utc": "2026-11-01T07:29:53+00:00",
+  "per_sigma": {
+    "0.2": {
+      "calibration": [
+        {
+          "pulsar": "B0531+21",
+          "noise_sd": 0.0,
+          "target": 0.08695652173913043,
+          "achieved": 0.17960203332476843,
+          "within_tolerance": false,
+          "at_floor": true,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "B1046-58",
+          "noise_sd": 0.00185,
+          "target": 0.20720720720720723,
+          "achieved": 0.2061734480440575,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "B1338-62",
+          "noise_sd": 0.0,
+          "target": 0.15476190476190477,
+          "achieved": 0.2806763952547601,
+          "within_tolerance": false,
+          "at_floor": true,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "B1727-47",
+          "noise_sd": 0.000765625,
+          "target": 0.2583333333333333,
+          "achieved": 0.2624404460559328,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "B1737-30",
+          "noise_sd": 0.00103125,
+          "target": 0.28571428571428575,
+          "achieved": 0.29347140000914157,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "B1757-24",
+          "noise_sd": 0.0003671875,
+          "target": 0.03926701570680628,
+          "achieved": 0.03898892950803684,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "B1758-23",
+          "noise_sd": 0.0072,
+          "target": 0.7916666666666667,
+          "achieved": 0.8032262541997708,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "B1800-21",
+          "noise_sd": 0.0,
+          "target": 0.02056451612903226,
+          "achieved": 0.027618695494482,
+          "within_tolerance": false,
+          "at_floor": true,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "B1823-13",
+          "noise_sd": 0.000475,
+          "target": 0.04166666666666667,
+          "achieved": 0.043290913978338605,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J0205+6449",
+          "noise_sd": 0.0074375000000000005,
+          "target": 0.18333333333333335,
+          "achieved": 0.18279633238279955,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J0537-6910",
+          "noise_sd": 0.0001875,
+          "target": 0.2,
+          "achieved": 0.20393839542587822,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J0631+1036",
+          "noise_sd": 0.00039999999999999996,
+          "target": 0.18803418803418803,
+          "achieved": 0.1944417889236087,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J0729-1448",
+          "noise_sd": 0.002975,
+          "target": 0.46875,
+          "achieved": 0.47924134140642577,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J1023-5746",
+          "noise_sd": 0.0,
+          "target": 0.009942640484913223,
+          "achieved": 0.053487269556348416,
+          "within_tolerance": false,
+          "at_floor": true,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J1420-6048",
+          "noise_sd": 0.00106875,
+          "target": 0.07692307692307693,
+          "achieved": 0.08050163935828494,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J1617-5055",
+          "noise_sd": 0.009899999999999999,
+          "target": 0.5454545454545454,
+          "achieved": 0.564741164246354,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J1737-3137",
+          "noise_sd": 0.0010562500000000001,
+          "target": 0.14285714285714288,
+          "achieved": 0.14004733661687907,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J1814-1744",
+          "noise_sd": 0.0035,
+          "target": 0.5714285714285715,
+          "achieved": 0.5684786063471868,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J1841-0524",
+          "noise_sd": 0.0018,
+          "target": 0.4285714285714286,
+          "achieved": 0.4355548448388735,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J2021+3651",
+          "noise_sd": 0.0011625000000000001,
+          "target": 0.04838709677419355,
+          "achieved": 0.0483123462786309,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J2229+6114",
+          "noise_sd": 0.0014906250000000002,
+          "target": 0.05660377358490566,
+          "achieved": 0.0579966907740463,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        }
+      ],
+      "directional_thresholds": {
+        "T1": 2.0733023770373666,
+        "T2_d_cut": -0.04078092247262941,
+        "T2_d_cut_per_null": {
+          "S3": -0.04078092247262941,
+          "S3m": -0.039378206812452334
+        },
+        "T2_signed_root_D4m_report_only": 2.489979325497025,
+        "T2_signed_root_D4m_per_null_report_only": {
+          "S3": 2.489979325497025,
+          "S3m": 1.9051326269996767
+        }
+      },
+      "powers_from_S1m": {
+        "T1": 0.99,
+        "T2": 0.954,
+        "generating_sigma": 0.2,
+        "S1m_mean_fitted_sigma_hat": 0.759533868168201
+      },
+      "references": {
+        "s1m_b_lower": 0.21574977138704637,
+        "s1m_b_refutation_bound": 0.21574977138704637,
+        "s1m_b_label_bound": 0.667918176761748,
+        "s1_b_upper": 0.9182693825925161,
+        "s4mix_b_support_bound": 0.03063818713702139,
+        "s4mix_b_bias_bound": 0.03063818713702139,
+        "s1m_placebo_bound": -0.3559490279540785,
+        "n": {
+          "s1m": 1000,
+          "s1m_placebo": 1000,
+          "s4mix": 500,
+          "s1": 1000
+        }
+      },
+      "scenarios": {
+        "S1": {
+          "replicates": 1000,
+          "analysed": 1000,
+          "discarded": 0,
+          "failed_fits": 0,
+          "pulsars_dropped_total": 3166,
+          "T1_rejection_rate": 1.0,
+          "T2_rejection_rate": 1.0,
+          "T2_rejection_rate_signed_root_D4m_report_only": 1.0,
+          "sigma": {
+            "generating": 0.2,
+            "mean_fitted_sigma_hat": 0.6240781377010367
+          },
+          "T1_rejection_rate_chi2_old": 1.0,
+          "T2_rejection_rate_chi2_old": 1.0,
+          "outcomes": {
+            "D_placebo": 0.001,
+            "C": 0.0,
+            "A2": 0.974,
+            "B": 0.0,
+            "A1": 0.0,
+            "D_bias_range": 0.0,
+            "inconclusive": 0.025,
+            "A_total": 0.974,
+            "D_total": 0.001,
+            "n": 1000
+          },
+          "median_completed_intervals": 213.0,
+          "median_pulsars": 18.0
+        },
+        "S2": {
+          "replicates": 1000,
+          "analysed": 1000,
+          "discarded": 0,
+          "failed_fits": 0,
+          "pulsars_dropped_total": 2240,
+          "T1_rejection_rate": 0.023,
+          "T2_rejection_rate": 0.001,
+          "T2_rejection_rate_signed_root_D4m_report_only": 0.008,
+          "sigma": {
+            "generating": 0.2,
+            "mean_fitted_sigma_hat": 0.18897409266755505
+          },
+          "T1_rejection_rate_chi2_old": 0.031,
+          "T2_rejection_rate_chi2_old": 0.036,
+          "outcomes": {
+            "D_placebo": 0.0,
+            "C": 1.0,
+            "A2": 0.0,
+            "B": 0.0,
+            "A1": 0.0,
+            "D_bias_range": 0.0,
+            "inconclusive": 0.0,
+            "A_total": 0.0,
+            "D_total": 0.0,
+            "n": 1000
+          },
+          "median_completed_intervals": 206.0,
+          "median_pulsars": 19.0
+        },
+        "S1m": {
+          "replicates": 1000,
+          "analysed": 1000,
+          "discarded": 0,
+          "failed_fits": 0,
+          "pulsars_dropped_total": 6100,
+          "T1_rejection_rate": 0.99,
+          "T2_rejection_rate": 0.954,
+          "T2_rejection_rate_signed_root_D4m_report_only": 0.636,
+          "sigma": {
+            "generating": 0.2,
+            "mean_fitted_sigma_hat": 0.759533868168201
+          },
+          "T1_rejection_rate_chi2_old": 0.989,
+          "T2_rejection_rate_chi2_old": 0.686,
+          "outcomes": {
+            "D_placebo": 0.025,
+            "C": 0.025,
+            "A2": 0.916,
+            "B": 0.034,
+            "A1": 0.0,
+            "D_bias_range": 0.0,
+            "inconclusive": 0.0,
+            "A_total": 0.9500000000000001,
+            "D_total": 0.025,
+            "n": 1000
+          },
+          "median_completed_intervals": 138.0,
+          "median_pulsars": 15.0
+        },
+        "S4-mix": {
+          "replicates": 500,
+          "analysed": 500,
+          "discarded": 0,
+          "failed_fits": 0,
+          "pulsars_dropped_total": 2027,
+          "T1_rejection_rate": 0.048,
+          "T2_rejection_rate": 0.028,
+          "T2_rejection_rate_signed_root_D4m_report_only": 0.024,
+          "sigma": {
+            "generating": 0.2,
+            "mean_fitted_sigma_hat": 0.18870330249228692
+          },
+          "T1_rejection_rate_chi2_old": 0.054,
+          "T2_rejection_rate_chi2_old": 0.054,
+          "outcomes": {
+            "D_placebo": 0.0,
+            "C": 1.0,
+            "A2": 0.0,
+            "B": 0.0,
+            "A1": 0.0,
+            "D_bias_range": 0.0,
+            "inconclusive": 0.0,
+            "A_total": 0.0,
+            "D_total": 0.0,
+            "n": 500
+          },
+          "median_completed_intervals": 182.0,
+          "median_pulsars": 17.0
+        }
+      }
+    },
+    "0.4": {
+      "calibration": [
+        {
+          "pulsar": "B0531+21",
+          "noise_sd": 0.0,
+          "target": 0.08695652173913043,
+          "achieved": 0.18160629232869446,
+          "within_tolerance": false,
+          "at_floor": true,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "B1046-58",
+          "noise_sd": 0.00185,
+          "target": 0.20720720720720723,
+          "achieved": 0.20622931678520448,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "B1338-62",
+          "noise_sd": 0.0,
+          "target": 0.15476190476190477,
+          "achieved": 0.3027025839077198,
+          "within_tolerance": false,
+          "at_floor": true,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "B1727-47",
+          "noise_sd": 0.0006125,
+          "target": 0.2583333333333333,
+          "achieved": 0.26400846896316704,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "B1737-30",
+          "noise_sd": 0.000825,
+          "target": 0.28571428571428575,
+          "achieved": 0.28388621642775763,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "B1757-24",
+          "noise_sd": 0.0,
+          "target": 0.03926701570680628,
+          "achieved": 0.04861311287679522,
+          "within_tolerance": false,
+          "at_floor": true,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "B1758-23",
+          "noise_sd": 0.005599999999999999,
+          "target": 0.7916666666666667,
+          "achieved": 0.7708204949786187,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "B1800-21",
+          "noise_sd": 0.0,
+          "target": 0.02056451612903226,
+          "achieved": 0.03267429680113995,
+          "within_tolerance": false,
+          "at_floor": true,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "B1823-13",
+          "noise_sd": 0.00011875,
+          "target": 0.04166666666666667,
+          "achieved": 0.04041725147427905,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J0205+6449",
+          "noise_sd": 0.0053125,
+          "target": 0.18333333333333335,
+          "achieved": 0.17609692949398353,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J0537-6910",
+          "noise_sd": 0.00020625,
+          "target": 0.2,
+          "achieved": 0.2058185163828013,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J0631+1036",
+          "noise_sd": 0.00039999999999999996,
+          "target": 0.18803418803418803,
+          "achieved": 0.17908746631369266,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J0729-1448",
+          "noise_sd": 0.00245,
+          "target": 0.46875,
+          "achieved": 0.45556035602671485,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J1023-5746",
+          "noise_sd": 0.0,
+          "target": 0.009942640484913223,
+          "achieved": 0.050235877590292695,
+          "within_tolerance": false,
+          "at_floor": true,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J1420-6048",
+          "noise_sd": 0.000890625,
+          "target": 0.07692307692307693,
+          "achieved": 0.07667250840475773,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J1617-5055",
+          "noise_sd": 0.011,
+          "target": 0.5454545454545454,
+          "achieved": 0.5494908024079425,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J1737-3137",
+          "noise_sd": 0.0008125000000000001,
+          "target": 0.14285714285714288,
+          "achieved": 0.1398358228786392,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J1814-1744",
+          "noise_sd": 0.0035,
+          "target": 0.5714285714285715,
+          "achieved": 0.5653188539582134,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J1841-0524",
+          "noise_sd": 0.0017000000000000001,
+          "target": 0.4285714285714286,
+          "achieved": 0.4444879236580103,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J2021+3651",
+          "noise_sd": 0.0009687500000000001,
+          "target": 0.04838709677419355,
+          "achieved": 0.04737355631747785,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J2229+6114",
+          "noise_sd": 0.00099375,
+          "target": 0.05660377358490566,
+          "achieved": 0.05645594883720364,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        }
+      ],
+      "directional_thresholds": {
+        "T1": 2.199937645055852,
+        "T2_d_cut": -0.07746258664515422,
+        "T2_d_cut_per_null": {
+          "S3": -0.06047207078043811,
+          "S3m": -0.07746258664515422
+        },
+        "T2_signed_root_D4m_report_only": 2.1518531771065783,
+        "T2_signed_root_D4m_per_null_report_only": {
+          "S3": 2.1518531771065783,
+          "S3m": 1.9746943424562906
+        }
+      },
+      "powers_from_S1m": {
+        "T1": 0.98,
+        "T2": 0.828,
+        "generating_sigma": 0.4,
+        "S1m_mean_fitted_sigma_hat": 0.8042073490258301
+      },
+      "references": {
+        "s1m_b_lower": 0.2021179687565808,
+        "s1m_b_refutation_bound": 0.2021179687565808,
+        "s1m_b_label_bound": 0.6211956544363689,
+        "s1_b_upper": 0.9220488616270281,
+        "s4mix_b_support_bound": 0.04798499843357258,
+        "s4mix_b_bias_bound": 0.04798499843357258,
+        "s1m_placebo_bound": -0.3410980927689802,
+        "n": {
+          "s1m": 1000,
+          "s1m_placebo": 1000,
+          "s4mix": 500,
+          "s1": 1000
+        }
+      },
+      "scenarios": {
+        "S1": {
+          "replicates": 1000,
+          "analysed": 1000,
+          "discarded": 0,
+          "failed_fits": 0,
+          "pulsars_dropped_total": 3297,
+          "T1_rejection_rate": 1.0,
+          "T2_rejection_rate": 1.0,
+          "T2_rejection_rate_signed_root_D4m_report_only": 1.0,
+          "sigma": {
+            "generating": 0.4,
+            "mean_fitted_sigma_hat": 0.7037209616150771
+          },
+          "T1_rejection_rate_chi2_old": 1.0,
+          "T2_rejection_rate_chi2_old": 1.0,
+          "outcomes": {
+            "D_placebo": 0.0,
+            "C": 0.0,
+            "A2": 0.975,
+            "B": 0.0,
+            "A1": 0.0,
+            "D_bias_range": 0.0,
+            "inconclusive": 0.025,
+            "A_total": 0.975,
+            "D_total": 0.0,
+            "n": 1000
+          },
+          "median_completed_intervals": 216.0,
+          "median_pulsars": 18.0
+        },
+        "S2": {
+          "replicates": 1000,
+          "analysed": 1000,
+          "discarded": 0,
+          "failed_fits": 0,
+          "pulsars_dropped_total": 2500,
+          "T1_rejection_rate": 0.017,
+          "T2_rejection_rate": 0.003,
+          "T2_rejection_rate_signed_root_D4m_report_only": 0.017,
+          "sigma": {
+            "generating": 0.4,
+            "mean_fitted_sigma_hat": 0.37801282681835585
+          },
+          "T1_rejection_rate_chi2_old": 0.04,
+          "T2_rejection_rate_chi2_old": 0.03,
+          "outcomes": {
+            "D_placebo": 0.0,
+            "C": 1.0,
+            "A2": 0.0,
+            "B": 0.0,
+            "A1": 0.0,
+            "D_bias_range": 0.0,
+            "inconclusive": 0.0,
+            "A_total": 0.0,
+            "D_total": 0.0,
+            "n": 1000
+          },
+          "median_completed_intervals": 206.0,
+          "median_pulsars": 19.0
+        },
+        "S1m": {
+          "replicates": 1000,
+          "analysed": 1000,
+          "discarded": 0,
+          "failed_fits": 0,
+          "pulsars_dropped_total": 6347,
+          "T1_rejection_rate": 0.98,
+          "T2_rejection_rate": 0.828,
+          "T2_rejection_rate_signed_root_D4m_report_only": 0.583,
+          "sigma": {
+            "generating": 0.4,
+            "mean_fitted_sigma_hat": 0.8042073490258301
+          },
+          "T1_rejection_rate_chi2_old": 0.98,
+          "T2_rejection_rate_chi2_old": 0.548,
+          "outcomes": {
+            "D_placebo": 0.025,
+            "C": 0.025,
+            "A2": 0.799,
+            "B": 0.149,
+            "A1": 0.0,
+            "D_bias_range": 0.0,
+            "inconclusive": 0.002,
+            "A_total": 0.9480000000000001,
+            "D_total": 0.025,
+            "n": 1000
+          },
+          "median_completed_intervals": 133.0,
+          "median_pulsars": 15.0
+        },
+        "S4-mix": {
+          "replicates": 500,
+          "analysed": 500,
+          "discarded": 0,
+          "failed_fits": 0,
+          "pulsars_dropped_total": 2210,
+          "T1_rejection_rate": 0.014,
+          "T2_rejection_rate": 0.008,
+          "T2_rejection_rate_signed_root_D4m_report_only": 0.022,
+          "sigma": {
+            "generating": 0.4,
+            "mean_fitted_sigma_hat": 0.37463639528718623
+          },
+          "T1_rejection_rate_chi2_old": 0.026,
+          "T2_rejection_rate_chi2_old": 0.026,
+          "outcomes": {
+            "D_placebo": 0.0,
+            "C": 1.0,
+            "A2": 0.0,
+            "B": 0.0,
+            "A1": 0.0,
+            "D_bias_range": 0.0,
+            "inconclusive": 0.0,
+            "A_total": 0.0,
+            "D_total": 0.0,
+            "n": 500
+          },
+          "median_completed_intervals": 181.0,
+          "median_pulsars": 17.0
+        }
+      }
+    },
+    "0.6": {
+      "calibration": [
+        {
+          "pulsar": "B0531+21",
+          "noise_sd": 0.0,
+          "target": 0.08695652173913043,
+          "achieved": 0.19112307120004465,
+          "within_tolerance": false,
+          "at_floor": true,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "B1046-58",
+          "noise_sd": 0.00185,
+          "target": 0.20720720720720723,
+          "achieved": 0.21113238668485018,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "B1338-62",
+          "noise_sd": 0.0,
+          "target": 0.15476190476190477,
+          "achieved": 0.32344306524104915,
+          "within_tolerance": false,
+          "at_floor": true,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "B1727-47",
+          "noise_sd": 0.0002296875,
+          "target": 0.2583333333333333,
+          "achieved": 0.2633639862811221,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "B1737-30",
+          "noise_sd": 0.000825,
+          "target": 0.28571428571428575,
+          "achieved": 0.28934848551161696,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "B1757-24",
+          "noise_sd": 0.0,
+          "target": 0.03926701570680628,
+          "achieved": 0.040770451712934315,
+          "within_tolerance": true,
+          "at_floor": true,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "B1758-23",
+          "noise_sd": 0.0072,
+          "target": 0.7916666666666667,
+          "achieved": 0.8211157543119085,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "B1800-21",
+          "noise_sd": 0.0,
+          "target": 0.02056451612903226,
+          "achieved": 0.031564878775157686,
+          "within_tolerance": false,
+          "at_floor": true,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "B1823-13",
+          "noise_sd": 0.00011875,
+          "target": 0.04166666666666667,
+          "achieved": 0.04166074090737702,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J0205+6449",
+          "noise_sd": 0.004781250000000001,
+          "target": 0.18333333333333335,
+          "achieved": 0.18293037684028973,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J0537-6910",
+          "noise_sd": 0.00020625,
+          "target": 0.2,
+          "achieved": 0.20040498307059312,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J0631+1036",
+          "noise_sd": 0.0006,
+          "target": 0.18803418803418803,
+          "achieved": 0.19312393740223702,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J0729-1448",
+          "noise_sd": 0.00245,
+          "target": 0.46875,
+          "achieved": 0.45552168031888385,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J1023-5746",
+          "noise_sd": 0.0,
+          "target": 0.009942640484913223,
+          "achieved": 0.051414134789936755,
+          "within_tolerance": false,
+          "at_floor": true,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J1420-6048",
+          "noise_sd": 0.000890625,
+          "target": 0.07692307692307693,
+          "achieved": 0.07882487341328914,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J1617-5055",
+          "noise_sd": 0.00935,
+          "target": 0.5454545454545454,
+          "achieved": 0.5545838042950199,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J1737-3137",
+          "noise_sd": 0.0009750000000000002,
+          "target": 0.14285714285714288,
+          "achieved": 0.14705078540028477,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J1814-1744",
+          "noise_sd": 0.00375,
+          "target": 0.5714285714285715,
+          "achieved": 0.5616022820010982,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J1841-0524",
+          "noise_sd": 0.002,
+          "target": 0.4285714285714286,
+          "achieved": 0.4334385093061041,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J2021+3651",
+          "noise_sd": 0.0009687500000000001,
+          "target": 0.04838709677419355,
+          "achieved": 0.04772226384992636,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        },
+        {
+          "pulsar": "J2229+6114",
+          "noise_sd": 0.0006625,
+          "target": 0.05660377358490566,
+          "achieved": 0.0581265190117717,
+          "within_tolerance": true,
+          "at_floor": false,
+          "n_sequences": 50
+        }
+      ],
+      "directional_thresholds": {
+        "T1": 2.015926792388151,
+        "T2_d_cut": -0.11375129600886062,
+        "T2_d_cut_per_null": {
+          "S3": -0.0843504620739381,
+          "S3m": -0.11375129600886062
+        },
+        "T2_signed_root_D4m_report_only": 2.1653086225255076,
+        "T2_signed_root_D4m_per_null_report_only": {
+          "S3": 2.1653086225255076,
+          "S3m": 1.9436119522657418
+        }
+      },
+      "powers_from_S1m": {
+        "T1": 0.952,
+        "T2": 0.597,
+        "generating_sigma": 0.6,
+        "S1m_mean_fitted_sigma_hat": 0.8674214694465704
+      },
+      "references": {
+        "s1m_b_lower": 0.13368738318539525,
+        "s1m_b_refutation_bound": 0.13368738318539525,
+        "s1m_b_label_bound": 0.5862433046422013,
+        "s1_b_upper": 0.9216401203395823,
+        "s4mix_b_support_bound": 0.08876563435527278,
+        "s4mix_b_bias_bound": 0.08876563435527278,
+        "s1m_placebo_bound": -0.36620090579480674,
+        "n": {
+          "s1m": 1000,
+          "s1m_placebo": 1000,
+          "s4mix": 500,
+          "s1": 1000
+        }
+      },
+      "scenarios": {
+        "S1": {
+          "replicates": 1000,
+          "analysed": 1000,
+          "discarded": 0,
+          "failed_fits": 0,
+          "pulsars_dropped_total": 3500,
+          "T1_rejection_rate": 1.0,
+          "T2_rejection_rate": 1.0,
+          "T2_rejection_rate_signed_root_D4m_report_only": 1.0,
+          "sigma": {
+            "generating": 0.6,
+            "mean_fitted_sigma_hat": 0.8147085409737264
+          },
+          "T1_rejection_rate_chi2_old": 1.0,
+          "T2_rejection_rate_chi2_old": 1.0,
+          "outcomes": {
+            "D_placebo": 0.0,
+            "C": 0.0,
+            "A2": 0.975,
+            "B": 0.0,
+            "A1": 0.0,
+            "D_bias_range": 0.0,
+            "inconclusive": 0.025,
+            "A_total": 0.975,
+            "D_total": 0.0,
+            "n": 1000
+          },
+          "median_completed_intervals": 220.0,
+          "median_pulsars": 18.0
+        },
+        "S2": {
+          "replicates": 1000,
+          "analysed": 1000,
+          "discarded": 0,
+          "failed_fits": 0,
+          "pulsars_dropped_total": 2920,
+          "T1_rejection_rate": 0.031,
+          "T2_rejection_rate": 0.006,
+          "T2_rejection_rate_signed_root_D4m_report_only": 0.021,
+          "sigma": {
+            "generating": 0.6,
+            "mean_fitted_sigma_hat": 0.5634837635838136
+          },
+          "T1_rejection_rate_chi2_old": 0.029,
+          "T2_rejection_rate_chi2_old": 0.036,
+          "outcomes": {
+            "D_placebo": 0.0,
+            "C": 1.0,
+            "A2": 0.0,
+            "B": 0.0,
+            "A1": 0.0,
+            "D_bias_range": 0.0,
+            "inconclusive": 0.0,
+            "A_total": 0.0,
+            "D_total": 0.0,
+            "n": 1000
+          },
+          "median_completed_intervals": 207.0,
+          "median_pulsars": 18.0
+        },
+        "S1m": {
+          "replicates": 1000,
+          "analysed": 1000,
+          "discarded": 0,
+          "failed_fits": 0,
+          "pulsars_dropped_total": 6700,
+          "T1_rejection_rate": 0.952,
+          "T2_rejection_rate": 0.597,
+          "T2_rejection_rate_signed_root_D4m_report_only": 0.412,
+          "sigma": {
+            "generating": 0.6,
+            "mean_fitted_sigma_hat": 0.8674214694465704
+          },
+          "T1_rejection_rate_chi2_old": 0.939,
+          "T2_rejection_rate_chi2_old": 0.388,
+          "outcomes": {
+            "D_placebo": 0.025,
+            "C": 0.025,
+            "A2": 0.581,
+            "B": 0.0,
+            "A1": 0.346,
+            "D_bias_range": 0.0,
+            "inconclusive": 0.023,
+            "A_total": 0.9269999999999999,
+            "D_total": 0.025,
+            "n": 1000
+          },
+          "median_completed_intervals": 130.0,
+          "median_pulsars": 14.0
+        },
+        "S4-mix": {
+          "replicates": 500,
+          "analysed": 500,
+          "discarded": 0,
+          "failed_fits": 0,
+          "pulsars_dropped_total": 2373,
+          "T1_rejection_rate": 0.044,
+          "T2_rejection_rate": 0.022,
+          "T2_rejection_rate_signed_root_D4m_report_only": 0.036,
+          "sigma": {
+            "generating": 0.6,
+            "mean_fitted_sigma_hat": 0.5434214456731639
+          },
+          "T1_rejection_rate_chi2_old": 0.046,
+          "T2_rejection_rate_chi2_old": 0.038,
+          "outcomes": {
+            "D_placebo": 0.0,
+            "C": 0.998,
+            "A2": 0.002,
+            "B": 0.0,
+            "A1": 0.0,
+            "D_bias_range": 0.0,
+            "inconclusive": 0.0,
+            "A_total": 0.002,
+            "D_total": 0.0,
+            "n": 500
+          },
+          "median_completed_intervals": 177.0,
+          "median_pulsars": 16.0
+        }
+      }
+    }
+  }
+}

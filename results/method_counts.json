@@ -1,0 +1,1647 @@
+{
+  "usable_all_pulsars": {
+    "window": 0,
+    "local-relaxation": 92,
+    "global": 163,
+    "global-noexp": 0,
+    "unknown": 77,
+    "short-window": 171
+  },
+  "usable_pulsars_with_>=_5_usable": {
+    "window": 0,
+    "local-relaxation": 71,
+    "global": 63,
+    "global-noexp": 0,
+    "unknown": 42,
+    "short-window": 94
+  },
+  "usable_included_pulsars": {
+    "window": 0,
+    "local-relaxation": 70,
+    "global": 63,
+    "global-noexp": 0,
+    "unknown": 18,
+    "short-window": 100
+  },
+  "admissible_per_pulsar": [
+    {
+      "pulsar": "J0537-6910",
+      "admissible_usable": 63,
+      "admissible_completed": 61,
+      "censored_at_obs_end": 1,
+      "censored_at_gap": 1,
+      "last_dropped": 0,
+      "included": true
+    },
+    {
+      "pulsar": "B1737-30",
+      "admissible_usable": 28,
+      "admissible_completed": 28,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": true
+    },
+    {
+      "pulsar": "B0531+21",
+      "admissible_usable": 24,
+      "admissible_completed": 24,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": true
+    },
+    {
+      "pulsar": "B1338-62",
+      "admissible_usable": 16,
+      "admissible_completed": 16,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": true
+    },
+    {
+      "pulsar": "J0631+1036",
+      "admissible_usable": 12,
+      "admissible_completed": 11,
+      "censored_at_obs_end": 1,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": true
+    },
+    {
+      "pulsar": "J2229+6114",
+      "admissible_usable": 9,
+      "admissible_completed": 8,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": true
+    },
+    {
+      "pulsar": "B1757-24",
+      "admissible_usable": 7,
+      "admissible_completed": 6,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": true
+    },
+    {
+      "pulsar": "J1841-0524",
+      "admissible_usable": 7,
+      "admissible_completed": 6,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": true
+    },
+    {
+      "pulsar": "B1758-23",
+      "admissible_usable": 6,
+      "admissible_completed": 6,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": true
+    },
+    {
+      "pulsar": "J0205+6449",
+      "admissible_usable": 6,
+      "admissible_completed": 5,
+      "censored_at_obs_end": 1,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": true
+    },
+    {
+      "pulsar": "J1023-5746",
+      "admissible_usable": 6,
+      "admissible_completed": 5,
+      "censored_at_obs_end": 1,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": true
+    },
+    {
+      "pulsar": "J1420-6048",
+      "admissible_usable": 5,
+      "admissible_completed": 5,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": true
+    },
+    {
+      "pulsar": "B1046-58",
+      "admissible_usable": 5,
+      "admissible_completed": 5,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": true
+    },
+    {
+      "pulsar": "B1800-21",
+      "admissible_usable": 6,
+      "admissible_completed": 5,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": true
+    },
+    {
+      "pulsar": "J1617-5055",
+      "admissible_usable": 5,
+      "admissible_completed": 4,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": true
+    },
+    {
+      "pulsar": "B1823-13",
+      "admissible_usable": 5,
+      "admissible_completed": 4,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": true
+    },
+    {
+      "pulsar": "J1737-3137",
+      "admissible_usable": 5,
+      "admissible_completed": 4,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": true
+    },
+    {
+      "pulsar": "J0729-1448",
+      "admissible_usable": 4,
+      "admissible_completed": 4,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": true
+    },
+    {
+      "pulsar": "B1727-47",
+      "admissible_usable": 4,
+      "admissible_completed": 4,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": true
+    },
+    {
+      "pulsar": "J1814-1744",
+      "admissible_usable": 5,
+      "admissible_completed": 4,
+      "censored_at_obs_end": 1,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": true
+    },
+    {
+      "pulsar": "J2021+3651",
+      "admissible_usable": 5,
+      "admissible_completed": 4,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": true
+    },
+    {
+      "pulsar": "J1016-5857",
+      "admissible_usable": 3,
+      "admissible_completed": 3,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": false
+    },
+    {
+      "pulsar": "J1957+2831",
+      "admissible_usable": 4,
+      "admissible_completed": 3,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1610-50",
+      "admissible_usable": 3,
+      "admissible_completed": 3,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": false
+    },
+    {
+      "pulsar": "J1105-6107",
+      "admissible_usable": 3,
+      "admissible_completed": 3,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": false
+    },
+    {
+      "pulsar": "J1112-6103",
+      "admissible_usable": 4,
+      "admissible_completed": 3,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1301-6305",
+      "admissible_usable": 4,
+      "admissible_completed": 3,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1357-6429",
+      "admissible_usable": 3,
+      "admissible_completed": 3,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": false
+    },
+    {
+      "pulsar": "J1850-0026",
+      "admissible_usable": 4,
+      "admissible_completed": 3,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1844+00",
+      "admissible_usable": 3,
+      "admissible_completed": 2,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1830-08",
+      "admissible_usable": 2,
+      "admissible_completed": 2,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": false
+    },
+    {
+      "pulsar": "J1019-5749",
+      "admissible_usable": 2,
+      "admissible_completed": 2,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": false
+    },
+    {
+      "pulsar": "J1413-6141",
+      "admissible_usable": 2,
+      "admissible_completed": 2,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": false
+    },
+    {
+      "pulsar": "B1907+00",
+      "admissible_usable": 3,
+      "admissible_completed": 2,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B0740-28",
+      "admissible_usable": 2,
+      "admissible_completed": 2,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": false
+    },
+    {
+      "pulsar": "B1900+06",
+      "admissible_usable": 2,
+      "admissible_completed": 2,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": false
+    },
+    {
+      "pulsar": "J1705-3423",
+      "admissible_usable": 3,
+      "admissible_completed": 2,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1706-44",
+      "admissible_usable": 2,
+      "admissible_completed": 2,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": false
+    },
+    {
+      "pulsar": "B1727-33",
+      "admissible_usable": 2,
+      "admissible_completed": 2,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": false
+    },
+    {
+      "pulsar": "B1809-173",
+      "admissible_usable": 3,
+      "admissible_completed": 2,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1809-2004",
+      "admissible_usable": 3,
+      "admissible_completed": 2,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1909+0912",
+      "admissible_usable": 2,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1320-5359",
+      "admissible_usable": 2,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J2111+4606",
+      "admissible_usable": 2,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J0625+10",
+      "admissible_usable": 2,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J2032+4127",
+      "admissible_usable": 2,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1837-0604",
+      "admissible_usable": 1,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": false
+    },
+    {
+      "pulsar": "J1837-0559",
+      "admissible_usable": 1,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": false
+    },
+    {
+      "pulsar": "J1835-1106",
+      "admissible_usable": 2,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1845-0316",
+      "admissible_usable": 2,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1821-1419",
+      "admissible_usable": 2,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1847-0130",
+      "admissible_usable": 2,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1819-1458",
+      "admissible_usable": 2,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J0058-7218",
+      "admissible_usable": 2,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1907+0631",
+      "admissible_usable": 2,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1452-6036",
+      "admissible_usable": 1,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": false
+    },
+    {
+      "pulsar": "J1524-5625",
+      "admissible_usable": 1,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": false
+    },
+    {
+      "pulsar": "J1931+1817",
+      "admissible_usable": 1,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": false
+    },
+    {
+      "pulsar": "J1702-4310",
+      "admissible_usable": 2,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1838-0453",
+      "admissible_usable": 1,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": false
+    },
+    {
+      "pulsar": "J1734-3333",
+      "admissible_usable": 1,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": false
+    },
+    {
+      "pulsar": "J1913+0446",
+      "admissible_usable": 2,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1740+1000",
+      "admissible_usable": 2,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B0355+54",
+      "admissible_usable": 2,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J0940-5428",
+      "admissible_usable": 2,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1822-09",
+      "admissible_usable": 1,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": false
+    },
+    {
+      "pulsar": "B1449-64",
+      "admissible_usable": 1,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": false
+    },
+    {
+      "pulsar": "B1859+01",
+      "admissible_usable": 2,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1907-03",
+      "admissible_usable": 2,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1853+01",
+      "admissible_usable": 2,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1643-43",
+      "admissible_usable": 2,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B0833-45",
+      "admissible_usable": 1,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": false
+    },
+    {
+      "pulsar": "B0818-13",
+      "admissible_usable": 2,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1844-04",
+      "admissible_usable": 2,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1702-19",
+      "admissible_usable": 1,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": false
+    },
+    {
+      "pulsar": "B0656+14",
+      "admissible_usable": 2,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B2113+14",
+      "admissible_usable": 2,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B0525+21",
+      "admissible_usable": 1,
+      "admissible_completed": 1,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 0,
+      "included": false
+    },
+    {
+      "pulsar": "B1736-29",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1718-35",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1717-16",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1835-1020",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1835-0024",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1834-0731",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1839-0223",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1841-0345",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1842+0257",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1832+0029",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1843-0509",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1830-1135",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1641-45",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1853+0056",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B0919+06",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1921+0812",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B0523+11",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B0559-05",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J2004+3427",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B0727-18",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1954+2529",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1948+2819",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B0756-15",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1913+1011",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B0853-33",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1913+0832",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1909+0749",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B0844-35",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1904-1629",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1856+0245",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1854-1557",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1740-31",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1828-1101",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B2334+61",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1754-24",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1758-03",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1123-6259",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1917+00",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1930+22",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1055-6028",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1028-5819",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1935+25",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1946-25",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1951+32",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B0458+46",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J0905-5127",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J0901-4624",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J0834-4159",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B2020+28",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J0726-2612",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B2217+47",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B2224+65",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J0417+35",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1913+10",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1911+11",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1406-6121",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1705-3950",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B2255+58",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1809-1917",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1806-2125",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1746-2856",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1834-10",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1838-04",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1841-05",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1846-06",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1412-6145",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1702-4128",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1650-4502",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1636-2614",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J1531-5610",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1859+07",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1904+06",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "B1907+03",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    },
+    {
+      "pulsar": "J2346-0609",
+      "admissible_usable": 1,
+      "admissible_completed": 0,
+      "censored_at_obs_end": 0,
+      "censored_at_gap": 0,
+      "last_dropped": 1,
+      "included": false
+    }
+  ],
+  "included_pulsars_totals": {
+    "admissible_completed": 219,
+    "censored_at_obs_end": 5,
+    "censored_at_gap": 1,
+    "last_dropped": 8,
+    "pulsars": 21
+  },
+  "unknown_method_sources": [
+    {
+      "source_key": "js06",
+      "in_audit": true,
+      "usable_glitches": 5
+    },
+    {
+      "source_key": "zgp+24",
+      "in_audit": true,
+      "usable_glitches": 4
+    },
+    {
+      "source_key": "ywml10",
+      "in_audit": false,
+      "usable_glitches": 4
+    },
+    {
+      "source_key": "wjm+10",
+      "in_audit": true,
+      "usable_glitches": 4
+    },
+    {
+      "source_key": "dow81",
+      "in_audit": true,
+      "usable_glitches": 4
+    },
+    {
+      "source_key": "wje11",
+      "in_audit": true,
+      "usable_glitches": 3
+    },
+    {
+      "source_key": "cdk88",
+      "in_audit": true,
+      "usable_glitches": 3
+    },
+    {
+      "source_key": "jml+95",
+      "in_audit": true,
+      "usable_glitches": 3
+    },
+    {
+      "source_key": "lrc+09",
+      "in_audit": true,
+      "usable_glitches": 2
+    },
+    {
+      "source_key": "ead+21",
+      "in_audit": true,
+      "usable_glitches": 2
+    },
+    {
+      "source_key": "fla93",
+      "in_audit": false,
+      "usable_glitches": 2
+    },
+    {
+      "source_key": "lyg+24",
+      "in_audit": true,
+      "usable_glitches": 2
+    },
+    {
+      "source_key": "rgl12",
+      "in_audit": false,
+      "usable_glitches": 2
+    },
+    {
+      "source_key": "mkhr87",
+      "in_audit": true,
+      "usable_glitches": 2
+    },
+    {
+      "source_key": "cab+24",
+      "in_audit": false,
+      "usable_glitches": 2
+    },
+    {
+      "source_key": "mngh7",
+      "in_audit": false,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "new",
+      "in_audit": false,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "mh11",
+      "in_audit": false,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "mjs+16",
+      "in_audit": false,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "awd+12",
+      "in_audit": false,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "our measurement;",
+      "in_audit": false,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "rkp+11",
+      "in_audit": false,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "shaw+2018",
+      "in_audit": true,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "skl+21",
+      "in_audit": true,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "sl96",
+      "in_audit": true,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "ura02",
+      "in_audit": true,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "wjm04",
+      "in_audit": false,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "shaw+2018 (atel #11625)",
+      "in_audit": true,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "lkg05",
+      "in_audit": false,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "lkgk06",
+      "in_audit": false,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "fb06",
+      "in_audit": true,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "bak+25b",
+      "in_audit": true,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "bkj+19",
+      "in_audit": false,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "btd82",
+      "in_audit": false,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "buc10",
+      "in_audit": true,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "buc13",
+      "in_audit": true,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "ckl+00",
+      "in_audit": false,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "dml02",
+      "in_audit": true,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "fla91",
+      "in_audit": true,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "lkg09",
+      "in_audit": false,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "fla94",
+      "in_audit": true,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "ggj+25",
+      "in_audit": true,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "hrr+04",
+      "in_audit": true,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "jbb+15",
+      "in_audit": true,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "kerr19",
+      "in_audit": true,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "khe+24",
+      "in_audit": false,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "bak+25",
+      "in_audit": true,
+      "usable_glitches": 1
+    },
+    {
+      "source_key": "zgy+22",
+      "in_audit": false,
+      "usable_glitches": 1
+    }
+  ],
+  "git_commit": "9ab50192bae36a81c52645aa59511859b44b9ba3",
+  "generated_utc": "2026-10-31T12:07:54+00:00"
+}

@@ -1,0 +1,828 @@
+# Schema for config/decisions.yaml, checked by glitchlib/config.py.
+# A leaf has a `type` (string, integer, number, boolean, list) and optionally `allowed`,
+# `min`, `max` (inclusive), `items` (spec for list elements) and `length`.
+# Any other mapping is a group of keys. Every key is required, unknown keys are rejected,
+# and nothing has a default. `allowed` lists the options DECISIONS.md names for that choice.
+# Bounds are only the ones a value of that kind must obey (e.g. a probability lies in [0, 1]).
+
+meta:
+  source: {type: string, allowed: [DECISIONS.md]}
+  status: {type: string, allowed: [proposed, frozen]}
+  decisions_md_sha256: {type: string}
+
+D1:
+  provisional: {type: boolean}
+  primary_question: {type: string}
+  secondary_question: {type: string}
+  secondary_exploratory: {type: boolean}
+
+D2:
+  provisional: {type: boolean}
+  data: {type: string, allowed: [admissible]}
+  T1:
+    model: {type: string, allowed: [M2]}
+    parameter: {type: string, allowed: [b]}
+    expected_sign: {type: string, allowed: [positive]}
+    null_value: {type: number}
+  T2:
+    model: {type: string, allowed: [M4]}
+    parameter: {type: string, allowed: [d]}
+    expected_sign: {type: string, allowed: [negative]}
+    null_value: {type: number}
+  model_prediction:
+    b: {type: number}
+    d: {type: number}
+  consistency_judged_against: {type: string, allowed: [S1_simulation]}
+
+D3:
+  provisional: {type: boolean}
+  family: {type: string, allowed: [lognormal_aft]}
+  censoring: {type: string, allowed: [right]}
+  intercepts: {type: string, allowed: [per_pulsar]}
+  sigma: {type: string, allowed: [shared]}
+  T1_model: {type: string, allowed: [M2]}
+  T2_model: {type: string, allowed: [M4]}
+
+D4:
+  provisional: {type: boolean}
+  test: {type: string, allowed: [likelihood_ratio]}
+  T1_comparison:
+    full: {type: string, allowed: [M2]}
+    reduced: {type: string, allowed: [M0]}
+  T2_comparison:
+    full: {type: string, allowed: [M4]}
+    reduced: {type: string, allowed: [M3]}
+  sidedness: {type: string, allowed: [two-sided]}
+  familywise_alpha: {type: number, min: 0, max: 1}
+  correction: {type: string, allowed: [bonferroni]}
+  per_test_alpha: {type: number, min: 0, max: 1}
+  secondary_analyses:
+    type: list
+    items: {type: string, allowed: [spearman, permutation, loo_cv, aic, implied_beta, class_comparison]}
+  secondary_reporting: {type: string, allowed: [estimates_and_intervals_no_significance]}
+
+D4a:
+  provisional: {type: boolean}
+  permutation:
+    strata: {type: string, allowed: [pulsar]}
+    permuted_variable: {type: string, allowed: [ln_R]}
+    intervals: {type: string, allowed: [all]}
+    statistic: {type: string, allowed: [M2_bhat_full_censored_likelihood]}
+    sidedness: {type: string, allowed: [two-sided]}
+    p_value: {type: string, allowed: [one_plus_count_abs_ge_over_one_plus_N]}
+    n_permutations: {type: integer, min: 1}
+    seed: {type: integer, min: 0}
+    placebo_uses_same_scheme: {type: boolean}
+  spearman:
+    intervals: {type: string, allowed: [completed_only]}
+    per_pulsar_min_completed_admissible: {type: integer, min: 4}
+    pooling: {type: string, allowed: [fisher_z_weighted_mean]}
+    pooling_weight: {type: string, allowed: [n_minus_3]}
+    p_values: {type: string, allowed: [none]}
+    label: {type: string, allowed: [completed intervals only]}
+  loo_cv:
+    unit: {type: string, allowed: [interval]}
+    score_completed: {type: string, allowed: [log_f_T]}
+    score_censored: {type: string, allowed: [log_S_c]}
+    summary: {type: string, allowed: [mean_over_all_intervals_per_model]}
+
+D4b:
+  provisional: {type: boolean}
+  interval_estimates:
+    level: {type: number, min: 0, max: 1}
+    model_parameters: {type: string, allowed: [wald_inverse_hessian]}
+    simulated_quantities: {type: string, allowed: [percentile]}
+    pooled_spearman: {type: string, allowed: [fisher_z_pm_z_over_sqrt_sum_n_minus_3]}
+    spearman_abs_r_one: {type: string, allowed: [flag_and_exclude_from_pooled_and_list]}
+  simulation:
+    typical_wait: {type: string, allowed: [obs_span_over_n_glitches]}
+    covariate_centring: {type: string, allowed: [within_pulsar]}
+    intercept: {type: string, allowed: [ln_W_p]}
+    S1:
+      covariate: {type: string, allowed: [ln_R]}
+      slope: {type: number}
+    S2:
+      covariate: {type: string, allowed: [none]}
+    S3:
+      covariate: {type: string, allowed: [ln_dnu_frac]}
+      slope: {type: number}
+    S4_t_rec:
+      distribution: {type: string, allowed: [lognormal]}
+      median: {type: string, allowed: [W_p]}
+      log_sd: {type: number, min: 0}
+      independent_of_T: {type: boolean}
+      uses_waits: {type: boolean}
+    replicates_per: {type: string, allowed: [scenario_and_sigma]}
+    replicates:
+      S1: {type: integer, min: 1}
+      S2: {type: integer, min: 1}
+      S3: {type: integer, min: 1}
+      S4_per_variant: {type: integer, min: 1}
+    seed: {type: integer, min: 0}
+    validation_lr_tests: {type: string, allowed: [all_replicates]}
+    validation_permutation:
+      applies_to:
+        type: list
+        items: {type: string, allowed: [primary, placebo]}
+      n_permutations: {type: integer, min: 1}
+      first_n_replicates: {type: integer, min: 1}
+    validation_loo_cv_first_n_replicates: {type: integer, min: 1}
+    real_run_n_permutations: {type: integer, min: 1}
+    method_class:
+      global_exp_fitted_yes: {type: string, allowed: [global]}
+      global_exp_fitted_no: {type: string, allowed: [global-noexp]}
+      global_exp_fitted_sometimes: {type: string, allowed: [per_glitch_from_audit_notes_else_unknown]}
+      admissible_global_requires_exp_fitted: {type: string, allowed: ["yes"]}
+  diagnostics:
+    collinearity:
+      correlation: {type: string, allowed: [pearson]}
+      over: {type: string, allowed: [usable_glitches]}
+      min_admissible_usable_glitches_per_pulsar: {type: integer, min: 2}
+      rule_summary: {type: string, allowed: [unweighted_median_abs_r]}
+      also_report: {type: string, allowed: [pooled_within_pulsar_demeaned_r]}
+    placebo:
+      outcome: {type: string, allowed: [previous_wait]}
+      rows: {type: string, allowed: [intervals_whose_start_glitch_has_predecessor]}
+      previous_wait_always_completed: {type: boolean}
+      test: {type: string, allowed: [D4a_permutation]}
+      sidedness: {type: string, allowed: [two-sided]}
+      alpha: {type: number, min: 0, max: 1}
+      significantly_negative: {type: string, allowed: [p_below_alpha_and_bhat_negative]}
+      significantly_positive: {type: string, allowed: [p_below_alpha_and_bhat_positive]}
+    missingness:
+      method: {type: string, allowed: [conditional_logit]}
+      strata: {type: string, allowed: [pulsar]}
+      response: {type: string, allowed: [df1_missing]}
+      predictor: {type: string, allowed: [ln_following_wait]}
+      rows: {type: string, allowed: [included_pulsars_glitches_with_completed_following_wait]}
+      censored_following_wait: {type: string, allowed: [exclude_and_count]}
+      sidedness: {type: string, allowed: [two-sided]}
+      alpha: {type: number, min: 0, max: 1}
+      report:
+        type: list
+        items: {type: string, allowed: [odds_ratio, interval]}
+      descriptive_also: {type: string, allowed: [df1_le_0]}
+
+D4c:
+  provisional: {type: boolean}
+  s4_expectations:
+    S4l_forward: {type: string, allowed: [not_positive]}
+    S4l_forward_max_upper_95: {type: number}
+    S4l_bias_reporting: {type: string, allowed: [finding_works_against_T1]}
+    S4w: {type: string, allowed: [unchanged]}
+    S4g: {type: string, allowed: [unchanged]}
+    S4g0: {type: string, allowed: [unchanged]}
+  layers:
+    statistics_only:
+      type: list
+      items: {type: string, allowed: [S1, S2, S3]}
+    statistics_measured_dnudot: {type: string, allowed: [true_times_exp_normal_sd_real_relative_error]}
+    emulated:
+      type: list
+      items: {type: string, allowed: [S1m, S4]}
+    S1m_t_rec: {type: string, allowed: [equals_T]}
+    S1_reference_for_D6_D12: {type: string, allowed: [S1m]}
+    S4_t_rec: {type: string, allowed: [independent_of_T]}
+  mixtures:
+    method_assignment: {type: string, allowed: [resampled_glitch_method]}
+    primary_analysis_glitches: {type: string, allowed: [admissible_only]}
+    unknown_emulated_as: {type: string, allowed: [window, global]}
+    unknown_sensitivity_emulated_as: {type: string, allowed: [window, global]}
+  emulation:
+    cadence: {type: string, allowed: [per_source_from_audit]}
+    cadence_until_audit_days: {type: number, min: 0}
+    noise_calibration: {type: string, allowed: [per_pulsar_bisection_on_median_relative_error]}
+    noise_min_error_values_per_pulsar: {type: integer, min: 1}
+    noise_fallback: {type: string, allowed: [global_median]}
+    pre_glitch_monitoring_days: {type: number, min: 0}
+    min_samples_after: {type: integer, min: 1}
+    min_samples_before_window: {type: integer, min: 1}
+    unmeasurable_glitch: {type: string, allowed: [missing_unusable_still_ends_previous_interval]}
+    exp_min_tau_over_cadence: {type: number, min: 0}
+  glitch_counts:
+    intercept: {type: string, allowed: [ln_W_p_minus_half_sigma_squared]}
+
+D4d:
+  provisional: {type: boolean}
+  s4_role:
+    pass_fail_tests: {type: string, allowed: [none]}
+    outputs:
+      type: list
+      items: {type: string, allowed: [results, emulation_findings_log]}
+    emulator_correctness_tests:
+      type: list
+      items: {type: string, allowed: [window_linear_recovery, window_exponential_constant_step,
+                                      fitted_methods_exact_when_t_rec_equals_T, undetected_exponential_never_fitted]}
+  exponential_detection:
+    unit: {type: string, allowed: [each_fitted_window]}
+    criterion: {type: string, allowed: [aic_drop]}
+    min_aic_drop: {type: number, min: 0}
+    tau_d_known_to_fit: {type: boolean}
+  calibrated_rules:
+    reference_scenarios:
+      type: list
+      items: {type: string, allowed: [S1m, S4-mix]}
+    reference_inputs: {type: string, allowed: [same_pulsars_counts_measurement_mix_noise_as_real]}
+    primary_measurement_mix: {type: string, allowed: [admissible_only]}
+    replicates: {type: integer, min: 1}
+    sigma: {type: string, allowed: [estimated_from_real_primary_fit]}
+    support_requires:
+      bhat_above_S4mix_percentile: {type: number, min: 0, max: 100}
+      placebo_bhat_not_below_S1m_placebo_percentile: {type: number, min: 0, max: 100}
+    artefact_if:
+      bhat_inside_S4mix_central_fraction: {type: number, min: 0, max: 1}
+      placebo_bhat_below_S1m_placebo_percentile: {type: number, min: 0, max: 100}
+    raw_placebo_permutation_p: {type: string, allowed: [reported_not_deciding]}
+  answers:
+    dnu_noise: {type: string, allowed: [times_exp_normal_sd_real_relative_error_all_layers]}
+    calibration_sequences_per_step: {type: integer, min: 1}
+    calibration_tolerance_fraction_of_target: {type: number, min: 0, max: 1}
+    calibration_record_achieved: {type: boolean}
+    cadence_within_pulsar: {type: string, allowed: [interval_uses_starting_glitch_source_cadence]}
+    pre_glitch_baseline_cadence: {type: string, allowed: [previous_interval]}
+    missing_error_fill: {type: string, allowed: [pulsar_median_relative_error]}
+    missing_error_min_values_per_pulsar: {type: integer, min: 1}
+    missing_error_fallback: {type: string, allowed: [global_median]}
+    missing_error_flagged: {type: boolean}
+
+D4e:
+  provisional: {type: boolean}
+  readings_confirmed:
+    global_exponential_detection: {type: string, allowed: [same_per_window_aic_decision]}
+    pre_glitch_baseline_cadence: {type: string, allowed: [first_glitch_cadence]}
+  calibration:
+    target_statistic: {type: string, allowed: [median_reported_formal_relative_error]}
+    target_reference: {type: string, allowed: [median_real_df1_err_over_df1]}
+    scenario: {type: string, allowed: [S1m]}
+    per: {type: string, allowed: [pulsar_and_sigma]}
+    noise_used_in: {type: string, allowed: [all_emulated_scenarios]}
+    report:
+      type: list
+      items: {type: string, allowed: [achieved_per_pulsar, pulsars_outside_tolerance]}
+  replicate_inclusion:
+    rule: {type: string, allowed: [D13_min_admissible_completed_intervals_per_pulsar]}
+    failing_pulsars: {type: string, allowed: [dropped_from_replicate_fit]}
+    replicate: {type: string, allowed: [kept]}
+    report: {type: string, allowed: [pulsars_dropped_per_scenario]}
+    discard_replicate_if_fewer_pulsars_than: {type: integer, min: 1}
+    report_discarded: {type: boolean}
+  limitations:
+    marginal_detection_errors_understated: {type: string, allowed: [stated_limitation_no_code_change]}
+
+D4f:
+  provisional: {type: boolean}
+  short_window:
+    class: {type: string, allowed: [short-window]}
+    definition: {type: string, allowed: [pre_post_local_solutions_fixed_spans_differenced_no_transients]}
+    sources:
+      elsk11:
+        source_type: {type: string, allowed: [espinoza]}
+        w_days: {type: number, min: 0}
+        w_sensitivity_days: {type: number, min: 0}
+      wmp+00:
+        source_type: {type: string, allowed: [wang]}
+        w_days: {type: number, min: 0}
+        w_sensitivity_days: {type: number, min: 0}
+    emulation: {type: string, allowed: [constant_level_w_before_and_after_truncated_at_neighbouring_glitch_no_exponentials]}
+  admission:
+    statistic: {type: string, allowed: [S4sw_forward_slope_upper_95]}
+    max_upper_95: {type: number}
+    every_sigma: {type: boolean}
+    main_and_sensitivity_w: {type: boolean}
+    fixture: {type: string, allowed: [synthetic]}
+    if_passed: {type: string, allowed: [primary_analysis]}
+    otherwise: {type: string, allowed: [robustness_item_2_only]}
+    record: {type: string, allowed: [emulation_findings_log]}
+  exp_fitted_when_detected_counts_as: {type: string, allowed: ["yes"]}
+  our_measurement:
+    class: {type: string, allowed: [global]}
+    status: {type: string, allowed: [assumed, confirmed]}
+    admitted: {type: boolean}
+    robustness_run_excluding: {type: boolean}
+  robustness_without_J0537:
+    always_reported: {type: boolean}
+    exploratory_if_fewer_intervals_than: {type: integer, min: 0}
+  unaudited_sources: {type: string, allowed: [unknown]}
+
+D4g:
+  provisional: {type: boolean}
+  gaps:
+    J0537-6910:
+      gap_start_mjd: {type: number}
+      gap_end_mjd: {type: number}
+      censored_interval_start_mjd: {type: number}
+  obs_end_documented:
+    J0537-6910: {type: number}
+    J1023-5746: {type: number}
+  jodrell_bank_basu2022:
+    obs_end_mjd: {type: number}
+    applies_if_last_glitch_before: {type: number}
+    pulsars:
+      type: list
+      items: {type: string}
+  all_other_pulsars:
+    obs_end: {type: string, allowed: [last_glitch_epoch]}
+    last_interval: {type: string, allowed: [dropped_and_logged_never_zero_censoring]}
+  robustness_item_10:
+    applies_to: {type: string, allowed: [jodrell_bank_pulsars]}
+    obs_end: {type: string, allowed: [max_last_glitch_and_mjd]}
+    mjd: {type: number}
+    latest_catalogue_mjd: {type: number}
+    reporting_lag_days: {type: number, min: 0}
+    jodrell_bank_rule:
+      source_keys:
+        type: list
+        items: {type: string}
+      primary_reference_prefix: {type: string}
+      included_pulsars_computed_31_oct:
+        type: list
+        items: {type: string}
+
+D4h:
+  provisional: {type: boolean}
+  intercept:
+    formula: {type: string, allowed: [ln_W_p_minus_half_sigma_squared_minus_ln_m_p]}
+    m_p: {type: string, allowed: [pool_mean_exp_slope_times_centred_covariate]}
+    m_p_without_covariate: {type: number}
+  false_positive_bound:
+    alpha: {type: number, min: 0, max: 1}
+    mc_sd_multiplier: {type: number, min: 0}
+    n: {type: string, allowed: [replicates]}
+    applies_to:
+      type: list
+      items: {type: string, allowed: [S2_T1, S2_T2, S3_T2]}
+  robustness_item_9:
+    combination: {type: string, allowed: [quadrature]}
+    max_fraction_of_T: {type: number, min: 0}
+    missing_error: {type: string, allowed: [exclude]}
+  robustness_item_8:
+    status: {type: string, allowed: [not_run]}
+    reason: {type: string}
+  confirmed:
+    S1m_replicates_per_sigma: {type: integer, min: 1}
+    support_placebo_condition: {type: string, allowed: [D4d_percentile]}
+    raw_placebo_permutation_p: {type: string, allowed: [reported_only]}
+    implied_beta_intervals: {type: string, allowed: [all_admissible_completed_and_censored]}
+
+D4i:
+  provisional: {type: boolean}
+  reason_recorded_before_freeze: {type: boolean}
+  A1_scaling_supported:
+    T1_rejects: {type: boolean}
+    bhat_above_S4mix_percentile: {type: number, min: 0, max: 100}
+    bhat_within_S1m_central_fraction: {type: number, min: 0, max: 1}
+    placebo_condition: {type: string, allowed: [D4d]}
+  A2_dnudot_supported:
+    requires_A1: {type: boolean}
+    T2_rejects_with_d_negative: {type: boolean}
+  T2_not_rejected:
+    label: {type: string}
+    is_outcome_B: {type: boolean}
+  B_requires_T2_power_at_least: {type: number, min: 0, max: 1}
+  C_refutation:
+    bhat_below_S1m_percentile: {type: number, min: 0, max: 100}
+    or_T1_not_rejected_and_T1_power_at_least: {type: number, min: 0, max: 1}
+    power_sigma: {type: string, allowed: [estimated_from_real_primary_fit]}
+  D_artefact: {type: string, allowed: [as_D4d]}
+  implied_beta:
+    role: {type: string, allowed: [reported_not_deciding]}
+    interval_level: {type: number, min: 0, max: 1}
+    discussed_by: {type: string, allowed: [D7_class]}
+  simulation_outcome_rates: {type: string, allowed: [D4i_rules]}
+  missingness:
+    judged_against: {type: string, allowed: [S1m_distribution]}
+
+D4j:
+  provisional: {type: boolean}
+  reason_recorded_before_freeze: {type: boolean}
+  order:
+    type: list
+    items: {type: string, allowed: [D_placebo, C, A, D_bias_range, inconclusive]}
+  D_placebo:
+    placebo_bhat_below_S1m_placebo_percentile: {type: number, min: 0, max: 100}
+  C_refutation:
+    bhat_below_S1m_percentile: {type: number, min: 0, max: 100}
+    or_T1_not_rejected_and_T1_power_at_least: {type: number, min: 0, max: 1}
+  A_scaling_supported:
+    T1_rejects: {type: boolean}
+    bhat_above_S4mix_percentile: {type: number, min: 0, max: 100}
+    bhat_within_S1m_central_fraction: {type: number, min: 0, max: 1}
+    within_A:
+      A2: {type: string, allowed: [T2_rejects_with_d_negative]}
+      B: {type: string, allowed: [T2_not_rejected_and_T2_power_at_least]}
+      B_min_T2_power: {type: number, min: 0, max: 1}
+      A1: {type: string, allowed: [otherwise]}
+  D_bias_range:
+    T1_rejects: {type: boolean}
+    bhat_at_or_below_S4mix_percentile: {type: number, min: 0, max: 100}
+  inconclusive: {type: string, allowed: [anything_else]}
+  never_change_outcome:
+    type: list
+    items: {type: string, allowed: [implied_beta, D15_missingness]}
+
+D4k:
+  provisional: {type: boolean}
+  failed_replicates:
+    excluded_from_rates: {type: boolean}
+    listed_with_reason: {type: boolean}
+    max_fraction_per_job: {type: number, min: 0, max: 1}
+    explanation_log: {type: string, allowed: [logs/emulation_findings.md]}
+  validation_sigma_grid_additional:
+    type: list
+    items: {type: number, min: 0}
+  real_reference_sigma: {type: string, allowed: [fitted_sigma_hat_of_primary_model]}
+  real_reference_replicates_and_seeds: {type: string, allowed: [as_in_06]}
+  missingness_not_estimable:
+    reported_as: {type: string, allowed: [not_estimable]}
+    S1m_reference_uses: {type: string, allowed: [estimable_replicates_only]}
+    report_count: {type: boolean}
+  real_data_fit_failure: {type: string, allowed: [stops_run]}
+
+D4l:
+  provisional: {type: boolean}
+  reason_recorded_before_freeze: {type: boolean}
+  directional_tests:
+    statistic: {type: string, allowed: [signed_root_LR]}
+    T1_predicted_direction: {type: string, allowed: [b_positive]}
+    T2_predicted_direction: {type: string, allowed: [d_negative]}
+    reject_above_null_percentile: {type: number, min: 0, max: 100}
+    T1_null_scenario: {type: string, allowed: [S2]}
+    T2_null_scenario: {type: string, allowed: [S3]}
+    null_replicates: {type: integer, min: 1}
+    null_seeds: {type: string, allowed: [disjoint_from_evaluation]}
+    real_run_null_sigma: {type: string, allowed: [fitted_sigma_hat]}
+    real_run_S3_size_coefficient: {type: string, allowed: [real_M3_estimate]}
+    powers_use_these_tests: {type: boolean}
+  C_refutation:
+    bhat_below_S1m_percentile: {type: number, min: 0, max: 100}
+    power_clause: {type: string, allowed: [removed]}
+  A_slope_condition:
+    above_S4mix_percentile: {type: number, min: 0, max: 100}
+    at_or_above_S1m_percentile: {type: number, min: 0, max: 100}
+    at_or_below_S1_percentile: {type: number, min: 0, max: 100}
+    report_percentile_within_S1m: {type: boolean}
+    label_if_above_S1m_percentile: {type: number, min: 0, max: 100}
+    label: {type: string}
+  report_only:
+    type: list
+    items: {type: string, allowed: [S3_old_test_rejections_fraction_d_negative, SD_vs_mean_SE_of_b_and_d_for_S1_S3_S1m,
+                                    S1m_measured_on_true_ln_dnudot_slope_per_method_class]}
+
+D4m:
+  provisional: {type: boolean}
+  reason_recorded_before_freeze: {type: boolean}
+  S3m:
+    base: {type: string, allowed: [S3]}
+    measurement: {type: string, allowed: [emulated]}
+    method_mix: {type: string, allowed: [source_audit]}
+    t_rec: {type: string, allowed: [as_S4_mix]}
+    roles:
+      type: list
+      items: {type: string, allowed: [evaluation, null_reference]}
+    evaluation_replicates: {type: string, allowed: [as_S3]}
+    seeds: {type: string, allowed: [disjoint]}
+    real_run: {type: string, allowed: [sigma_hat_and_real_M3_size_coefficient]}
+  T2_rejects_if_exceeds_null_percentile_under:
+    type: list
+    items: {type: string, allowed: [S3, S3m]}
+  A1_label: {type: string}
+  creep_specific_evidence: {type: string, allowed: [A2_only]}
+  false_positive_bound_also_applies_to: {type: string, allowed: [A2_rate_under_S3m_every_sigma]}
+  calibrated_intervals:
+    factor: {type: string, allowed: [sd_of_estimate_over_mean_model_se]}
+    b_null: {type: string, allowed: [S2]}
+    d_null: {type: string, allowed: [S3m]}
+    plain_wald_shown: {type: boolean}
+    plain_wald_label: {type: string, allowed: [uncalibrated]}
+    decisions_unaffected: {type: boolean}
+  report_only:
+    type: list
+    items: {type: string, allowed: [S3m_outcome_rates, fraction_S1m_b_above_S3m_97.5, fraction_S1m_d_below_S3m_2.5]}
+
+D4n:
+  provisional: {type: boolean}
+  reason_recorded_before_freeze: {type: boolean}
+  chosen_after: {type: string, allowed: [simulated_power_only]}
+  matched_sigma:
+    replaces: {type: string, allowed: [D4k.real_reference_sigma]}
+    scenarios:
+      type: list
+      items: {type: string, allowed: [S1, S1m, S2, S3, S3m, S4-mix]}
+    statistic: {type: string, allowed: [median_fitted_sigma_hat_of_primary_model]}
+    target: {type: string, allowed: [real_fitted_sigma_hat]}
+    search: {type: string, allowed: [bisection]}
+    search_range:
+      type: list
+      items: {type: number, min: 0}
+    replicates_per_step: {type: integer, min: 1}
+    tolerance_in_sigma_hat: {type: number, min: 0}
+    then_replicates: {type: string, allowed: [full_count]}
+    if_fitted_sigma_hat_at_zero_exceeds_target: {type: string, allowed: [run_at_zero_and_report]}
+  T2:
+    statistic: {type: string, allowed: [d_hat]}
+    rejects_if_d_hat_below_null_percentile: {type: number, min: 0, max: 100}
+    null_scenarios:
+      type: list
+      items: {type: string, allowed: [S3, S3m]}
+    combine: {type: string, allowed: [smaller_percentile]}
+    null_sigma_in_06: {type: string, allowed: [same_sigma]}
+    null_sigma_in_08: {type: string, allowed: [matched_sigma]}
+    signed_root: {type: string, allowed: [reported_never_changes_outcome]}
+  short_window_label:
+    applies_to: {type: string, allowed: [A2]}
+    label: {type: string}
+    if_d_hat_refitted_without_short_window_at_least: {type: number}
+    report_only: {type: boolean}
+  report_against_sigma:
+    type: list
+    items: {type: string, allowed: [generating_sigma, mean_fitted_sigma_hat_of_primary_model]}
+  report_against_sigma_in:
+    type: list
+    items: {type: string, allowed: ["05", "06"]}
+
+D4o:
+  provisional: {type: boolean}
+  reason_recorded_before_freeze: {type: boolean}
+  replaces: {type: string, allowed: [D14.exponentials]}
+  draw: {type: string, allowed: [log_uniform_within_group]}
+  ranges: {type: string, allowed: [envelope_of_single_component_tabulated_fits]}
+  excluded_from_envelopes:
+    type: list
+    items: {type: string, allowed: [multi_component_fits, J1617-5055_event]}
+  groups:
+    J0537-6910:
+      pulsars:
+        type: list
+        items: {type: string, allowed: [J0537-6910]}
+      exponential_only_if_dnu_microhz_at_least: {type: number, min: 0}
+      Q:
+        type: list
+        items: {type: number, min: 0}
+      tau_d_days:
+        type: list
+        items: {type: number, min: 0}
+      source: {type: string}
+    crab:
+      pulsars:
+        type: list
+        items: {type: string, allowed: [B0531+21]}
+      Q:
+        type: list
+        items: {type: number, min: 0}
+      tau_d_days:
+        type: list
+        items: {type: number, min: 0}
+      source: {type: string}
+    others:
+      pulsars: {type: string, allowed: [all_other_included]}
+      dnu_frac_split: {type: number, min: 0}
+      at_least_split:
+        Q:
+          type: list
+          items: {type: number, min: 0}
+        tau_d_days:
+          type: list
+          items: {type: number, min: 0}
+      below_split:
+        Q:
+          type: list
+          items: {type: number, min: 0}
+        tau_d_days:
+          type: list
+          items: {type: number, min: 0}
+      source: {type: string}
+  detection: {type: string, allowed: [D4d_aic_only]}
+  report_only:
+    detection_fraction_per_group: {type: boolean}
+    published_detection_rates:
+      J0537-6910:
+        type: list
+        items: {type: integer, min: 0}
+      Yu2013:
+        type: list
+        items: {type: integer, min: 0}
+  limitations_not_emulated:
+    type: list
+    items: {type: string, allowed: [crab_persistent_step_slow_growth_46pct_tau_320d, multi_component_recoveries, J1617-5055_Q_0.98_event]}
+  D8_robustness_additions:
+    type: list
+    items: {type: string, allowed: [exclude_B0531+21]}
+  limitations_recorded_report_only:
+    short_window_label_fires_on_model_true_A2:
+      type: list
+      items: {type: number, min: 0, max: 1}
+    J0537_emulated_detection_fraction_of_glitches:
+      type: list
+      items: {type: number, min: 0, max: 1}
+
+D4p:
+  provisional: {type: boolean}
+  reason_recorded_before_freeze: {type: boolean}
+  matched_sigma_search:
+    search_range:
+      type: list
+      items: {type: number, min: 0}
+    if_fitted_sigma_hat_at_lower_end_exceeds_target: {type: string, allowed: [run_at_lower_end_and_report]}
+    max_bisection_steps: {type: integer, min: 1}
+    if_not_converged: {type: string, allowed: [midpoint_of_final_bracket_and_report]}
+  confirmed_readings_08:
+    noise_calibration: {type: string, allowed: [each_candidate_and_matched_sigma]}
+    interval_factors: {type: string, allowed: [each_null_at_own_matched_sigma]}
+    search_seeds: {type: string, allowed: [own_seed_index_same_seeds_every_step]}
+  robustness_09:
+    report:
+      type: list
+      items: {type: string, allowed: [b_hat, d_hat, calibrated_intervals, signed_roots, same_sign_as_primary]}
+    outcome_classification: {type: string, allowed: [none]}
+    interval_factors: {type: string, allowed: [primary_factors_from_08]}
+    interval_label: {type: string}
+  A1_label: {type: string}
+  A1_label_fixed_power_figure: {type: boolean}
+  provisional_tags_removed:
+    type: list
+    items: {type: string, allowed: [D9, D10, D11]}
+  D9_unaudited_sources: {type: string, allowed: [excluded_not_assumed]}
+  preflight_07_refuses_if_any_provisional: {type: boolean}
+  limitations_recorded:
+    type: list
+    items: {type: string, allowed: [t_rec_log_sd_0.3_not_tabulated, short_window_spans_40_125_d_not_tabulated]}
+
+D5:
+  provisional: {type: boolean}
+  baselines:
+    type: list
+    items: {type: string, allowed: [M0, M3, poisson_exponential_aft]}
+  poisson_scope: {type: string, allowed: [per_pulsar]}
+  poisson_reporting: {type: string, allowed: [descriptive]}
+
+D6:
+  provisional: {type: boolean}
+  primary_errors_in_lnR: {type: string, allowed: [ignore]}
+  attenuation_handling: {type: string, allowed: [simulation_calibration]}
+  calibration_scenario: {type: string, allowed: [S1]}
+  calibration_inputs:
+    type: list
+    items: {type: string, allowed: [real_error_bars, real_measurement_methods]}
+  robustness_max_sigma_lnR: {type: number, min: 0}
+
+D7:
+  provisional: {type: boolean}
+  statistic: {type: string, allowed: [median_usable_dnu_frac]}
+  vela_like_min_dnu_frac: {type: number, min: 0}
+  exploratory_only: {type: boolean}
+  report_per_class:
+    type: list
+    items: {type: string, allowed: [T1_estimate, T2_estimate]}
+  test: {type: string, allowed: [none]}
+
+D8:
+  provisional: {type: boolean}
+  report_all: {type: boolean}
+  exclude_pulsar: {type: string}
+  method_classes_separately:
+    type: list
+    items: {type: string, allowed: [window, local-relaxation, global, global-noexp, unknown]}
+  per_pulsar_min_admissible_completed: {type: integer, min: 1}
+  drop_censored: {type: boolean}
+  max_sigma_lnR: {type: number, min: 0}
+  exclude_gap_flagged: {type: boolean}
+  min_dnu_frac: {type: number, min: 0}
+  step_dnudot_where_reported: {type: boolean}
+  max_epoch_uncertainty_fraction_of_T: {type: number, min: 0}
+
+D9:
+  provisional: {type: boolean}
+  primary_dnudot: {type: string, allowed: [catalogue_df1]}
+  admissible_methods:
+    type: list
+    items: {type: string, allowed: [window, local-relaxation, global, global-noexp, unknown]}
+  excluded_from_primary:
+    type: list
+    items: {type: string, allowed: [window, local-relaxation, global, global-noexp, unknown]}
+  secondary_dnudot: {type: string, allowed: [source_paper_step]}
+
+D10:
+  provisional: {type: boolean}
+  preference_order:
+    type: list
+    items: {type: string, allowed: [maintainer_last_observation, most_recent_glitch_paper_data_span_end]}
+  on_disagreement: {type: string, allowed: [earliest_defensible]}
+  if_none: {type: string, allowed: [drop_last_interval_and_log]}
+
+D11:
+  provisional: {type: boolean}
+  interval_spanning_gap: {type: string, allowed: [censor_at_gap_start, exclude]}
+  gap_list_source: {type: string, allowed: [source_papers]}
+  gaps_to_verify:
+    type: list
+    items: {type: string}
+  robustness_alternative: {type: string, allowed: [censor_at_gap_start, exclude]}
+
+D12:
+  provisional: {type: boolean}
+  gate:
+    min_admissible_completed_intervals: {type: integer, min: 0}
+    min_pulsars: {type: integer, min: 0}
+    if_not_met: {type: string}
+  outcomes:
+    A_support:
+      rule: {type: string}
+      s1_central_fraction: {type: number, min: 0, max: 1}
+      implied_beta_min: {type: number}
+      implied_beta_min_admissible_intervals: {type: integer, min: 0}
+    B_size_does_the_work:
+      rule: {type: string}
+      T2_min_power_S1: {type: number, min: 0, max: 1}
+    C_refutation:
+      rule: {type: string}
+      T1_min_power_S1: {type: number, min: 0, max: 1}
+      power_sigma: {type: number, min: 0}
+      s1_central_fraction: {type: number, min: 0, max: 1}
+    D_artefact:
+      rule: {type: string}
+    inconclusive:
+      rule: {type: string}
+
+D13:
+  provisional: {type: boolean}
+  pulsar_key: {type: string, allowed: [name]}
+  missing_codes:
+    type: list
+    items: {type: string}
+  excluded_objects:
+    type: list
+    items: {type: string}
+  usable_min_dff_exclusive: {type: number}
+  usable_min_df1_exclusive: {type: number}
+  order_by: {type: string, allowed: [mjd]}
+  min_admissible_completed_intervals_per_pulsar: {type: integer, min: 1}
+  remove_glitches_for_epoch_uncertainty: {type: boolean}
+  flag_mjd_err_above_days: {type: number, min: 0}
+  flag_mjd_err_unknown: {type: boolean}
+  expected_counts_21_pulsars:
+    mjd_err_above_30_days: {type: integer, min: 0}
+    mjd_err_unknown: {type: integer, min: 0}
+  primary_fractional_error_cut: {type: string, allowed: [none]}
+
+D14:
+  provisional: {type: boolean}
+  sigma_grid:
+    type: list
+    items: {type: number, min: 0}
+  replicates:
+    S1: {type: integer, min: 1}
+    S2: {type: integer, min: 1}
+    S3: {type: integer, min: 1}
+    S4_per_variant: {type: integer, min: 1}
+  seed: {type: integer, min: 0}
+  S1_t_rec: {type: string, allowed: [equals_T]}
+  S4_t_rec:
+    independent_of_T: {type: boolean}
+    distribution: {type: string, allowed: [lognormal]}
+    median: {type: string, allowed: [pulsar_median_wait]}
+    log_sd: {type: number, min: 0}
+  exponentials:
+    provisional: {type: boolean}
+    Q:
+      distribution: {type: string, allowed: [log-uniform]}
+      low: {type: number, min: 0}
+      high: {type: number, min: 0}
+    tau_d_days:
+      distribution: {type: string, allowed: [log-uniform]}
+      low: {type: number, min: 0}
+      high: {type: number, min: 0}
+  cadence_and_noise: {type: string, allowed: [per_source_from_source_audit]}
+  noise_scaling: {type: string, allowed: [match_real_df1_relative_errors]}
+  S4_method_mix: {type: string, allowed: [source_audit_proportions]}
+  pass_criteria:
+    S2_T1_max_false_positive_rate: {type: number, min: 0, max: 1}
+    S2_T2_max_false_positive_rate: {type: number, min: 0, max: 1}
+    S3_T2_max_false_positive_rate: {type: number, min: 0, max: 1}
+    S1_bhat_median_max_abs_deviation_noise_free: {type: number, min: 0}
+    S4: {type: string, allowed: [reported_not_pass_fail]}
+
+D15:
+  provisional: {type: boolean}
+  placebo:
+    model: {type: string, allowed: [M2]}
+    outcome: {type: string, allowed: [previous_wait]}
+    data: {type: string, allowed: [admissible]}
+    p_threshold: {type: number, min: 0, max: 1}
+    if_significantly_negative: {type: string, allowed: [artefact_flag_support_blocked]}
+    if_significantly_positive: {type: string, allowed: [report_does_not_block_support]}
+    otherwise: {type: string, allowed: [clean]}
+  missingness:
+    method: {type: string, allowed: [within_pulsar_logistic_regression]}
+    response: {type: string, allowed: [dnudot_missing]}
+    predictor: {type: string, allowed: [ln_following_wait]}
+    report: {type: string, allowed: [odds_ratio]}
+    if_significant: {type: string, allowed: [state_selection_caveat]}
+  collinearity:
+    measure: {type: string, allowed: [within_pulsar_correlation]}
+    variables:
+      type: list
+      items: {type: string, allowed: [ln_dnu_frac, ln_dnudot_frac]}
+    summary: {type: string, allowed: [median_abs_r]}
+    underpowered_if_above: {type: number, min: 0, max: 1}
+    allowed_before_freeze: {type: boolean}
+    if_underpowered: {type: string, allowed: [T2_exploratory]}

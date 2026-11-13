@@ -1,0 +1,131 @@
+{
+  "admitted": true,
+  "max_upper_95": 0.02,
+  "checks": [
+    {
+      "variant": "S4sw-espinoza-w40",
+      "w": 40.0,
+      "cadence_days": 6.0,
+      "sigma": 0.2,
+      "mean": 0.0005147561930596374,
+      "se_mean": 0.0007476536697366796,
+      "upper_95": 0.0019801304586527335,
+      "passes": true
+    },
+    {
+      "variant": "S4sw-espinoza-w150",
+      "w": 150.0,
+      "cadence_days": 6.0,
+      "sigma": 0.2,
+      "mean": 0.0003507804843268667,
+      "se_mean": 0.0006401222516285292,
+      "upper_95": 0.00160539704322147,
+      "passes": true
+    },
+    {
+      "variant": "S4sw-wang-w125",
+      "w": 125.0,
+      "cadence_days": 28.0,
+      "sigma": 0.2,
+      "mean": 7.888673163144055e-05,
+      "se_mean": 0.0006869907437139351,
+      "upper_95": 0.00142536384702314,
+      "passes": true
+    },
+    {
+      "variant": "S4sw-wang-w300",
+      "w": 300.0,
+      "cadence_days": 28.0,
+      "sigma": 0.2,
+      "mean": 0.001714473150589813,
+      "se_mean": 0.0006076034717701105,
+      "upper_95": 0.002905354072140729,
+      "passes": true
+    },
+    {
+      "variant": "S4sw-espinoza-w40",
+      "w": 40.0,
+      "cadence_days": 6.0,
+      "sigma": 0.4,
+      "mean": 0.0016997659651409461,
+      "se_mean": 0.0013831076296614926,
+      "upper_95": 0.004410607106020035,
+      "passes": true
+    },
+    {
+      "variant": "S4sw-espinoza-w150",
+      "w": 150.0,
+      "cadence_days": 6.0,
+      "sigma": 0.4,
+      "mean": 0.004153210728515626,
+      "se_mean": 0.0013071564997807717,
+      "upper_95": 0.006715190390243379,
+      "passes": true
+    },
+    {
+      "variant": "S4sw-wang-w125",
+      "w": 125.0,
+      "cadence_days": 28.0,
+      "sigma": 0.4,
+      "mean": 0.0003127012524638318,
+      "se_mean": 0.0013937579139796882,
+      "upper_95": 0.0030444165670316953,
+      "passes": true
+    },
+    {
+      "variant": "S4sw-wang-w300",
+      "w": 300.0,
+      "cadence_days": 28.0,
+      "sigma": 0.4,
+      "mean": 0.0050302376940218494,
+      "se_mean": 0.0011601489921371716,
+      "upper_95": 0.007304087935311149,
+      "passes": true
+    },
+    {
+      "variant": "S4sw-espinoza-w40",
+      "w": 40.0,
+      "cadence_days": 6.0,
+      "sigma": 0.6,
+      "mean": -0.00017173713263551237,
+      "se_mean": 0.002190326779540061,
+      "upper_95": 0.00412122446963661,
+      "passes": true
+    },
+    {
+      "variant": "S4sw-espinoza-w150",
+      "w": 150.0,
+      "cadence_days": 6.0,
+      "sigma": 0.6,
+      "mean": 0.006132967565833439,
+      "se_mean": 0.0018591691710141303,
+      "upper_95": 0.009776872182188322,
+      "passes": true
+    },
+    {
+      "variant": "S4sw-wang-w125",
+      "w": 125.0,
+      "cadence_days": 28.0,
+      "sigma": 0.6,
+      "mean": 0.0021558520823449327,
+      "se_mean": 0.0018897978032592706,
+      "upper_95": 0.005859787714796014,
+      "passes": true
+    },
+    {
+      "variant": "S4sw-wang-w300",
+      "w": 300.0,
+      "cadence_days": 28.0,
+      "sigma": 0.6,
+      "mean": 0.012527909258574855,
+      "se_mean": 0.001694249271521897,
+      "upper_95": 0.015848576811590995,
+      "passes": true
+    }
+  ],
+  "rule": "D4f: S4sw forward-slope upper 95% bound (mean + 1.96 SE) <= max at every sigma and w",
+  "fixture": "synthetic",
+  "seed": 20261031,
+  "git_commit": "6caeda06f7264d766d93f6ca3edb02aab9b8b57c",
+  "generated_utc": "2026-10-31T12:00:23+00:00"
+}

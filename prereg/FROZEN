@@ -1,0 +1,6 @@
+Pre-registration frozen: 2026-11-01
+Frozen on top of commit: 758b2e73723817d7c0bc08acf278a74e72fa9910
+DECISIONS.md SHA-256: 2fd950febe3648b20098cca04a4ebe2742c905c43218d7977fa4894198f00bed
+config/decisions.yaml SHA-256: 3cd2b2f9254697aabaf60a6264d6c7856f8918d3577b6877dfb108fdfb1c671f
+Checks before freezing: clean git tree; 248 tests pass; no decision tagged provisional; results/validation.json all PASS (105 of 105).
+The data freeze (SHA-256 of data/processed/final_dataset.csv) is recorded separately in prereg/data_freeze.json by scripts/04_uncertainty.py.
